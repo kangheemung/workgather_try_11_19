@@ -72,7 +72,22 @@ input{
     text-align: left;
     width: 100%;
     background-color: #004A54;
-    margin-left: 10px;
+    margin-left: 20px;
     text-align: center;
     content:url("/square.png");
+}
+.workshop_enter{
+    display: flex;
+  
+    
+}
+.smail_btn{
+    width: 20%;
+    margin-left:10px;
+    text-align: left;
+}
+.big_btn{
+    width: 15%;
+    margin-left:10px;
+    text-align: left;
 }
