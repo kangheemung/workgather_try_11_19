@@ -3,42 +3,40 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body{
     background-color:#DBE5E6;
-    
-    
-    
-
+    margin-right: 4%;
+    margin-left: 4%;
 }
 .header{
     color:#004A54;
     text-align: right;
-    margin-right: 15px;
     font-family: 'Mali', cursive;
-    
+    font-weight: bolder; 
 }
 .page1{
     text-align: center;
-
 }
 .main-text{
     color:#004A54;
     text-align: center;
-    padding-bottom: 5%;
+    font-weight: bolder; 
+    margin-top: none;
+}
+.main-body{
+    object-fit: cover;
+    margin:10%,10%;
 
 }
-
 .top{  
-    width: 97%;
+    width: 100%;
     transform: translate(-50%,-100%);
     text-align: center;
     object-fit: cover;
     position: absolute;
 }
 .top2{
-    width: 100%;
-    
+    width: 110%;
     text-align: center;
-    transform: translate(1%,0);
-    
+    transform: translate(-5%,1%);
     position: relative;
 }
 .top2 h4{
@@ -52,42 +50,137 @@ body{
     min-width: 100px;
     max-width: 400px;
     display: inline-block; 
-    background-color: #004A54;
-    color:white;
-   
-    margin-top: 5px;
-    padding: 15px
-    
-    
-
+    background-color: #F0F3F3;
+    color:#004A54;
+    margin-top: 10%;
+    padding: 15px;
+    font-weight: bolder;
+    border:0;
+    outline:0;
+    border-radius: 10px;
 }
 input{
     font-size: 130%;
     font-family: 'Mali', cursive;
     font-weight: bolder; 
 }
-.about_us title{
-    color: red;}
-.us_ikon::before{
-    text-align: left;
-    width: 100%;
-    background-color: #004A54;
-    margin-left: 20px;
-    text-align: center;
-    content:url("/square.png");
-}
-.workshop_enter{
+.big_title{
     display: flex;
-  
+    color:#004A54;
+    margin-top: 5%;
+    }
+
+.square{
+    width: 20px;
+    margin-top: 18px;
+    margin-right: 20px;
+    margin-left: 20px;  
+}
+
+.main_body{
+    object-fit: contain;
+   
     
 }
+.main_button{
+    margin-top: 10%;
+    margin-bottom: 30%;
+    text-align: center;
+
+}
+
+.workshop_enter{
+    display: flex; 
+    object-fit: cover; 
+    width: 100%;
+    text-align: center;
+}
+.page3{
+    padding-bottom: 8%;
+}
 .smail_btn{
-    width: 20%;
-    margin-left:10px;
-    text-align: left;
+    width: 30%;   
+    transform: translate(19%, 120%);
 }
 .big_btn{
-    width: 15%;
-    margin-left:10px;
+    width: 150%;  
+    transform: translate(-15%, 10%);
+}
+.alam{
+   background-color: whitesmoke;
+    text-align: right;
+    margin-bottom: none;
+    width: 100%;
+    height: 40px;
+    border: solid whitesmoke 5px
+    
+   
+    
+}
+.alam_button{
+    width: 30%;
+    margin-right:3%;
+    margin-top: -3%;
+   
+    
+    
+    
+}
+footer {
+    text-align: center;
+}
+footer p{
+    font-size: smaller;
+    color:black;
+}
+.datail_box{
+    font-size: 15px;
+    margin-bottom: 20%;
     text-align: left;
 }
+.datail_box ul{
+    margin-right: 10%;
+}
+
+.datail_box1{
+    width: 98%;
+    border: solid #004A54 1px;
+    padding: 5px;
+    box-sizing: border-box;   
+}
+.datail_box1 ul{
+    font-size: 13px;
+}
+.datail_box1 font{
+    color: #004A54;
+    font-size: 15px;
+}
+.check {
+    width: 7%;  
+    transform: translate(5%, 5%);
+}
+.check1 {
+    width: 4%;  
+    transform: translate(7%, 5%);
+}
+.s-text{
+    color:#004A54;
+}
+.foot-text{
+    color:#004A54;
+    font-family: 'Mali', cursive;
+   
+}
+.bottom-text{
+    font-size: medium; 
+}
+.bottom-text1{
+    font-size: small;
+}
+.bottom-text2{
+    font-size: x-small;
+
+}
+.name{
+    color:#004A54;
+    font-size: medium; }
