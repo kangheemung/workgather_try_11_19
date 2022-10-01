@@ -3,8 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body{
     background-color:#DBE5E6;
-    margin-right: 4%;
-    margin-left: 4%;
+    object-fit: cover;
 }
 .header{
     color:#004A54;
@@ -93,19 +92,27 @@ input{
     display: flex; 
     object-fit: cover; 
     width: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
     text-align: center;
 }
 .page3{
     padding-bottom: 8%;
 }
 .smail_btn{
-    width: 30%;   
-    transform: translate(19%, 120%);
+    width: 5%;   
+    height: 50%;
+    margin-left: 2%;
+    margin-right: 2%;
+    transform: translate(-65%, 180%);
 }
+
 .big_btn{
-    width: 150%;  
-    transform: translate(-15%, 10%);
+    width: 28%;  
+    transform: translate(-12%, 10%);
 }
+
+
 .alam{
    background-color: whitesmoke;
     text-align: right;
@@ -120,11 +127,7 @@ input{
 .alam_button{
     width: 30%;
     margin-right:3%;
-    margin-top: -3%;
-   
-    
-    
-    
+    margin-top: -3%;   
 }
 footer {
     text-align: center;
@@ -184,3 +187,60 @@ footer p{
 .name{
     color:#004A54;
     font-size: medium; }
+.s_header{
+   color: #DBE5E6;
+   background-color:  #004A54; 
+   text-align: left;
+   font-family: 'Mali', cursive;     
+}
+.s_header h4{
+    padding-top:3%;
+    padding-bottom: 3%;
+}
+.position_btn{
+    display: flex;
+    text-align: center;
+}
+.p-btn{
+    width: 50%;
+    margin-right: 5%;
+    margin-left: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-top: 30%;
+    background-color: #004A54;
+    color:#F0F3F3;
+    min-width: 100px;
+    max-width: 400px;
+    font-weight: bolder;
+    border: 10px;
+    outline:0;
+    border-radius: 10px;
+}
+
+.position-text{
+    color:#004A54;
+    text-align: right;
+    font-family: 'Mali', cursive;
+    font-weight: bolder; 
+    font-size: medium;
+    text-align: center;
+    margin-top: 30%;
+}
+.position{
+    display: center;
+    text-align: center;
+}
+.hand_img{
+    margin-top: 30%;
+    width: 40%;
+    margin-bottom: 30%;  
+}
+.select_header{
+    display: flex;
+    background-color:  #004A54; 
+}
+.select_b{
+    text-align: right;
+    margin-left: 40%;   
+}
