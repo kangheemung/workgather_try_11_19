@@ -1,0 +1,29 @@
+<div class= "asobinagara">
+<h1>ASOBINAGARA</h1>
+</div>
+<div class="signup">
+    <div>
+        <p>Sign-in with email</p>
+    </div>
+    <div class="body">
+        <%= form_for :sessions, url: sessions_path do |f| %>
+            <%= f.text_field :email, :placeholder => "email" %><br>
+            <%= f.password_field :password, :placeholder => "password" %><br>
+            <%= f.password_field :password_confirmation, :placeholder => "password_confirmation"%><br>
+            <div>
+                <%= f.button :Signup, class: 'button'%>
+            </div>
+    </div>
+    <% end %>
+    <div class= "login">
+    <span href="" >会員登録</span>
+    </div>
+</div>
+<footer>
+    <div>
+    <img class="hand" src="/login_hand.png">
+    </div>
+    <div class ="bottom-text2">
+    <p>ASOBINAGARA <font class="s-text"> © ASOBINAGARA ,lnc.  All Right Reserved</fron></div></p>
+    </div>
+</footer>

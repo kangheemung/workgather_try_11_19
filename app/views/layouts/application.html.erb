@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
-    <title>Workgather</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  
-    </head>
+ <%= render'layouts/head_information'%>
     <body>
-    <%= yield %>
+     <%= yield %>
     </body>
 </html>
