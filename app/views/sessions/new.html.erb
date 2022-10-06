@@ -2,16 +2,15 @@
 <h1>ASOBINAGARA</h1>
 </div>
 <div class="signup">
-    <div>
+ <div>
         <p>Sign-in with email</p>
-    </div>
     <div class="body">
         <%= form_for :sessions, url: sessions_path do |f| %>
             <%= f.text_field :email, :placeholder => "email" %><br>
             <%= f.password_field :password, :placeholder => "password" %><br>
             <%= f.password_field :password_confirmation, :placeholder => "password_confirmation"%><br>
             <div>
-                <%= f.button :Signup, class: 'button'%>
+                <%= f.sumbit :Signup, class: 'button'%>
             </div>
     </div>
     <% end %>

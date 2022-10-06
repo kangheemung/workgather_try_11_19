@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   #top
   root 'home#top'
 
@@ -18,8 +18,13 @@ Rails.application.routes.draw do
   delete 'logout' =>'sessions#destroy'
 
   #signup
-  get 'users/participate_new' => 'users#participate_new', as: 'signup'
+  get 'users/new' => 'users#new', as: 'signup'
   get 'users/workshop_Organizer_new'=>'users#workshop_Organizer_new'
+  get 'users/show'=>'users#show'
   post 'users/create'=>'users#create',as: 'users'
+  #album
+  get 'images/index'=>'images#index'
+  get 'images/new'=>'images#new'
+  post 'images/create'=>'images#create',as: 'create_image'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
