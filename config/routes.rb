@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   #top
   root 'home#top'
 
@@ -19,12 +20,12 @@ Rails.application.routes.draw do
 
   #signup
   get 'users/new' => 'users#new', as: 'signup'
-  get 'users/workshop_Organizer_new'=>'users#workshop_Organizer_new'
   get 'users/show'=>'users#show'
   post 'users/create'=>'users#create',as: 'users'
+  #plannerssignup
+  get 'planners/new'=> 'planners#new',as:'planners_login'
+  post 'planners/create'=>'planners#create' ,as:'planners_new'
   #album
-  get 'images/index'=>'images#index'
-  get 'images/new'=>'images#new'
-  post 'images/create'=>'images#create',as: 'create_image'
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
