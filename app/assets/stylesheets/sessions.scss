@@ -4,6 +4,13 @@
 .asobinagara{
    font-weight: bold;
 }
+.singup_title{
+    align-content: center;
+    margin-top: 10%;
+    margin-left: 5%;
+    font-size: larger;
+    font-weight: bolder;
+}
 .body{
    margin-top: 10%;
    align-content: center;
@@ -13,7 +20,7 @@
     border: solid 3px;
     border-radius: 10px;
 }
-.signup p{
+.signup {
     font-size: large;
     font-weight: bold;
 }
@@ -30,6 +37,7 @@
     border-radius: 5%; 
 }
 .hand{
-    width: 50%;
+    width: 30%;
+    margin-left: 60%;
     align-content: center;
 }

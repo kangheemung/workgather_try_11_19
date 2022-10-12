@@ -1,6 +1,6 @@
 class PlannersController < ApplicationController
   def new
-    @planners
+    @planner=Planner.new
   end
   def create
     planner=Planner.new(planner_params)

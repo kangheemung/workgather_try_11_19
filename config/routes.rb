@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   #signup
   get 'users/new' => 'users#new', as: 'signup'
   get 'users/show'=>'users#show'
-  post 'users/create'=>'users#create',as: 'users'
+  post 'users/create'=>'users#create', as: 'users'
   #plannerssignup
   get 'planners/new'=> 'planners#new',as:'planners_login'
   post 'planners/create'=>'planners#create' ,as:'planners_new'

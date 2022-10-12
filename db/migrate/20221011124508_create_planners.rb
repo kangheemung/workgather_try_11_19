@@ -1,7 +1,7 @@
 class CreatePlanners < ActiveRecord::Migration[5.2]
   def change
     create_table :planners do |t|
-      t.string :username
+      t.string :user_name
       t.string :email
       t.string :password_digest
       t.string :first_name

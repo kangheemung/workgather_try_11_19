@@ -12,11 +12,19 @@
     margin-left:1%;
     margin-top: 10%;
     font-weight: bold;
+    align-content: center;
 }
 .signup span{
     font-weight:bolder;
 }
-.body{margin-left: 5%;}
+.signup_text{
+    text-align: center;
+    margin-top: 10%;
+    font-size: large;
+    font-weight: bolder;
+}
+.body{
+    margin-left: 5%;}
 .button{
     background-color: #004A54;
     width: 50%;
@@ -28,6 +36,7 @@
     border: solid 1px;
     font-size: large;
     border-radius: 5%;
+    color:whitesmoke
 }
 .login{
     margin-bottom: 5%;
@@ -35,11 +44,14 @@
 }
 .name_box{
     width: 100%;
-    margin-top: 3%;
-    
+    margin-top: 3%;   
+}
+.bottom-text2 p{
+    font-size: x-small;
 }
 .sign_btn{
-    text-align: center;}
+    text-align: center;
+   }
 .gender_box{
     margin-top: 3%;
 }

@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     #p "=============="
     #p params
     #p "=============="
-     user=User.find_by(email: params[:sessions][:email].downcase)
+     user = User.find_by(email: params[:sessions][:email].downcase)
     if user && user.authenticate(params[:sessions][:password])
       # session[:user_id] = user.id
       login(user)
@@ -14,6 +14,9 @@ class SessionsController < ApplicationController
       flash.now[:danger] = 'invalid email/password combination'
       render 'new'
     end
+    p "========="
+    params
+    p "========="
   end
   def destroy
      session[:user_id] = nil

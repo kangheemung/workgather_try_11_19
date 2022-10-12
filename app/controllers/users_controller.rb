@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  def participate_new
+  def new
     @user=User.new
   end
   def create
@@ -14,6 +14,8 @@ class UsersController < ApplicationController
   end
   def show
     @user=User.find(1)
+  end
+  def delete
   end
 
   private
