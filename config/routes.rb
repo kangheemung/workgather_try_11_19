@@ -14,14 +14,14 @@ Rails.application.routes.draw do
   get 'posts/new' => 'posts#new'
 
   #login
-  get 'sessions/new'=>'sessions#new',as: 'login'
-  post 'sessions/create'=>'sessions#create',as: 'sessions'
+  get 'sessions/new'=>'sessions#new',as:'login'
+  post 'sessions/create'=>'sessions#create',as:'sessions'
   delete 'logout' =>'sessions#destroy'
 
   #signup
-  get 'users/new' => 'users#new', as: 'signup'
+  get 'users/new' => 'users#new', as:'signup'
   get 'users/show'=>'users#show'
-  post 'users/create'=>'users#create', as: 'users'
+  post 'users/create'=>'users#create', as:'users'
   #plannerssignup
   get 'planners/new'=> 'planners#new',as:'planners_login'
   post 'planners/create'=>'planners#create' ,as:'planners_new'

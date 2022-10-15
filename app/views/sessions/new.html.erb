@@ -6,7 +6,7 @@
         <span>Sign-in with email</span>
     </div>
     <div class="body">
-        <%= form_for :sessions, url:sessions_path do |f| %>
+        <%= form_for :sessions, url: sessions_path do |f| %>
             <%= f.label :email%><br>
             <%= f.text_field :email, :placeholder => "email" %><br>
             <%= f.label :password %><br>

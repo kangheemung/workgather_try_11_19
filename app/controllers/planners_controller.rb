@@ -5,7 +5,7 @@ class PlannersController < ApplicationController
   def create
     planner=Planner.new(planner_params)
     if planner.save
-      login(planner)
+      log_in(planner)
       redirect_to root_path
     else
       render :new
@@ -15,8 +15,9 @@ class PlannersController < ApplicationController
   end
   def delete
   end
+  
   private
   def planner_params
-    params.require(:planner).permit(:name,:email,:password,:password_confirmation)
+    params.require(:planner).permit(:user_name,:email,:password,:password_confirmation,:first_name,:last_name,:birthday,:gender)
   end
 end
