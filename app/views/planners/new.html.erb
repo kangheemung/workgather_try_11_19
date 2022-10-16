@@ -4,7 +4,7 @@
 <div class="signup">
     <div class="signup_text"><span>会員登録(開催者専用)</span></div>
  <div class="body">
-    <%= form_for :planner, url: planners_new_path do |f| %>
+    <%= form_for :planner, url:planners_create_path do |f| %>
         <%= f.label :User_name %><br>
         <%= f.text_field :user_name, :placeholder => "User name"%><br>
         <%= f.label :email%><br>
