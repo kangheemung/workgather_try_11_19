@@ -5,23 +5,35 @@
     <div class="signup_text"><span>会員登録(開催者専用)</span></div>
  <div class="body">
     <%= form_for :planner, url:planners_create_path do |f| %>
+        <div class="body_box">    
         <%= f.label :User_name %><br>
+        </div>  
         <%= f.text_field :user_name, :placeholder => "User name"%><br>
+        <div class="body_box">  
         <%= f.label :email%><br>
+        </div>  
         <%= f.text_field :email, :placeholder => "email"  %><br>
+        <div class="body_box">  
         <%= f.label :password %><br>
+        </div>  
         <%= f.password_field :password, :placeholder => "password" %><br>
+        <div class="body_box">  
         <%= f.label :password_confirmation %><br>
+        </div>  
         <%= f.password_field :password_confirmation, :placeholder => "password_confirmation"%><br>
+        <div class="body_box">  
         <%= f.label :name %><br>
-          <div class="name_box">
-            <%= f.text_field :first_name, :placeholder => "first_name", class:"name"%>
-            <%= f.text_field :last_name, :placeholder => "last_name" ,class:"name" %> 
-          </div>
+        </div>  
+        <%= f.text_field :first_name, :placeholder => "first_name", class:"name"%>
+        <%= f.text_field :last_name, :placeholder => "last_name" ,class:"name" %> 
+        <div class="body_box">
         <%= f.label :誕生日%><br>
+        </div>
         <%= f.date_field :birthday, :placeholder => "birthday"%>
             <div class="gender_box">
+                <div class="body_box">
                 <%= f.label :gender,'性別' %><br>
+                </div>
                 <%= f.select :gender, {'男性': 1,'女性': 2,'その他': 3},{ include_blank: '選択してください'}, { class: 'form-control' , required: true } %></td>
             </div>
         <div class="sign_btn">
@@ -29,7 +41,7 @@
         </div>
     <% end %>
     <div class= "login">
-        <span onclick="location.href = '/sessions/new'">ログイン</span>
+        <span onclick="location.href = '/planners/login_form'">ログイン</span>
     </div>
 </div>
 <footer>

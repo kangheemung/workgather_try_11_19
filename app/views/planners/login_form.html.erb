@@ -1,5 +1,3 @@
-ログインです。
-
 <div class= "asobinagara">
 <h1>ASOBINAGARA</h1>
 </div>
@@ -10,12 +8,18 @@
     <div class="body">
         <%= form_for :planners, url: planners_login_create_path do |f| %>
             <%= f.label :email%><br>
+            <div class="body_box">
             <%= f.text_field :email, :placeholder => "email" %><br>
+            </div>
             <%= f.label :password %><br>
+            <div class="body_box">
             <%= f.password_field :password, :placeholder => "password" %><br>
+            </div>
             <%= f.label :password_confirmation %><br>
+            <div class="body_box">
             <%= f.password_field :password_confirmation, :placeholder => "password_confirmation"%><br>
-            <div>
+            </div>
+            <div class="body_box">
                 <%= f.submit :Signup, class: 'button'%>
             </div>
         <% end %>

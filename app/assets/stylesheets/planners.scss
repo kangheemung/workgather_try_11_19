@@ -1,9 +1,13 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.asobinagara{
+    margin-top: 3%;
+}
 .asobinagara h1{
     align-content: center;
-    font-size: large;
+    font-size: xx-large;
+    font-weight: bolder;
 }
 .signup{
     border: solid 3px;
@@ -15,12 +19,19 @@
 .signup_text{
     text-align: center;
     margin-top: 10%;
-    font-size: large;
+    margin-bottom: 5%;
+    font-size: x-large;
     font-weight: bolder;
 }
-
-
-
+.singup_title{
+    text-align: center;
+    margin-top:5%;
+    margin-bottom: 5%;
+}
+.singup_title span{
+    font-size: x-large;
+    font-weight: bolder;
+}
 .signup {
     margin-top: 10%;
     font-weight:bolder;
@@ -28,6 +39,10 @@
 .body{
     margin-left: 5%;
     text-align: center;
+}
+.body_box{
+   margin-top: 2%;
+   margin-bottom: 2%;
 }
 .button{
     background-color: #004A54;
@@ -46,9 +61,10 @@
     margin-bottom: 5%;
     text-align: center;
 }
-.name_box{
-    width: 100%;
-    margin-top: 3%;   
+
+.name{
+    width:20%;
+    margin-top: 3%; 
 }
 .sign_btn{
     text-align: center;
