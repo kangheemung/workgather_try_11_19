@@ -6,7 +6,7 @@
         <span>Sign-in with email</span>
     </div>
     <div class="body">
-        <%= form_for @planner, url: planners_login_create_path do |f| %>
+        <%= form_for :planner, url: planners_login_create_path do |f| %>
           <p><%= f.label :email%></p>
           <div class="body_box">
             <%= f.text_field :email, :placeholder => "email" %><br>
@@ -16,7 +16,7 @@
             <%= f.password_field :password, :placeholder => "password" %><br>
           </div>
           <div class="body_box">
-                <%= f.submit :Signup, class: 'button'%>
+                <%= f.submit :Login , class: 'button'%>
           </div>
         <% end %>
     </div>

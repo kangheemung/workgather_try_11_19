@@ -1,13 +1,14 @@
 class PlannerSessionsController < ApplicationController
   include  PlannerSessionsHelper
   def new
+
   end
   def create
-      planner = Planner.find_by(email: params[:planners][:email].downcase)
-      if planner && planner.authenticate(params[:planners][:password])
+      planner = Planner.find_by(email: params[:planner][:email].downcase)
+      if planner && planner.authenticate(params[:planner][:password])
         log_in(planner)
         flash[:notice]="ログインしました。"
-        redirect_to("/posts/index")
+        redirect_to("/events/index")
       else
         redirect_to planner_login_path
       end

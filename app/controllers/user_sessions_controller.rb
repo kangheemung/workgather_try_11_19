@@ -3,8 +3,8 @@ class UserSessionsController < ApplicationController
   def new
   end
   def create
-      user = User.find_by(email: params[:users][:email].downcase)
-      if user && user.authenticate(params[:users][:password])
+      user = User.find_by(email: params[:user][:email].downcase)
+      if user && user.authenticate(params[:user][:password])
         log_in(user)
         flash[:notice]="ログインしました。"
         redirect_to("/posts/index")

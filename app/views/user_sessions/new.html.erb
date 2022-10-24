@@ -7,13 +7,13 @@
         <span>Sign-in with email</span>
     </div>
     <div class="body">
-        <%= form_for @user, url: login_create_path do |f| %>
+        <%= form_for :user, url: login_create_path do |f| %>
             <p><%= f.label :email%></p>
             <p><%= f.text_field :email, :placeholder => "email" %></p>
             <p><%= f.label :password %></p>
             <p><%= f.password_field :password, :placeholder => "password" %></p>
             <div>
-                <%= f.submit :Signup, class: 'button'%>
+                <%= f.submit :Login, class: 'button'%>
             </div>
             
         <% end %>
