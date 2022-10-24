@@ -1,0 +1,27 @@
+<div class= "asobinagara">
+<h1>ASOBINAGARA</h1>
+</div>
+<div class="signup">
+    <div class="singup_title">
+        <span>Sign-in with email</span>
+    </div>
+    <div class="body">
+        <%= form_for @planner, url: planners_login_create_path do |f| %>
+          <p><%= f.label :email%></p>
+          <div class="body_box">
+            <%= f.text_field :email, :placeholder => "email" %><br>
+          </div>
+          <p><%= f.label :password %></p>
+          <div class="body_box">
+            <%= f.password_field :password, :placeholder => "password" %><br>
+          </div>
+          <div class="body_box">
+                <%= f.submit :Signup, class: 'button'%>
+          </div>
+        <% end %>
+    </div>
+    <div class= "login">
+    <span onclick="location.href = '/planners/new'" >会員登録</span>
+    </div>
+</div>
+

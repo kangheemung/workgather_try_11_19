@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2022_10_11_124508) do
     t.string "last_name"
     t.string "birthday"
     t.string "gender"
+    t.string "planner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(version: 2022_10_11_124508) do
     t.string "last_name"
     t.string "birthday"
     t.integer "gender"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
