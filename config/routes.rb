@@ -44,6 +44,6 @@ Rails.application.routes.draw do
   #album
   get 'images/index'=>'images#index'
   get 'images/new'=>'images#new'
-  post'images/create'=>'images#create',as: 'create_image'
+  post'images/create'=>'images#create', as: 'create_image'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
