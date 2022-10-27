@@ -8,6 +8,7 @@ class ImagesController < ApplicationController
   def create
     #p "params: #{params}"
     @image =Image.new(image_params)
+   
     if @image.save
       redirect_to "/images/index"
     else

@@ -1,5 +1,5 @@
 class Image < ApplicationRecord
     mount_uploader :name, ImageUploader
-    belongs-to :user, class_name:"User"
-    belongs-to :planner, class_name:"Planner" 
+    belongs_to :user, class_name:"User"
+    belongs_to :planner, class_name:"Planner" 
 end
