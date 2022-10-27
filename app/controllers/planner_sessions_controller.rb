@@ -10,7 +10,7 @@ class PlannerSessionsController < ApplicationController
         flash[:notice]="ログインしました。"
         redirect_to("/events/index")
       else
-        redirect_to planner_login_path
+        redirect_to planners_login_path
       end
   end
   def destroy

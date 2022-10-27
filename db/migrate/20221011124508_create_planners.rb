@@ -8,7 +8,8 @@ class CreatePlanners < ActiveRecord::Migration[5.2]
       t.string :last_name
       t.string :birthday
       t.string :gender
-      t.string :planner_id
+      t.string :avator
+      t.string :event_id
       t.timestamps
     end
   end

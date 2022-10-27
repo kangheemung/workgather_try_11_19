@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_11_124508) do
+ActiveRecord::Schema.define(version: 2022_10_26_080903) do
+
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.string "image"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string "name"
+    t.integer "user_id"
+    t.integer "planner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "planners", force: :cascade do |t|
     t.string "user_name"
@@ -20,7 +36,17 @@ ActiveRecord::Schema.define(version: 2022_10_11_124508) do
     t.string "last_name"
     t.string "birthday"
     t.string "gender"
+    t.string "avator"
+    t.string "event_id"
     t.string "planner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.string "image"
+    t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -33,7 +59,8 @@ ActiveRecord::Schema.define(version: 2022_10_11_124508) do
     t.string "last_name"
     t.string "birthday"
     t.integer "gender"
-    t.integer "user_id"
+    t.string "avator"
+    t.string "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'images/index'
+  get 'images/new'
   get 'events/index'
   get 'events/show'
   #top
@@ -40,6 +42,8 @@ Rails.application.routes.draw do
   post 'planners/:id/update' => 'planners#update'
   get 'planners/:id' => 'planners#show'
   #album
-  
+  get 'images/index'=>'images#index'
+  get 'images/new'=>'images#new'
+  post'images/create'=>'images#create',as: 'create_image'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
