@@ -41,6 +41,11 @@ Rails.application.routes.draw do
   get 'planeners/:id/edit' => 'planners#edit'
   post 'planners/:id/update' => 'planners#update'
   get 'planners/:id' => 'planners#show'
+  #
+  get 'events/index'=>'events#index'
+  get 'events/new'=>'events#new'
+  get 'events/show'=>'events#show'
+  post 'events/create'=>'events#create',as:'events_create'
   #album
   get 'images/index'=>'images#index'
   get 'images/new'=>'images#new'
