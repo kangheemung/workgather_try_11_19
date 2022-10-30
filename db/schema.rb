@@ -12,18 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2022_10_30_110220) do
 
-  create_table "events", force: :cascade do |t|
-    t.string "w_title"
-    t.string "w_theme"
-    t.string "firstname"
-    t.string "lastname"
-    t.string "f_name_E"
-    t.string "l_name_E"
-    t.integer "planner_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "images", force: :cascade do |t|
     t.string "name"
     t.integer "user_id"
@@ -61,7 +49,6 @@ ActiveRecord::Schema.define(version: 2022_10_30_110220) do
     t.string "last_name"
     t.string "birthday"
     t.integer "gender"
-    t.string "avator"
     t.string "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
