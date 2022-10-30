@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'workshops/index'
+  get 'workshops/new'
+  get 'workshops/show'
   get 'images/index'
   get 'images/new'
   get 'events/index'
@@ -42,6 +45,10 @@ Rails.application.routes.draw do
   post 'planners/:id/update' => 'planners#update'
   get 'planners/:id' => 'planners#show'
   #
+  get 'workshops/index'=>'workshops#index'
+  get 'workshops/new'=>'workshops#new'
+  get 'workshops/show'=> 'workshops#show'
+  post 'workshops/create'=>'workshops#create',as:'workshops_create'
   get 'events/index'=>'events#index'
   get 'events/new'=>'events#new'
   get 'events/show'=>'events#show'

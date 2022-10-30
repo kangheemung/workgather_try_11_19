@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_26_080903) do
+ActiveRecord::Schema.define(version: 2022_10_30_110220) do
 
   create_table "events", force: :cascade do |t|
     t.string "w_title"
     t.string "w_theme"
-    t.string "image"
     t.string "firstname"
     t.string "lastname"
     t.string "f_name_E"
     t.string "l_name_E"
+    t.integer "planner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 2022_10_26_080903) do
     t.string "last_name"
     t.string "birthday"
     t.string "gender"
-    t.string "avator"
     t.string "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -64,6 +63,19 @@ ActiveRecord::Schema.define(version: 2022_10_26_080903) do
     t.integer "gender"
     t.string "avator"
     t.string "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "workshops", force: :cascade do |t|
+    t.string "w_title"
+    t.string "w_theme"
+    t.string "firstname"
+    t.string "lastname"
+    t.string "f_name_E"
+    t.string "l_name_E"
+    t.integer "image"
+    t.string "planner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

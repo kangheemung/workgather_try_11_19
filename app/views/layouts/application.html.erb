@@ -2,6 +2,15 @@
 <html>
  <%= render'layouts/head_information'%>
     <body>
+    <header>
+      <% if current_planner%>
+        <%= link_to "イベント作成",workshops_new_path %>
+        <%= link_to "ログアウト","#" %>
+      <% else %>
+      <%= link_to "参加者ログイン", login_path%>
+      <%= link_to "開催者ログイン", planners_login_path%>
+      <% end %>
+    </header>
      <%= yield %>
      <%= render 'layouts/footer'%>
     </body>

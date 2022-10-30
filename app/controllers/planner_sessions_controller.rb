@@ -8,7 +8,7 @@ class PlannerSessionsController < ApplicationController
       if planner && planner.authenticate(params[:planner][:password])
         log_in(planner)
         flash[:notice]="ログインしました。"
-        redirect_to("/events/index")
+        redirect_to ("/workshops/index")
       else
         redirect_to planners_login_path
       end
