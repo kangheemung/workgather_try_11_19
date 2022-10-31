@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 2022_10_30_110220) do
     t.string "lastname"
     t.string "f_name_E"
     t.string "l_name_E"
-    t.integer "image"
+    t.string "image"
     t.string "planner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

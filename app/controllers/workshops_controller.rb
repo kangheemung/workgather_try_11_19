@@ -1,4 +1,5 @@
 class WorkshopsController < ApplicationController
+  include  PlannerSessionsHelper
   def index
     @workshops=Workshop.all
   end
@@ -11,12 +12,11 @@ class WorkshopsController < ApplicationController
      #p "params: #{params}"
      @workshop = Workshop.new(workshop_params)
      if @workshop.save
-       redirect_to "/workshops/index"
+       redirect_to ("/workshops/index")
      else
        render "new"
      end
   end
-
   def show
   end
   private

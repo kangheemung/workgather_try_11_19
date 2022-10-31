@@ -1,5 +1,20 @@
-<h1>Workshops#index</h1>
-<p>Find me in app/views/workshops/index.html.erb</p>
-<% @workshops.each do |workshop| %>
-  <%= image_tag workshop.image.url, size: '200x200' %>
- <% end %> 
+<body>
+  <% @workshops.each do |workshop| %>
+  <div class="table_left">
+        <p><%= workshop.w_title%></p>
+        <p><%= workshop.w_theme%></p>
+        <p> <%= image_tag workshop.image.url, size: '200x200' %>  
+  </div>
+  <div class="table_right">
+        <p>空き状況</p>
+        <p>開催時間</p>
+        <p>参加者</p>
+        <p>場所</p>
+        <p>場所詳細</p>
+        <p>駐車場ありなし</p>
+        <p>like</p>
+        <p><input type="button" value="予約する" class= "btn_b"  onclick="location.href = '/home/select_position'"></p> 
+        <p><input type="button" value="レビュー" class= "btn_r"  onclick="location.href = '/home/select_position'"></p> 
+  </div>
+  <% end %> 
+</body>

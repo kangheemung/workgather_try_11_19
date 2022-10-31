@@ -44,15 +44,11 @@ Rails.application.routes.draw do
   get 'planeners/:id/edit' => 'planners#edit'
   post 'planners/:id/update' => 'planners#update'
   get 'planners/:id' => 'planners#show'
-  #
+  #workshops投稿
   get 'workshops/index'=>'workshops#index'
-  get 'workshops/new'=>'workshops#new'
+  get 'workshops'=>'workshops#new'
   get 'workshops/show'=> 'workshops#show'
   post 'workshops/create'=>'workshops#create',as:'workshops_create'
-  get 'events/index'=>'events#index'
-  get 'events/new'=>'events#new'
-  get 'events/show'=>'events#show'
-  post 'events/create'=>'events#create',as:'events_create'
   #album
   get 'images/index'=>'images#index'
   get 'images/new'=>'images#new'

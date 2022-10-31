@@ -1,3 +1,18 @@
 // Place all the styles related to the workshops controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.contain{ 
+  
+}
+.table_left{
+    width: 60%;
+    float:left;
+    margin-left: 5%;
+    text-align: center;
+}
+.table_right{
+    width: 30%;
+    border: 1px solid #444444;
+    float:left;
+    text-align: center;
+}

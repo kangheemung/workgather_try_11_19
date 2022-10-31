@@ -7,7 +7,7 @@ class CreateWorkshops < ActiveRecord::Migration[5.2]
       t.string :lastname
       t.string  :f_name_E
       t.string :l_name_E
-      t.integer :image
+      t.string :image
       t.string :planner_id
       t.timestamps
     end
