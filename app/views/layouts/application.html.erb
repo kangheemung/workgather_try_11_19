@@ -9,6 +9,8 @@
       <% else %>
       <%= link_to "参加者ログイン", login_path%>
       <%= link_to "開催者ログイン", planners_login_path%>
+      <%= current_planner.email%>
+     
       <% end %>
     </header>
      <%= yield %>

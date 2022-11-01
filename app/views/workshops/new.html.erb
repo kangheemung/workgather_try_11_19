@@ -1,5 +1,3 @@
-<h1>Workshops#new</h1>
-<p>Find me in app/views/workshops/new.html.erb</p>
 <div class= "asobinagara">
 <h1>ASOBINAGARA</h1>
 </div>
@@ -7,33 +5,190 @@
     <div class="signup_text">
         <span>ワークショップ詳細登録</span>
     </div>
-     <div class="body">
         <%= form_for @workshop, url: workshops_create_path do|f| %>
+         <div class="body">
                 <div class="body_box">    
-                <%= f.label :ワークショップ名 %>
+                  <%= f.label :ワークショップタイトル %>
                 </div>  
-                <%= f.text_field :w_title, :placeholder => "ワークショップ名" %>
+                <div class="text_box">
+                  <%= f.text_field :w_title, :placeholder => "例)コービーアートやってみよう！" , :size=>"27"%>
+                </div>
                 <div class="body_box"> 
-                <%= f.label :ワークショップのテーマ%>
+                  <%= f.label :ワークショップテーマ %>
                 </div>  
-                <%= f.text_field :w_theme, :placeholder => "ワークショップのテーマ"  %>
+                <div class="text_box">
+                  <%= f.text_field :w_theme, :placeholder => "例)コーヒーアート",:size=>"27" %>
+                </div>
                 <div class="body_box"> 
-                <%= f.label :主催者名 %>
+                  <%= f.label :主催者名 %>
                 </div>  
-                <div>
-                <p><%= f.label :firstname %></p>
-                <p><%= f.text_field  :firstname, :placeholder => "あなたの名前を入力して下さい。" %></p>
-                <p><%= f.label :lastname %></p>
-                <p><%= f.text_field  :lastname, :placeholder => "あなたの名前を入力して下さい。" %></p>
-                <p><%= f.label :firstname %></p>
-                <p><%= f.text_field :f_name_E, :placeholder => "カタカナ表記/英語"%></p>
-                <p><%= f.label :lastname %></p>
-                <p><%= f.text_field :l_name_E, :placeholder => "カタカナ表記/英語"%></p>
-                <p><%= f.label :workshopのイメージ %></p>
-                <p><%= f.file_field  :image %></p>
+                <div class="name_box">
+                    <div class="s_box">
+                      <p><%= f.label :姓%></p>
+                      <p><%= f.text_field  :firstname, :placeholder => "姓",class: "input", :size=>"12"%></p>
+                    </div>
+                    <div class="s_box">
+                      <p><%= f.label :名%></p>
+                      <p><%= f.text_field  :lastname, :placeholder => "名" ,class: "input",:size=>"12"%></p>
+                    </div>
+                </div>  
+                <div class="name_box"> 
+                    <div class="s_box">
+                      <p><%= f.label :firstname %></p>
+                      <p><%= f.text_field :f_name_E, :placeholder => "firstname",class: "input",:size=>"12"%></p>
+                    </div>
+                    <div class="s_box">
+                      <p><%= f.label :lastname %></p>
+                      <p><%= f.text_field :l_name_E, :placeholder => "lastname",class: "input",:size=>"12"%></p>
+                    </div>
+                </div>
+                <div class="body_box">    
+                  <%= f.label :住所 %>
+                </div>  
+                <div class="text_box">
+                  <%= f.text_field :prefecture, :placeholder => "郵便番号", :size=>"27"%>
+                  <input type="text" id="postal" onKeyUp="$('#postal').zip2addr('#prefecture','#workshop_address');" ><br>
+                   <input type="text" id="prefecture" ><br>
+                  <input type="text" id="workshop_address">
+                </div>   
+                <div class="text_box">
+                  <%= f.text_field :city, :placeholder => "都/市/県", :size=>"27"%> 
+                </div>   
+                <div class="text_box">
+                  <%= f.text_field :address1, :placeholder => "詳細住所" , :size=>"27"%>
+                </div>   
+                <div class="body_box"> 
+                  <p><%= f.label :workshopのイメージ %></p>
+                  </div>
+                  
+
+                <p><%= f.file_field  :image%></p>
                 <div class="sign_btn">
                     <p><%= f.button "投稿", class: "button" %></p>
                 </div>
-        <%end%>  
+         </div>   
+        <%end%> 
+
+<script> 
+        /*
+ * jQuery.zip2addr
+ *
+ * Copyright 2010, Kotaro Kokubo a.k.a kotarok kotaro@nodot.jp
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ *
+ * https://github.com/kotarok/jQuery.zip2addr
+ *
+ * Depends:
+ *	jQuery 1.4 or above
+ */
+
+$.fn.zip2addr = function(target,target1) {
+  var c = {
+    api: 'http://www.google.com/transliterate?langpair=ja-Hira|ja&jsonp=?',
+    prefectureToken: '(東京都|道|府|県)',
+    zipDelimiter: '-'
+  }
+
+  var cache = $.fn.zip2addr.cache;
+
+  var getAddr = function(zip, callback) {
+    $.getJSON(c.api, {
+        'text': zip
+      },
+      function(json) {
+        if (RegExp(c.prefectureToken).test(json[0][1][0])) {
+          callback(json[0][1][0].replace(RegExp('(.*?' + c.prefectureToken + ')(.+)'), function(a, b, c, d) {
+            return [b, d]
+          }))
+        }
+      }
+    )
+  }
+
+  var fillAddr = (function() {
+    if (typeof target1 == 'object' && target1.pref) {
+      return function(addr) {
+        var addrs = addr.split(',');
+        if (addrs) {
+          if (!RegExp(addrs[1]).test($(target1.addr).val())) {
+            $(target1.pref).val(addrs[0]);
+            $(target1.addr).val(addrs[1]);
+          }
+        } else if (!RegExp(addrs[1]).test($(target1.addr).val())) {
+          $(target1.pref).add(target1.addr).val('');
+        }
+      }
+    } else {
+      return function(addr) {
+        var addrs = addr.split(',');
+        var addrStr = addr.replace(',', '');
+        var addrField = target1.addr || target1;
+        if (addrStr) {
+          if (!RegExp(addrStr).test($(addrField).val())) {
+            $(target).val[addrs[0]];
+            $(addrField).val(addrs[1]);
+          }
+        } else if (!RegExp(addrStr).test($(addrField).val())) {
+          $(addrField).val('');
+        }
+      }
+    }
+  })()
+
+  //From http://liosk.blog103.fc2.com/blog-entry-72.html
+  var fascii2ascii = (function() {
+    var pattern = /[\uFF01-\uFF5E]/g,
+      replace = function(m) {
+        return String.fromCharCode(m.charCodeAt() - 0xFEE0);
+      };
+    return function(s) {
+      return s.replace(pattern, replace);
+    };
+  })();
+
+  var check = function(_val) {
+    var val = fascii2ascii(_val).replace(/\D/g, '');
+    if (val.length == 7) {
+      if (cache[val] == undefined) {
+        getAddr(val.replace(/(\d\d\d)(\d\d\d\d)/, '$1-$2'), function(json) {
+          cache[val] = json;
+          fillAddr(json);
+        })
+      } else {
+        fillAddr(cache[val]);
+      }
+    }
+  }
+
+  this.each(function() {
+    var elem = $(this);
+    if (typeof target1 == 'object' && target1.zip2) {
+      elem.add($(target1.zip2))
+        .bind('keyup.zip2addr change.zip2addr', function() {
+          check(elem.val() + '' + $(target1.zip2).val())
+        })
+        .bind('blur.zip2addr', function() {
+          $(this).val(function() {
+            return fascii2ascii($(this).val())
+          })
+        })
+    } else {
+      elem
+        .bind('keyup.zip2addr change.zip2addr', function() {
+          check(elem.val())
+        })
+        .bind('blur.zip2addr', function() {
+          $(this).val(function() {
+            return fascii2ascii($(this).val()).replace(/\D/g, '').replace(/(\d\d\d)(\d\d\d\d)/, '$1' + c.zipDelimiter + '$2')
+          })
+        })
+    }
+  });
+
+  return this;
+};
+
+$.fn.zip2addr.cache = {};
+</script>
 </div>
 

@@ -1,6 +1,8 @@
 // Place all the styles related to the workshops controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+//indexCSS
+
 .header{
     display: flex;
     background-color: #004A54;
@@ -22,9 +24,6 @@
     width: 65%;
     float:left;
     margin-left: 1%;
-}
-.body{
-    margin-top:2%;
 }
 .s_header{
     float:left;
@@ -79,4 +78,31 @@
     border-radius: 5%;
     color: #004A54;
 
+}
+//new
+.body{
+    margin-top:2%;
+    text-align: center;
+}
+.body_box{
+    margin-top: 3%;
+    font-size: large;
+    font-weight: bolder;
+}
+.text_box{
+    margin-top: 3%;
+    margin-right: 5%;
+}
+.name_box{
+    display: flex;
+    margin-right: 10%;
+
+}
+.s_box{
+    width: 40%;
+    margin-right: 5%;
+}
+.input{
+    margin-right: 10%;
+    margin-left: 10%;
 }

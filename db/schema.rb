@@ -62,6 +62,9 @@ ActiveRecord::Schema.define(version: 2022_10_30_110220) do
     t.string "f_name_E"
     t.string "l_name_E"
     t.string "image"
+    t.string "prefecture"
+    t.string "city"
+    t.string "address1"
     t.string "planner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
