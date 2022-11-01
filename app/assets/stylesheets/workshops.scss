@@ -1,18 +1,82 @@
 // Place all the styles related to the workshops controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.contain{ 
-  
+.header{
+    display: flex;
+    background-color: #004A54;
+}
+.s_header1{ 
+    color: whitesmoke;
+   margin-left: 50%;
+   font-size:larger;
+   font-weight: bolder;
+}
+.side_header{
+    color:whitesmoke;
+    background-color:#CDDBCD;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: small;
 }
 .table_left{
-    width: 60%;
+    width: 65%;
     float:left;
+    margin-left: 1%;
+}
+.body{
+    margin-top:2%;
+}
+.s_header{
+    float:left;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size:larger;
+    font-weight: bolder;
+}
+.s_header {
     margin-left: 5%;
-    text-align: center;
+}
+.side_header p{
+    margin-left: 5%;
+
 }
 .table_right{
-    width: 30%;
+    width: 28%;
     border: 1px solid #444444;
     float:left;
     text-align: center;
+    margin-left: 5%;
+}
+.title{
+    background-color: whitesmoke;
+    font-weight: 150;
+    font-weight: bolder;
+}
+.img{
+    margin-top:10%;} 
+.btn_b{
+    background-color: #004A54;
+    width: 95%;
+    height: 60%;
+    margin-top:10% ;
+  
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border: solid 1px;
+    font-size: large;
+    border-radius: 5%;
+    color:whitesmoke
+}
+.btn_r{ background-color:whitesmoke;
+    width:95%;
+    height: 60%;
+    margin-top:3% ;
+    margin-bottom: 10%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border: solid 1px;
+    font-size: large;
+    border-radius: 5%;
+    color: #004A54;
+
 }

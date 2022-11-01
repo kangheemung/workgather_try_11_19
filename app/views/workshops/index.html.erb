@@ -1,9 +1,19 @@
+  <div class="header">
+    <div class="s_header">ASOBINAGARA</div><!三本のイメージを押したら　カテゴリーが開きます。-->
+    <div class="s_header1">sign up</div>
+  </div> 
+  <div class="side_header">
+    <p>Home>workshopsの詳細ページ</p><!三本のイメージを押したら　カテゴリーが開きます。-->
+  </div>
 <body>
+<div class="body">
   <% @workshops.each do |workshop| %>
   <div class="table_left">
-        <p><%= workshop.w_title%></p>
-        <p><%= workshop.w_theme%></p>
-        <p> <%= image_tag workshop.image.url, size: '200x200' %>  
+        <div class="title"><span ><%= workshop.w_title%></span></div>
+        <div class="w_theme"><span><%= workshop.w_theme%></span></div>
+        <div class="img">
+          <p> <%= image_tag workshop.image.url, size: '200x200'%>  
+        </div>
   </div>
   <div class="table_right">
         <p>空き状況</p>
@@ -17,4 +27,5 @@
         <p><input type="button" value="レビュー" class= "btn_r"  onclick="location.href = '/home/select_position'"></p> 
   </div>
   <% end %> 
+  </div>
 </body>
