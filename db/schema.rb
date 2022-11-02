@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2022_10_30_110220) do
     t.string "last_name"
     t.string "birthday"
     t.string "gender"
+    t.string "workshop_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -65,6 +66,14 @@ ActiveRecord::Schema.define(version: 2022_10_30_110220) do
     t.string "city"
     t.string "address1"
     t.string "planner_id"
+    t.text "w_detail"
+    t.string "profile"
+    t.text "p_text"
+    t.text "p_detail"
+    t.string "profile_img"
+    t.string "time"
+    t.string "personnel"
+    t.text "Precautions"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
