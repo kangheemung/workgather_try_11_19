@@ -3,57 +3,56 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //indexCSS
 
-.header{
+.w_header{
     display: flex;
     background-color: #004A54;
 }
-.s_header1{ 
+.w_s_header1{ 
     color: whitesmoke;
    margin-left: 50%;
    font-size:larger;
    font-weight: bolder;
 }
-.side_header{
+.w_side_header{
     color:whitesmoke;
     background-color:#CDDBCD;
     padding-top: 1%;
     padding-bottom: 1%;
     font-size: small;
 }
-.table_left{
+.w_table_left{
     width: 65%;
     float:left;
     margin-left: 1%;
 }
-.s_header{
+.w_s_header{
+    color:whitesmoke;
     float:left;
     padding-top: 1%;
     padding-bottom: 1%;
     font-size:larger;
     font-weight: bolder;
 }
-.s_header {
-    margin-left: 5%;
-}
-.side_header p{
+
+.w_side_header p{
     margin-left: 5%;
 
 }
-.table_right{
+.w_table_right{
     width: 28%;
     border: 1px solid #444444;
     float:left;
     text-align: center;
     margin-left: 5%;
 }
-.title{
+.w_title{
     background-color: whitesmoke;
     font-weight: 150;
     font-weight: bolder;
 }
-.img{
+.w_img{
     margin-top:10%;} 
-.btn_b{
+.w_btn_b{
     background-color: #004A54;
     width: 95%;
     height: 60%;
@@ -66,7 +65,7 @@
     border-radius: 5%;
     color:whitesmoke
 }
-.btn_r{ background-color:whitesmoke;
+.w_btn_r{ background-color:whitesmoke;
     width:95%;
     height: 60%;
     margin-top:3% ;
@@ -80,7 +79,7 @@
 
 }
 //new
-.body{
+.W_body{
     margin-top:2%;
     text-align: center;
 }

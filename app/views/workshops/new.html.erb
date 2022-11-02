@@ -46,17 +46,10 @@
                   <%= f.label :住所 %>
                 </div>  
                 <div class="text_box">
-                  <%= f.text_field :prefecture, :placeholder => "郵便番号", :size=>"27"%>
-                  <input type="text" id="postal" onKeyUp="$('#postal').zip2addr('#prefecture','#workshop_address');" ><br>
-                   <input type="text" id="prefecture" ><br>
-                  <input type="text" id="workshop_address">
-                </div>   
-                <div class="text_box">
-                  <%= f.text_field :city, :placeholder => "都/市/県", :size=>"27"%> 
-                </div>   
-                <div class="text_box">
-                  <%= f.text_field :address1, :placeholder => "詳細住所" , :size=>"27"%>
-                </div>   
+                  <input type="text" id="postal" onKeyUp="$('#postal').zip2addr('#workshop_prefecture','#workshop_address1');" ><br>
+                  <input type="text" id="workshop_prefecture" name="workshop[prefecture]"><br>
+                  <input type="text" id="workshop_address1" name="workshop[address1]">
+                </div>      
                 <div class="body_box"> 
                   <p><%= f.label :workshopのイメージ %></p>
                   </div>
@@ -68,9 +61,9 @@
                 </div>
          </div>   
         <%end%> 
-
-<script> 
-        /*
+</div>
+<script>
+/*
  * jQuery.zip2addr
  *
  * Copyright 2010, Kotaro Kokubo a.k.a kotarok kotaro@nodot.jp
@@ -82,7 +75,7 @@
  *	jQuery 1.4 or above
  */
 
-$.fn.zip2addr = function(target,target1) {
+$.fn.zip2addr = function(target, target1) {
   var c = {
     api: 'http://www.google.com/transliterate?langpair=ja-Hira|ja&jsonp=?',
     prefectureToken: '(東京都|道|府|県)',
@@ -125,7 +118,7 @@ $.fn.zip2addr = function(target,target1) {
         var addrField = target1.addr || target1;
         if (addrStr) {
           if (!RegExp(addrStr).test($(addrField).val())) {
-            $(target).val[addrs[0]];
+            $(target).val(addrs[0]);
             $(addrField).val(addrs[1]);
           }
         } else if (!RegExp(addrStr).test($(addrField).val())) {
@@ -190,5 +183,3 @@ $.fn.zip2addr = function(target,target1) {
 
 $.fn.zip2addr.cache = {};
 </script>
-</div>
-

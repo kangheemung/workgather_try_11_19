@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2022_10_30_110220) do
     t.string "last_name"
     t.string "birthday"
     t.string "gender"
-    t.string "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
