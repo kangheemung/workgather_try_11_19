@@ -17,10 +17,10 @@
   </div>
   <div class="w_table_right">
         <p>空き状況</p>
-        <p>開催時間</p>
-        <p>参加者</p>
-        <p>場所</p>
-        <p>場所詳細</p>
+        <p><%= workshop.time%></p>
+        <p>定員<%= workshop.personnel%></p>
+        <p><%= workshop.prefecture%></p>
+        <p>場所詳細<%= workshop.address1%></p>
         <p>駐車場ありなし</p>
         <p>like</p>
         <p><input type="button" value="予約する" class= "w_btn_b"  onclick="location.href = '/home/select_position'"></p> 

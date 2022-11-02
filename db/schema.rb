@@ -63,7 +63,6 @@ ActiveRecord::Schema.define(version: 2022_10_30_110220) do
     t.string "l_name_E"
     t.string "image"
     t.string "prefecture"
-    t.string "city"
     t.string "address1"
     t.string "planner_id"
     t.text "w_detail"

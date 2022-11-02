@@ -9,7 +9,6 @@ class CreateWorkshops < ActiveRecord::Migration[5.2]
       t.string :l_name_E
       t.string :image
       t.string :prefecture
-      t.string :city
       t.string :address1
       t.string :planner_id
       t.text :w_detail
