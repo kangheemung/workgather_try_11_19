@@ -11,6 +11,7 @@ class WorkshopsController < ApplicationController
   def create
      #p "params: #{params}"
      @workshop = Workshop.new(workshop_params)
+     @workshop.planner_id=current_planner.id
      if @workshop.save
        redirect_to ("/workshops/index")
      else
