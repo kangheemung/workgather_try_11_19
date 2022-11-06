@@ -1,3 +1,21 @@
 <div class="s_header">
     <h4>ASOBINAGARA</h4><!三本のイメージを押したら　カテゴリーが開きます。-->
 </div>
+
+<div>
+<%= form_for @post, url:posts_create_path do |f| %>
+        <div class="body_box">    
+        <%= f.label :タイトル %><br>
+        </div>  
+        <p><%= f.text_field :title, :placeholder => "タイトル"%></p>
+        <div class="body_box">  
+        <%= f.label :content%><br>
+        </div> 
+        <div> 
+          <p><%= f.text_field :content, :placeholder => "コメント欄"  %></p>
+        </div>
+        <div class="body_box">  
+          <p> <%= f.submit "投稿", class: "button" %></p>
+        </div>  
+
+</div>

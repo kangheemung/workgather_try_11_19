@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   #投稿
   get 'posts/index'=>'posts#index'
   get 'posts/new'=>'posts#new'
-  post'posts/create'=>'posts#create'
+  post'posts/create'=>'posts#create',as:'posts_create'
   get 'posts/:id/update'=>'posts#update'
   get 'posts/:id/edit' => 'posts#edit'
   delete 'posts/:id/destroy'=>'posts#destroy'
