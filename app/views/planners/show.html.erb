@@ -1,0 +1,8 @@
+ <h2><%= @planner.user_name %></h2>
+      <p><%= @planner.email %></p>
+      <p><%= @planner.first_name %></p>
+      <p><%= @planner.last_name%></p>
+      <p><%= @planner.birthday%></p>
+      <p><%= @planner.gender%></p>
+
+      <%= link_to("編集", "/users/#{@planner.id}/edit") %>

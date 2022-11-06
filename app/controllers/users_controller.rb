@@ -12,7 +12,7 @@ include  UserSessionsHelper
       #session[:user_id]=user.id
       log_in(user)
       flash[:notice]="ユーザー登録が完了しました"
-      redirect_to ("/")
+      redirect_to ("/posts/index")
     else
       render :new
     end

@@ -64,15 +64,15 @@ ActiveRecord::Schema.define(version: 2022_10_30_110220) do
     t.string "image"
     t.string "prefecture"
     t.string "address1"
+    t.string "address2"
     t.string "planner_id"
     t.text "w_detail"
-    t.string "profile"
     t.text "p_text"
     t.text "p_detail"
     t.string "profile_img"
     t.string "time"
     t.string "personnel"
-    t.text "Precautions"
+    t.text "precautions"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

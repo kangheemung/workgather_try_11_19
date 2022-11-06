@@ -5,7 +5,7 @@
     <div class="signup_text">
         <span>ワークショップ詳細登録</span>
     </div>
-        <%= form_for @workshop, url: workshops_create_path do|f| %>
+        <%= form_for @workshop, url: workshops_create_path do |f| %>
          <div class="body">
                 <div class="body_box">    
                   <%= f.label :ワークショップタイトル %>
@@ -55,30 +55,31 @@
                   <p><%= f.label :workshopのイメージ %></p>
                 </div>
                 <p><%= f.file_field  :image%></p>
-                  <div class="s_box">
+                  <div class="text_box">
                       <p><%= f.label :ワークショップの紹介 %></p>
                       <p><%= f.text_field :w_detail, :placeholder => "ワークショップの紹介"%></p>
                   </div>
-                   <div class="s_box">
+                   <div class="text_box">
                       <p><%= f.label :主催者紹介 %></p>
                       <p><%=  f.file_field :profile_img, :placeholder => "lastname",class: "input",:size=>"12"%></p>
                       <p><%= f.text_field :p_text, :placeholder => "主催者のフロフィール"%></p>
                   </div>
-                  <div class="s_box">
+                  <div class="text_box">
                       <p><%= f.label :追加内容 %></p>
+                      
                       <p><%= f.text_field :p_detail, :placeholder => "フロフィール詳細"%></p>
                   </div>
-                   <div class="s_box">
+                   <div class="text_box">
                       <p><%= f.label :開催時間 %></p>
                       <p><%= f.text_field :time, :placeholder => "例)１時間〜２時間"%></p>
                   </div>
-                   <div class="s_box">
+                   <div class="text_box">
                       <p><%= f.label :定員 %></p>
                       <p><%= f.text_field :personnel, :placeholder => "例）５名まで、"%></p>
                   </div>
-                   <div class="s_box">
+                   <div class="text_box">
                       <p><%= f.label :新型コロナ感染対策%></p>
-                      <p><%= f.text_field :Precautions, :placeholder => "●マスクをされてない方,37.5度以上の場合は参加をお断り致します。"%></p>
+                      <p><%= f.text_field :precautions, :placeholder => "●マスクをされてない方,37.5度以上の場合は参加をお断り致します。"%></p>
                   </div>
                 <div class="sign_btn">
                     <p><%= f.button "投稿", class: "button" %></p>
