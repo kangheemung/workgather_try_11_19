@@ -1,6 +1,8 @@
   <div class="w_header">
     <div class="w_s_header">ASOBINAGARA</div><!三本のイメージを押したら　カテゴリーが開きます。-->
-    <div class="w_s_header1">sign up</div>
+    <div class="w_s_header1">
+    <p ><a href='/home/sign_up'>sign up</a></p>
+    </div>
   </div> 
     <div class="w_side_header_p">
       <p>Home> workshopsの詳細ページ</p>
@@ -15,7 +17,7 @@
           <span><%= workshop.w_theme%></span>
           </div>
           <div class="w_img">
-            <p> <%= image_tag workshop.image.url, size: '350x350'%>  
+            <p> <%= image_tag workshop.image.url, size: '300x300'%>  
           </div>
     </div>
       <div class="w_table_right">
@@ -28,7 +30,7 @@
             <p>駐車場ありなし</p>
             <p>like</p>
             <p><input type="button" value="予約する" class= "w_btn_b"  onclick="location.href = '/home/select_position'"></p> 
-            <p><input type="button" value="レビュー" class= "w_btn_r"  onclick="location.href = '/home/select_position'"></p> 
+            <p><input type="button" value="レビュー" class= "w_btn_r"  onclick="location.href = '/posts/new'"></p> 
       </div>
     <% end %> 
   </div>

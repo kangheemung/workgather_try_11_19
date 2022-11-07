@@ -11,12 +11,19 @@
 }
 .w_s_header{
     margin-left:8%;
+    margin-top:3%;
 }
 .w_s_header1{ 
     color: whitesmoke;
-   margin-left: 50%;
+   margin-left: 40%;
    font-size:larger;
    font-weight: bolder;
+   
+   
+}
+.w_s_header1 a{
+    color: inherit; 
+    text-decoration:none
 }
 .w_side_header_p{
     margin-left:3%;
@@ -115,4 +122,10 @@
 .input{
     margin-right: 10%;
     margin-left: 10%;
+}
+.w_img{
+    margin-right: 5%;
+}
+.w_img p{
+    margin-left: 10px;
 }

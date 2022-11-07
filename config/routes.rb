@@ -1,17 +1,11 @@
 Rails.application.routes.draw do
-  get 'workshops/index'
-  get 'workshops/new'
-  get 'workshops/show'
-  get 'images/index'
-  get 'images/new'
-  get 'events/index'
-  get 'events/show'
   #top
   root 'home#top'
 
   get 'home/select_position'=>'home#select_position'
   get 'home/select_position_E'=>'home#select_position_E'
   get 'home/select_position_K'=>'home#select_position_K'
+  get 'home/sign_up'=>'home#sign_up'
   get 'home/about'=>'home#about'
   #参加者ログイン
   get 'login' => 'user_sessions#new',as:'login'
@@ -37,6 +31,8 @@ Rails.application.routes.draw do
   get "users/:id/edit" => "users#edit"
   post "users/:id/update" => "users#update"
   get "users/:id" => "users#show"
+  post "logout" => "users#logout"
+  
   #開催者会員登録
   get 'planners/new'=> 'planners#new'
   get 'planners/index'=>'planners#index',as:'planners_index'
@@ -44,9 +40,10 @@ Rails.application.routes.draw do
   get 'planeners/:id/edit' => 'planners#edit'
   post 'planners/:id/update' => 'planners#update'
   get 'planners/:id' => 'planners#show'
+  post "logout" => "planner#logout"
   #workshops投稿
   get 'workshops/index'=>'workshops#index'
-  get 'workshops'=>'workshops#new'
+  get 'workshops/new'=>'workshops#new',as:'workshops_new'
   get 'workshops/show'=> 'workshops#show'
   post 'workshops/create'=>'workshops#create',as:'workshops_create'
   #album
