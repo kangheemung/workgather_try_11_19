@@ -1,7 +1,7 @@
   <div class="w_header">
     <div class="w_s_header">ASOBINAGARA</div><!三本のイメージを押したら　カテゴリーが開きます。-->
     <div class="w_s_header1">
-    <p ><a href='/home/sign_up'>sign up</a></p>
+      <span><a href='/homes/sign_in'>sign up</a></span>
     </div>
   </div> 
     <div class="w_side_header_p">
@@ -9,17 +9,17 @@
     </div><!三本のイメージを押したら　カテゴリーが開きます。-->
 <div class="w_body">
     <% @workshops.each do |workshop| %>
-    <div class="w_table_left">
+      <div class="w_table_left">
           <div class="w_title">
             <span><%= workshop.w_title%></span>
           </div>
           <div class="w_theme">
-          <span><%= workshop.w_theme%></span>
+            <span><%= workshop.w_theme%></span>
           </div>
           <div class="w_img">
             <p> <%= image_tag workshop.image.url, size: '300x300'%>  
           </div>
-    </div>
+      </div>
       <div class="w_table_right">
             <p>空き状況</p>
             <p><%= workshop.time%></p>

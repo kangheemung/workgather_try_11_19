@@ -11,7 +11,7 @@ class CreateWorkshops < ActiveRecord::Migration[5.2]
       t.string :prefecture
       t.string :address1
       t.string :address2
-      t.string :planner_id
+      t.integer  :planner_id
       t.text :w_detail
       t.text :p_text
       t.text :p_detail

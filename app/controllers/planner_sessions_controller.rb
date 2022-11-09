@@ -10,12 +10,13 @@ class PlannerSessionsController < ApplicationController
         flash[:notice]="ログインしました。"
         redirect_to ("/workshops/index")
       else
+        flash[:danger] = 'Invalid email/password combination'
         redirect_to planners_login_path
       end
   end
   def destroy
-    session[:user_id]= nil
+    session[:planner_id]= nil
     flash[:notice]="ログアウトしました"
-    redirect_to("/login")
+    redirect_to root_path
   end
 end

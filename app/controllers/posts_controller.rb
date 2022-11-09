@@ -5,12 +5,11 @@ class PostsController < ApplicationController
     end
     def new
       @post=Post.new
+      @workshop=Workshop.new
     end
     def create
        #p "params: #{params}"
-       #@post = current_user.posts.build(post_params)
-       @post = Post.new(post_params)
-       @post.user_id= current_user.id
+       @post = current_user.posts.build(post_params)
        if @post.save
          redirect_to ("/posts/index")
        else
@@ -18,6 +17,7 @@ class PostsController < ApplicationController
        end
     end
     def show
+      @workshop =Workshop.find_by(params:id)
     end
     private
     def post_params

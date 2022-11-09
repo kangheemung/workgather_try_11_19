@@ -20,6 +20,7 @@ end
 def show
   @planner=Planner.find_by(id: params[:id])
 end
+
   private
   def planner_params
     params.require(:planner).permit(:user_name,:email,:password,:password_confirmation,:first_name,:last_name,:birthday,:gender)

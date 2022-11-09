@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
   #top
-  root 'home#top'
+  root 'homes#top'
 
-  get 'home/select_position'=>'home#select_position'
-  get 'home/select_position_E'=>'home#select_position_E'
-  get 'home/select_position_K'=>'home#select_position_K'
-  get 'home/sign_up'=>'home#sign_up'
-  get 'home/about'=>'home#about'
+  get  'homes/select_position'=>'homes#select_position'
+  get 'homes/select_position_E'=>'homes#select_position_E'
+  get  'homes/select_position_K'=>'homes#select_position_K'
+  get 'homes/sign_in'=>'homes#sign_in'
+  get 'homes/about'=>'homes#about'
   #参加者ログイン
   get 'login' => 'user_sessions#new',as:'login'
-  post 'login' => 'user_sessions#create',as:'login_create'
+  post 'users/login' => 'user_sessions#create',as:'login_create'
   post 'logout' => 'user_sessions#destroy'
   get 'sessions/new'=>'sessions#new'
   #開催者ログイン
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   post 'planners/login' => 'planner_sessions#create',as:'planners_login_create'
   post 'logout' => 'planners#destroy'
   #投稿
-  get 'posts/index'=>'posts#index'
+  get 'posts/index'=>'posts#index',as:'posts_index'
   get 'posts/new'=>'posts#new'
   post'posts/create'=>'posts#create',as:'posts_create'
   get 'posts/:id/update'=>'posts#update'
@@ -25,13 +25,13 @@ Rails.application.routes.draw do
   delete 'posts/:id/destroy'=>'posts#destroy'
   get 'posts/:id'=>'posts#show'
   #参加者会員登録
-  get "users/index" => "users#index"
+get 'users/index' => 'users#index'
   get 'users/new'=>'users#new', as:'signup'
   post 'users/create'=>'users#create',as:'users'
-  get "users/:id/edit" => "users#edit"
-  post "users/:id/update" => "users#update"
-  get "users/:id" => "users#show"
-  post "logout" => "users#logout"
+  get 'users/:id/edit' => 'users#edit'
+  post 'users/:id/update' => 'users#update'
+  get 'users/:id' => 'users#show'
+  delete 'logout' => 'users#destroy',as:'user_logout'
   
   #開催者会員登録
   get 'planners/new'=> 'planners#new'
@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   get 'planeners/:id/edit' => 'planners#edit'
   post 'planners/:id/update' => 'planners#update'
   get 'planners/:id' => 'planners#show'
-  post "logout" => "planner#logout"
+  delete 'logout' => 'planners#destroy',as:'planner_logout'
   #workshops投稿
   get 'workshops/index'=>'workshops#index'
   get 'workshops/new'=>'workshops#new',as:'workshops_new'

@@ -2,18 +2,7 @@
 <html>
  <%= render'layouts/head_information'%>
     <body>
-    <header>
-      <% if current_planner %>
-        <%= link_to "workshop作成",workshops_new_path %>
-        <%= link_to "ログアウト",root_path, method: :delete %>
-      <% else %>
-      <%= link_to "参加者ログイン", login_path%>
-      <%= link_to "開催者ログイン", planners_login_path%>
-
-     
-      <% end %>
-    </header>
+     <%= render'layouts/header'%>
+     <%= render'layouts/alert'%>
      <%= yield %>
-     <%= render 'layouts/footer'%>
-    </body>
 </html>

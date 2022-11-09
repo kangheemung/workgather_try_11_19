@@ -20,6 +20,7 @@ include  UserSessionsHelper
   def show
     @user=User.find_by(id: params[:id])
   end
+ 
   private
    def user_params
        params.require(:user).permit(:user_name,:email,:password,:password_confirmation,:first_name,:last_name,:birthday,:gender)

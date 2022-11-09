@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+ body{
+    background-color:#DBE5E6;
+    object-fit: cover;
+    color: #004A54;
+    font-family: 'Mali', cursive;
+    min-height: 100vh;
+    font-size: large;
+}
+
+.notification:not(:last-child){
+    margin-bottom:0;
+}
+header{
+    color:#004A54;
+    text-align: right;
+    font-family: 'Mali', cursive;
+    font-weight: bolder; 
+}
+a {
+    color: #004A54;
+    text-decoration: none;
+}

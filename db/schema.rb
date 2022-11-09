@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2022_10_30_110220) do
     t.string "prefecture"
     t.string "address1"
     t.string "address2"
-    t.string "planner_id"
+    t.integer "planner_id"
     t.text "w_detail"
     t.text "p_text"
     t.text "p_detail"

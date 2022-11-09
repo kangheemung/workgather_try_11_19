@@ -5,7 +5,6 @@ class WorkshopsController < ApplicationController
     @workshop=Workshop.new
   end
   def new
-    
     @workshop=Workshop.new
     @planner=Planner.new
   end

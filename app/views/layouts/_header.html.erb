@@ -1,0 +1,16 @@
+    <!ユーザーによってheader変わる>
+<% if current_planner.present? %>
+ <span>ようこそ <%= current_planner.user_name %> さん</span>
+  <%= link_to "workshop作成",workshops_new_path %>
+  <%= link_to "ログアウト",planner_logout_path, method: :delete %>
+<% elsif current_user.present?  %>
+  ようこそ <%= current_user.user_name %> さん
+  <%= link_to "workshopを見に行く",workshops_index_path %>
+  <%= link_to "ログアウト",user_logout_path, method: :delete %>
+<% else %>
+   <span>ログインしましょう！</span>
+  <%= link_to "参加者ログイン", login_path %>
+  <%= link_to "開催者ログイン", planners_login_path %>
+<% end %>
+
+       

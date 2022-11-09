@@ -7,14 +7,15 @@ class UserSessionsController < ApplicationController
       if user && user.authenticate(params[:user][:password])
         log_in(user)
         flash[:notice]="ログインしました。"
-        redirect_to("/posts/index")
+        redirect_to workshops_index_path
     else
+        flash[:danger] = 'Invalid email/password combination'
         redirect_to login_path
     end
   end
   def destroy
     session[:user_id]= nil
     flash[:notice]="ログアウトしました"
-    redirect_to("/login")
+    redirect_to root_path
   end
 end
