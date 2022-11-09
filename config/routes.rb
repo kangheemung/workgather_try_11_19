@@ -10,19 +10,17 @@ Rails.application.routes.draw do
   #参加者ログイン
   get 'login' => 'user_sessions#new',as:'login'
   post 'users/login' => 'user_sessions#create',as:'login_create'
-  post 'logout' => 'user_sessions#destroy'
-  get 'sessions/new'=>'sessions#new'
+  delete 'logout' => 'user_sessions#destroy',as:'users_logout'
   #開催者ログイン
   get 'planners/login_form' => 'planner_sessions#new',as:'planners_login'
   post 'planners/login' => 'planner_sessions#create',as:'planners_login_create'
-  post 'logout' => 'planners#destroy'
+  delete 'logout' => 'planner_sessions#destroy',as:'planners_logout'
   #投稿
   get 'posts/index'=>'posts#index',as:'posts_index'
   get 'posts/new'=>'posts#new'
   post'posts/create'=>'posts#create',as:'posts_create'
   get 'posts/:id/update'=>'posts#update'
   get 'posts/:id/edit' => 'posts#edit'
-  delete 'posts/:id/destroy'=>'posts#destroy'
   get 'posts/:id'=>'posts#show'
   #参加者会員登録
 get 'users/index' => 'users#index'
@@ -31,7 +29,7 @@ get 'users/index' => 'users#index'
   get 'users/:id/edit' => 'users#edit'
   post 'users/:id/update' => 'users#update'
   get 'users/:id' => 'users#show'
-  delete 'logout' => 'users#destroy',as:'user_logout'
+  
   
   #開催者会員登録
   get 'planners/new'=> 'planners#new'
@@ -40,7 +38,7 @@ get 'users/index' => 'users#index'
   get 'planeners/:id/edit' => 'planners#edit'
   post 'planners/:id/update' => 'planners#update'
   get 'planners/:id' => 'planners#show'
-  delete 'logout' => 'planners#destroy',as:'planner_logout'
+ 
   #workshops投稿
   get 'workshops/index'=>'workshops#index'
   get 'workshops/new'=>'workshops#new',as:'workshops_new'

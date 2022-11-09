@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_30_110220) do
+ActiveRecord::Schema.define(version: 2022_11_09_134742) do
 
   create_table "images", force: :cascade do |t|
     t.string "name"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2022_10_30_110220) do
     t.string "last_name"
     t.string "birthday"
     t.string "gender"
-    t.string "workshop_id"
+    t.integer "workshop_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,6 +42,15 @@ ActiveRecord::Schema.define(version: 2022_10_30_110220) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "workshop_id"
+    t.string "content"
+    t.integer "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "user_name"
     t.string "email"
@@ -50,7 +59,7 @@ ActiveRecord::Schema.define(version: 2022_10_30_110220) do
     t.string "last_name"
     t.string "birthday"
     t.integer "gender"
-    t.string "post_id"
+    t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
