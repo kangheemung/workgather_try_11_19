@@ -1,1 +1,35 @@
-<%= @user.email%>
+<div class= "asobinagara">
+<h1>ASOBINAGARA</h1>
+</div>
+<div class="signup">
+    <div class="signup_text">
+       <p><span><%=@user.user_name%>様</span></p>
+       <p>ASOBINAGARAにようこそ!!</p>
+       <p>詳細情報</p>
+    </div>
+     <div class="body">
+         <div class="body_box"> 
+         <p> 名前:<%= @user.user_name%></p>
+                <div class="body_box"> 
+                <p>email: <%= @user.email%></p>
+                </div>
+                <div class="body_box"> 
+                </div>  
+                <div class="body_box">
+               <p>first_name: <%= @user.first_name %></p>
+               <p>last_name: <%= @user.last_name %></p>
+                 </div> 
+                <div class="body_box">
+                <p>誕生日: <%= @user.birthday %><p>
+                </div> 
+                <div class="gender_box">
+                    <div class="body_box">
+                      #先生に性別文字表示するやり方聞く
+                       <p>性別： <%= @user.gender %></p>
+                    </div>
+                    <%= link_to "編集","/users/#{@user.id}/edit"%>
+                </div>
+
+            </div>  
+</div>
+

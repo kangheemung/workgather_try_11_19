@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get 'posts/:id/edit' => 'posts#edit'
   get 'posts/:id'=>'posts#show'
   #参加者会員登録
-get 'users/index' => 'users#index'
+  get 'users/index' => 'users#index'
   get 'users/new'=>'users#new', as:'signup'
   post 'users/create'=>'users#create',as:'users'
   get 'users/:id/edit' => 'users#edit'

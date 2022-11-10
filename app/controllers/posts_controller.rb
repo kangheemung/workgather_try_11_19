@@ -17,7 +17,8 @@ class PostsController < ApplicationController
        end
     end
     def show
-      @workshop =Workshop.find_by(params:id)
+      @post=Post.find_by(id :params[:id])
+      @workshop =Workshop.find_by(id: params[:id])
     end
     private
     def post_params
