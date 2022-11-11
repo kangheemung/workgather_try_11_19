@@ -5,24 +5,17 @@
     </div> 
 </div> 
     <div class="p_side_header_p">
-      <p>Home> workshopsの詳細ページ</p>
+      <p>Home> workshopsのレビュー</p>
     </div><!三本のイメージを押したら　カテゴリーが開きます。-->
 <div class="p_body">
     <% @workshops.each do |workshop| %>
-        <div class="p_table_left">
             <div class="p_title">
-                <span><%= workshop.w_title%></span>
+                <span><%= workshop.w_title%>のレビュー</span>
             </div>
-            <div class="p_theme">
-            <span><%= workshop.w_theme%></span>
-            </div>
-            <div class="p_img">
-                <p> <%= image_tag workshop.image.url, size: '350x350'%>  
-            </div>
-             <div class="card mb-6">
+    <%end%>        
+          <div class="card mb-6">
             <header class="card-header">
               <p class="card-header-title">
-              
               </p>
             </header>
             <div class="card-content">
@@ -32,8 +25,12 @@
                     <div class="star-rating-front" style="width: %">★★★★★</div>
                     <div class="star-rating-back">★★★★★</div>
                     <%@posts.each do|post|%>
-                      <p><%=link_to post.title, "/posts/#{post.id}" %>|<%link_to"編集"%></p>
-                       <p><%=link_to post.content, "/posts/#{post.id}" %></p>
+                      <p><%=image_tag post.image.url, size: '200x200' %></p>
+                      <p><%=link_to post.title %></p>
+                      <p><%=link_to post.content, "/posts/#{post.id}" %></p>
+                        <%if current_user%> #=作成したユーザーのみ編集できるようにしたい。
+                          <p><%=link_to "編集", "/posts/#{post.id}/edit"%></p>
+                        <%end%>
                     <%end%>
                   </div>
                   <div class="average-score-display ml-3 pt-2">
@@ -41,9 +38,7 @@
                 </div>
               </div>
             </div>
-            <footer class="card-footer">
-            </footer>
           </div>   
        </div>
-   <%end%>
+  
 

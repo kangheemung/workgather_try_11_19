@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  include  UserSessionsHelper
     def index
       @posts=Post.all
       @workshops=Workshop.all
@@ -17,7 +18,11 @@ class PostsController < ApplicationController
        end
     end
     def show
-      @post=Post.find_by(id :params[:id])
+      @post=Post.find_by(id: params[:id])
+      @workshop =Workshop.find_by(id: params[:id])
+    end
+    def edit
+      @post=Post.find_by(id: params[:id])
       @workshop =Workshop.find_by(id: params[:id])
     end
     private

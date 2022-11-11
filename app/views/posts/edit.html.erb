@@ -1,0 +1,32 @@
+<div class="p_header">
+    <h4>ASOBINAGARA</h4><!三本のイメージを押したら　カテゴリーが開きます。-->
+</div>
+ <%= form_for @workshop, url:workshops_create_path do |f| %>
+  <div class="p_table_left">
+          <div class="p_title">
+            <span><%= @workshop.w_title%></span>
+          </div>
+          <div class="p_theme">
+            <span><%= @workshop.w_theme%></span>
+          </div>
+    </div>
+  <%end%> 
+ 
+  <%= form_for @post, url:posts_create_path do |f| %>
+          <div class="body_box">
+          <p><%=  f.file_field :image%></p>
+          </div>
+          <div class="body_box">    
+          <%= f.label :参加したワークショップ %><br>
+          </div>  
+          <p><%= f.text_field :title, :placeholder => "タイトル"%></p>
+          <div class="body_box">  
+          <%= f.label :コメント%><br>
+          </div> 
+          <div> 
+            <p><%= f.text_field :content, :placeholder => "コメント欄"  %></p>
+          </div>
+          <div class="body_box">  
+            <p> <%= f.submit "投稿", class: "button" %></p>
+          </div>  
+  <%end%>

@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get 'posts/index'=>'posts#index',as:'posts_index'
   get 'posts/new'=>'posts#new'
   post'posts/create'=>'posts#create',as:'posts_create'
-  get 'posts/:id/update'=>'posts#update'
+  post 'posts/:id/update'=>'posts#update'
   get 'posts/:id/edit' => 'posts#edit'
   get 'posts/:id'=>'posts#show'
   #参加者会員登録
