@@ -1,7 +1,7 @@
 <div class="p_header">
     <h4>ASOBINAGARA</h4><!三本のイメージを押したら　カテゴリーが開きます。-->
 </div>
- <%= form_for @workshop, url:workshops_create_path do |f| %>
+ <%= form_for @workshop, url:"workshops/#{@workshop.id}/update" do |f| %>
   <div class="p_table_left">
           <div class="p_title">
             <span><%= @workshop.w_title%></span>
@@ -12,7 +12,8 @@
     </div>
   <%end%> 
  
-  <%= form_for @post, url:posts_create_path do |f| %>
+  <%= form_for @post, url:"posts/#{@post.id}/update" do |f| %>
+ 
           <div class="body_box">
           <p><%=  f.file_field :image%></p>
           </div>

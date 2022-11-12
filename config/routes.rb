@@ -42,8 +42,9 @@ Rails.application.routes.draw do
   #workshops投稿
   get 'workshops/index'=>'workshops#index'
   get 'workshops/new'=>'workshops#new',as:'workshops_new'
-  get 'workshops/show'=> 'workshops#show'
+  post 'workshops/:id/update' => 'workshops#update'
   post 'workshops/create'=>'workshops#create',as:'workshops_create'
+  get 'workshops/:id'=> 'workshops#show'
   #album
   get 'images/index'=>'images#index'
   get 'images/new'=>'images#new'
