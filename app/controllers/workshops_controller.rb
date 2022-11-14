@@ -5,7 +5,7 @@ class WorkshopsController < ApplicationController
     @workshop=Workshop.new
   end
   def new
-    @workshop=Workshop.new
+    @workshops = Workshop.all
     @planner=Planner.new
   end
   def create
@@ -19,6 +19,7 @@ class WorkshopsController < ApplicationController
   end
   def show
   end
+  
   private
   def workshop_params
     params.require(:workshop).permit(:w_title,:w_theme,:image,:prefecture,:address1,:address2,:planner_id,:w_detail,:p_text,:p_detail,:profile_img,:time,:personnel,:precautions)

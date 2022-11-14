@@ -25,7 +25,7 @@ include  UserSessionsHelper
   end
   def update
     @user=User.find_by(id: params[:id])
-    if @user.update(update_user_params)
+    if @user.update(user_params)
         #  session[:planner_id]=planner.id
         flash[:notice]="プランナー情報を更新しました。"
         redirect_to users_show_path(@user.id)
@@ -34,10 +34,7 @@ include  UserSessionsHelper
     end
   end
 private
-  def update_user_params
-    params.require(:user).permit(:user_name,:email,:password,:password_confirmation,:first_name,:last_name,:birthday,:gender)
-  end
-  def user_params
+ def user_params
       params.require(:user).permit(:user_name,:email,:password,:password_confirmation,:first_name,:last_name,:birthday,:gender)
   end
 end

@@ -20,8 +20,8 @@ Rails.application.routes.draw do
   get 'posts/new'=>'posts#new',as:'posts_new'
   post'posts/create'=>'posts#create',as:'posts_create'
   get 'posts/:id/edit' => 'posts#edit',as:'posts_edit'
-  post  '/posts/:id/update'=> 'poasts#update'
-  get 'posts/:id'=>'posts#show',as:'post_show'
+  patch 'posts/:id/update'=> 'posts#update',as:'posts_update'
+  get 'posts/:id'=>'posts#show',as:'posts_show'
   
   #参加者会員登録
   get 'users/index' => 'users#index'
@@ -30,7 +30,6 @@ Rails.application.routes.draw do
   get 'users/:id/edit' => 'users#edit'
   post 'users/:id/update' => 'users#update',as:'users_update'
   get 'users/:id' => 'users#show',as:'users_show'
-  
   
   #開催者会員登録
   get 'planners/new'=> 'planners#new',as:'planners_new'

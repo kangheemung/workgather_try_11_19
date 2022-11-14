@@ -1,7 +1,7 @@
 <div class="p_header">
     <h4>ASOBINAGARA</h4><!三本のイメージを押したら　カテゴリーが開きます。-->
 </div>
-  <%= form_for @post, url:"posts/#{@post.id}/update" do |f| %>
+  <%= form_for @post,url: posts_update_path(@post.id) do |f| %>
  
           <div class="body_box">
           <p><%=  f.file_field :image%></p>
