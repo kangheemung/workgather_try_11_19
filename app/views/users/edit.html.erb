@@ -6,7 +6,7 @@
         <span>会員登録(参加者専用)</span>
     </div>
      <div class="body">
-        <%= form_for @user, url: "users/#{@user.id}/update" do |f| %>
+        <%= form_for @user, url: users_update_path(@user.id) do |f| %>
                 <div class="body_box">    
                 <%= f.label :user_name %>
                 </div>  
@@ -42,9 +42,6 @@
                 <div class="sign_btn">
                     <%= f.button "会員登録", class: "button" %><br>
                 </div>
-        <%end%>
-            <div class= "login">
-            <span onclick="location.href= '/login'">ログイン</span>
-            </div>    
+        <%end%>   
 </div>
 

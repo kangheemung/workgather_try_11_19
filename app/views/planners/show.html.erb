@@ -1,8 +1,9 @@
- <h2><%= @planner.user_name %></h2>
-      <p><%= @planner.email %></p>
-      <p><%= @planner.first_name %></p>
-      <p><%= @planner.last_name%></p>
-      <p><%= @planner.birthday%></p>
-      <p><%= @planner.gender%></p>
+<h2><%= @planner.user_name %></h2>
+<p><%= @planner.email %></p>
+<p><%= @planner.first_name %></p>
+<p><%= @planner.last_name%></p>
+<p><%= @planner.birthday%></p>
+<p><%= @planner.gender%></p>
+<p><%= link_to("編集", planners_edit_path(@planner.id)) %></p>
+<p><%= link_to("完了！ワークショップを見に行く",workshops_index_path) %></p>
 
-      <%= link_to("編集", "/users/#{@planner.id}/edit") %>

@@ -21,17 +21,37 @@
           </div>
       </div>
       <div class="w_table_right">
-            <p>空き状況</p>
-            <p><%= workshop.time%></p>
-            <p>定員<%= workshop.personnel%></p>
-            <p><%= workshop.prefecture%></p>
-            <p>場所詳細<%= workshop.address1%></p>
-            <p><%= workshop.address2%></p>
-            <p>駐車場ありなし</p>
-            <p>like</p>
-            <p><input type="button" value="予約する" class= "w_btn_b"  onclick="location.href = '/home/select_position'"></p> 
-            <p><input type="button" value="レビュー" class= "w_btn_r"  onclick="location.href = '/posts/new'"></p> 
-      </div>
+        <% if current_planner.present? %>
+          <p>空き状況</p>
+          <p><%= workshop.time%></p>
+          <p>定員<%= workshop.personnel%></p>
+          <p><%= workshop.prefecture%></p>
+          <p>場所詳細<%= workshop.address1%></p>
+          <p><%= workshop.address2%></p>
+          <p>駐車場ありなし</p>
+          <p>like</p>
+        <% elsif current_user.present? %>
+          <p>空き状況</p>
+          <p><%= workshop.time%></p>
+          <p>定員<%= workshop.personnel%></p>
+          <p><%= workshop.prefecture%></p>
+          <p>場所詳細<%= workshop.address1%></p>
+          <p><%= workshop.address2%></p>
+          <p>駐車場ありなし</p>
+          <p>like</p>
+          <p><input type="button" value="予約する" class= "w_btn_b"  onclick="location.href = '/home/select_position'"></p> 
+          <p><input type="button" value="レビュー" class= "w_btn_r"  onclick="location.href = '/posts/new'"></p> 
+        <% else %>
+          <p>空き状況</p>
+          <p><%= workshop.time%></p>
+          <p>定員<%= workshop.personnel%></p>
+          <p><%= workshop.prefecture%></p>
+          <p>場所詳細<%= workshop.address1%></p>
+          <p><%= workshop.address2%></p>
+          <p>駐車場ありなし</p>
+          <p>like</p>
+        <% end %>
     <% end %> 
+    </div>
   </div>
 

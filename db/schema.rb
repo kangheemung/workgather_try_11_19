@@ -67,10 +67,6 @@ ActiveRecord::Schema.define(version: 2022_11_09_134742) do
   create_table "workshops", force: :cascade do |t|
     t.string "w_title"
     t.string "w_theme"
-    t.string "firstname"
-    t.string "lastname"
-    t.string "f_name_E"
-    t.string "l_name_E"
     t.string "image"
     t.string "prefecture"
     t.string "address1"
