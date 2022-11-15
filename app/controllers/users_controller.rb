@@ -26,7 +26,7 @@ include  UserSessionsHelper
   def update
     @user=User.find_by(id: params[:id])
     if @user.update(user_params)
-        #  session[:planner_id]=planner.id
+        #  session[:user_id]=user.id
         flash[:notice]="プランナー情報を更新しました。"
         redirect_to users_show_path(@user.id)
     else

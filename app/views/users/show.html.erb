@@ -1,20 +1,24 @@
 <div class= "asobinagara">
-<h1>ASOBINAGARA</h1>
+  <h1>ASOBINAGARA</h1>
 </div>
 <div class="signup">
     <div class="signup_text">
-   <p><span><%=current_user.user_name%>様</span></p>
-   <p>ASOBINAGARAにようこそ!!</p>
-   <p>詳細情報</p>
+      <p><%=current_user.user_name%>様</p>
+      <p>ASOBINAGARAに</p>
+      <p>ようこそ!!</p>
     </div>
-     <h2><%= current_user.user_name %></h2>
-      <p><%= current_user.email %></p>
-      <p><%= current_user.first_name %></p>
-      <p><%= current_user.last_name%></p>
-      <p><%= current_user.birthday%></p>
-      <p><%= current_user.gender%></p>
-
-      <%= link_to("編集", "/users/#{@user.id}/edit") %>
-      <%= link_to("会員登録", "/workshops/index") %>
+    <div class="sign_up_main">
+      <p>name: <%= current_user.user_name %></p>
+      <p>email: <%= current_user.email %></p>
+      <p>first_name: <%= current_user.first_name %></p>
+      <p>last_name: <%= current_user.last_name%></p>
+      <p>birthday: <%= current_user.birthday%></p>
+      <p>gender: <%= current_user.gender%></p>
+    </div>
+    <div class = "signup_body">
+     <p> <%= link_to("編集", "/users/#{@user.id}/edit/") %> |
+         <%= link_to("ワークショップを見に行く！", "/workshops/index") %>
+     </p>
+    </div>
 </div>
 

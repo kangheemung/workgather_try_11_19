@@ -1,12 +1,6 @@
-<div class="p_header">
-    <div class="p_s_header">ASOBINAGARA</div><!三本のイメージを押したら　カテゴリーが開きます。-->
-    <div class="p_s_header1">
-      <span><a href="/homes/sign_in">sign up</a></span>
-    </div> 
-</div> 
-    <div class="p_side_header_p">
-      <p>Home> workshopsのレビュー</p>
-    </div><!三本のイメージを押したら　カテゴリーが開きます。-->
+<div class="p_side_header_p">
+  <p>Home> workshopsのレビュー</p>
+</div><!三本のイメージを押したら　カテゴリーが開きます。-->
 <div class="p_body">
     <% @workshops.each do |workshop| %>
       <div class="p_title">
@@ -14,31 +8,25 @@
       </div>
     <%end%>        
           <div class="card mb-6">
-            <header class="card-header">
-              <p class="card-header-title">
-              </p>
-            </header>
             <div class="card-content">
               <div class="content">
                 <div class="content average-score">
                   <div class="star-rating mb-2">
-                    <div class="star-rating-front" style="width: %">★★★★★</div>
+                   <div class="star-rating-front" style="width: %">★★★★★</div>
                     <div class="star-rating-back">★★★★★</div>
                       <%@posts.each do|post|%>
                         <p><%=image_tag post.image.url, size: '200x200' %></p>
                         <p><%= post.title %></p>
                         <p><%=post.content%></p>
-                          <%if current_user%> #=作成したユーザーのみ編集できるようにしたい。
-                            <p><%=link_to "編集","/posts/#{post.id}/edit" %></p>
-                          <%end%>
+                        <%if current_user%> #=作成したユーザーのみ編集できるようにしたい。
+                          <p><%=link_to "編集","/posts/#{post.id}/edit" %></p>
+                        <%end%>
                       <%end%>
-                  </div>
-                  <div class="average-score-display ml-3 pt-2">
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>   
-       </div>
-  
+            </div>   
+        </div>
+    
 

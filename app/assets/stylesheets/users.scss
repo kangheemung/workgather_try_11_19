@@ -5,7 +5,6 @@
     margin-top: 5%;
 }
 .asobinagara h1{
-    align-content: center;
     font-size: xx-large;
     font-weight: bolder;
 }
@@ -13,20 +12,27 @@
     text-align: left;
     border: solid 3px;
     border-radius: 10px;
-    margin-left:1%;
     margin-top: 5%;
-    font-weight: bold;
-    align-content: center;
+   
+   
 }
-.signup span{
-    font-weight:bolder;
+.sign_up_main{
+    padding-left:10% ;
 }
-.signup_text{
+.signup_body{
+    background-color:whitesmoke;
+    padding-bottom: 1%;
+    border-radius: 10px;
+}
+.signup_body p{
+    padding-top: 4%;
     text-align: center;
-    margin-top: 10%;
-    margin-bottom: 5%;
+}
+.signup_text{ 
+    margin-top: 5%;
     font-size: x-large;
     font-weight: bolder;
+    margin-bottom: 10%;
 }
 .body{
     margin-left: 5%;}

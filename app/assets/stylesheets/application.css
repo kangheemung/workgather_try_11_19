@@ -26,12 +26,36 @@
     margin-bottom:0;
 }
 header{
-    color:#004A54;
-    text-align: right;
-    font-family: 'Mali', cursive;
-    font-weight: bolder; 
+    color: #DBE5E6;
+    background-color:  #004A54; 
+    text-align: left;
+    font-family: 'Mali', cursive; 
+    padding-top: 5%;
+    padding-bottom: 5%;  
 }
-a {
-    color: #004A54;
+a { color: #DBE5E6;
     text-decoration: none;
 }
+.header1{
+    color: #DBE5E6;
+    background-color:  #004A54; 
+    text-align: left;
+    font-family: 'Mali', cursive; 
+    padding-top: 5%;
+    padding-bottom: 5%; 
+    display: flex;        
+ }
+ .s_header{
+    margin-left:3%;
+    font-size: x-large;    
+    color: whitesmoke;
+}
+.s_header1{ 
+    color: whitesmoke;
+    font-weight: bolder;  
+    font-size:larger;
+    margin-left: 20%;
+    text-decoration:none
+}
+
+

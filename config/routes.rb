@@ -20,15 +20,15 @@ Rails.application.routes.draw do
   get 'posts/new'=>'posts#new',as:'posts_new'
   post'posts/create'=>'posts#create',as:'posts_create'
   get 'posts/:id/edit' => 'posts#edit',as:'posts_edit'
-  patch 'posts/:id/update'=> 'posts#update',as:'posts_update'
+  patch 'posts/:id/edit'=> 'posts#update',as:'posts_update'
   get 'posts/:id'=>'posts#show',as:'posts_show'
   
   #参加者会員登録
   get 'users/index' => 'users#index'
   get 'users/new'=>'users#new', as:'signup'
   post 'users/create'=>'users#create',as:'users'
-  get 'users/:id/edit' => 'users#edit'
-  post 'users/:id/update' => 'users#update',as:'users_update'
+  get 'users/:id/edit' => 'users#edit',as:'users_edit'
+  patch 'users/:id/edit'=>'users#update',as:'users_update'
   get 'users/:id' => 'users#show',as:'users_show'
   
   #開催者会員登録
@@ -36,15 +36,16 @@ Rails.application.routes.draw do
   get 'planners/index'=>'planners#index',as:'planners_index'
   post'planners/create'=>'planners#create',as:'planners_create'
   get 'planners/:id/edit' => 'planners#edit',as:'planners_edit'
-  post 'planners/:id/update' => 'planners#update',as:'planners_update'
+  patch 'planners/:id/edit' => 'planners#update',as:'planners_update'
   get 'planners/:id' => 'planners#show',as:'planners_show'
  
   #workshops投稿
   get 'workshops/index'=>'workshops#index',as:'workshops_index'
   get 'workshops/new'=>'workshops#new',as:'workshops_new'
-  post 'workshops/:id/update' => 'workshops#update',as:'workshops_update'
+  get 'workshops/:id/edit' => 'workshops#edit',as:'workshops_edit'
+  patch 'workshops/:id/edit' => 'workshops#update',as:'workshops_update'
   post 'workshops/create'=>'workshops#create',as:'workshops_create'
-  get 'workshops/:id'=> 'workshops#show'
+  get 'workshops/:id'=> 'workshops#show',as:'workshops_show'
   #album
   get 'images/index'=>'images#index'
   get 'images/new'=>'images#new'

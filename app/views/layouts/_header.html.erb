@@ -1,19 +1,34 @@
     <!ユーザーによってheader変わる>
 <% if current_planner.present? %>
- <span>ようこそ <%= current_planner.user_name %> さん</span>
-  <%= link_to "workshop見に行く",workshops_index_path %>
-  <%= link_to "workshop作成",workshops_new_path, data: {"turbolinks" => false} %>
-  <%= link_to "ログアウト",planners_logout_path, method: :delete %>
+ <div class="header1">
+    <div class="s_header">ASOBINAGARA</div><!三本のイメージを押したら　カテゴリーが開きます。-->
+      <div class="s_header1">
+        <%= link_to "workshop作成",workshops_new_path, data: {"turbolinks" => false} %>|
+        <%= link_to "workshop見に行く",workshops_index_path, data: {"turbolinks" => false} %>|
+        <a href="/homes/sign_in">sign up</a>|
+        <%= link_to "ログアウト",planners_logout_path, method: :delete %>
+    </div>
+  </div>
 <% elsif current_user.present? %>
-  ようこそ <%= current_user.user_name %> さん
-  <%= link_to "workshopを見に行く",workshops_index_path %>
-  <%= link_to "ログアウト",users_logout_path, method: :delete %>
+<div class="header1">
+    <div class="s_header">ASOBINAGARA</div><!三本のイメージを押したら　カテゴリーが開きます。-->
+    <div class="s_header1">
+      <%= link_to "workshopを見に行く",workshops_index_path, data: {"turbolinks" => false} %>|
+      <a href="/homes/sign_in">sign up</a> |
+      <%= link_to "ログアウト",users_logout_path, method: :delete %>
+    </div>
+</div> 
 <% else %>
-   <span>ログインしましょう！</span>
-  <%= link_to "参加者ログイン", login_path %>|
-  <%= link_to "開催者ログイン", planners_login_path %>|
-  <%= link_to "参加者会員登録", signup_path %>|
-  <%= link_to "開催者会員登録", planners_new_path %>
+<span>ログインしましょう！</span>
+   <div class="header1">
+    <div class="s_header">ASOBINAGARA</div><!三本のイメージを押したら　カテゴリーが開きます。-->
+      <div class="s_header1">
+        <%= link_to "参加者ログイン", login_path, data: {"turbolinks" => false} %>|
+        <%= link_to "開催者ログイン", planners_login_path , data: {"turbolinks" => false}%>|
+        <%= link_to "参加者会員登録", signup_path , data: {"turbolinks" => false}%>|
+        <%= link_to "開催者会員登録", planners_new_path, data: {"turbolinks" => false} %>
+      </div>
+  </div>   
 <% end %>
 
        
