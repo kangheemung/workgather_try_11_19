@@ -1,5 +1,5 @@
 <div class= "asobinagara">
-<h1>ASOBINAGARA</h1>
+  <h1>ASOBINAGARA</h1>
 </div>
 <div class="signup">
     <div class="signup_text">
@@ -43,25 +43,24 @@
                   </div>
                   <div class="text_box">
                       <p><%= f.label :追加内容 %></p>
-                      
                       <p><%= f.text_field :p_detail, :placeholder => "フロフィール詳細"%></p>
                   </div>
-                   <div class="text_box">
+                  <div class="text_box">
                       <p><%= f.label :開催時間 %></p>
                       <p><%= f.text_field :time, :placeholder => "例)１時間〜２時間"%></p>
                   </div>
-                   <div class="text_box">
+                  <div class="text_box">
                       <p><%= f.label :定員 %></p>
                       <p><%= f.text_field :personnel, :placeholder => "例）５名まで、"%></p>
                   </div>
-                   <div class="text_box">
+                  <div class="text_box">
                       <p><%= f.label :新型コロナ感染対策%></p>
                       <p><%= f.text_field :precautions, :placeholder => "●マスクをされてない方,37.5度以上の場合は参加をお断り致します。"%></p>
                   </div>
                 <div class="sign_btn">
                     <p><%= f.button "投稿", class: "button" %></p>
                 </div>
-         </div>   
+           </div>   
         <%end%> 
 </div>
 <script>

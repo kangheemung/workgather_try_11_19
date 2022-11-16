@@ -2,11 +2,11 @@ class WorkshopsController < ApplicationController
   include  PlannerSessionsHelper
   def index
     @workshops = Workshop.all
-    @workshop=Workshop.new
+    @workshop = Workshop.new
   end
   def new
-    @workshops = Workshop.all
-    @planner=Planner.new
+    @workshop = Workshop.new
+    @planner = Planner.new
   end
   def create
      #p "params: #{params}"
