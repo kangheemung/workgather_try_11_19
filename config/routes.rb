@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get  'homes/select_position'=>'homes#select_position'
   get 'homes/select_position_E'=>'homes#select_position_E'
   get  'homes/select_position_K'=>'homes#select_position_K'
-  get 'homes/sign_in'=>'homes#sign_in'
+  get 'homes/sign_in'=>'homes#sign_in',as:'home_sign_in'
+  get 'homes/sign_up'=>'homes#sign_up',as:'home_sign_up'
   get 'homes/about'=>'homes#about'
   #参加者ログイン
   get 'login' => 'user_sessions#new',as:'login'

@@ -18,9 +18,9 @@
                         <p><%=image_tag post.image.url, size: '200x200' %></p>
                         <p><%= post.title %></p>
                         <p><%=post.content%></p>
-                        <%if current_user%> #=作成したユーザーのみ編集できるようにしたい。
-                          <p><%=link_to "編集","/posts/#{post.id}/edit" %></p>
-                        <%end%>
+                          <%if current_user%> #=作成したユーザーのみ編集できるようにしたい。
+                            <p><%=link_to "編集","/posts/#{post.id}/edit" %></p>
+                          <%end%>
                       <%end%>
                     </div>
                   </div>
