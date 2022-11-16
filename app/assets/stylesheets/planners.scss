@@ -2,43 +2,46 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .asobinagara{
-    margin-top: 3%;
+    margin-top: 5%;
 }
 .asobinagara h1{
-    align-content: center;
     font-size: xx-large;
     font-weight: bolder;
 }
 .signup{
+    text-align: left;
     border: solid 3px;
     border-radius: 10px;
-    margin-left:1%;
-    margin-top: 10%;
-    font-weight: bold;
+    margin-top: 5%;
+   
+   
 }
-.signup_text{
+.sign_up_main{
+    padding-left:10% ;
+}
+.signup_body{
+    background-color:whitesmoke;
+    padding-bottom: 1%;
+    border-radius: 10px;
+    color: #004A54;
+}
+.signup_body p{
+    padding-top: 4%;
     text-align: center;
-    margin-top: 10%;
-    margin-bottom: 5%;
+    color: #004A54;
+}
+.signup_body a{
+    color: #004A54;
+    text-decoration: none
+}
+.signup_text{ 
+    margin-top: 5%;
     font-size: x-large;
     font-weight: bolder;
-}
-.singup_title{
-    text-align: center;
-    margin-top:5%;
-    margin-bottom: 5%;
-}
-.singup_title span{
-    font-size: x-large;
-    font-weight: bolder;
-}
-.signup {
-    margin-top: 10%;
-    font-weight:bolder;
+    margin-bottom: 10%;
 }
 .body{
     margin-left: 5%;
-    text-align: center;
 }
 .body_box{
    margin-top: 2%;

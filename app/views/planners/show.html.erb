@@ -1,9 +1,23 @@
-<h2><%= @planner.user_name %></h2>
-<p><%= @planner.email %></p>
-<p><%= @planner.first_name %></p>
-<p><%= @planner.last_name%></p>
-<p><%= @planner.birthday%></p>
-<p><%= @planner.gender%></p>
-<p><%= link_to("編集", planners_edit_path(@planner.id)) %></p>
-<p><%= link_to("完了！ワークショップを見に行く",workshops_index_path) %></p>
-
+<div class= "asobinagara">
+  <h1>ASOBINAGARA</h1>
+</div>
+<div class="signup">
+    <div class="signup_text">
+      <p><%=current_planner.user_name%>様</p>
+      <p>ASOBINAGARAに</p>
+      <p>ようこそ!!</p>
+    </div>
+    <div class="sign_up_main">
+      <p>name: <%= current_planner.user_name %></p>
+      <p>email: <%= current_planner.email %></p>
+      <p>first_name: <%= current_planner.first_name %></p>
+      <p>last_name: <%= current_planner.last_name%></p>
+      <p>birthday: <%= current_planner.birthday%></p>
+      <p>gender: <%= current_planner.gender%></p>
+    </div>
+    <div class = "signup_body">
+       <p> <%= link_to("編集", "/planners/#{@planner.id}/edit/") %> |
+           <%= link_to("ワークショップを見に行く！", "/workshops/index") %>
+       </p>
+    </div>
+</div>
