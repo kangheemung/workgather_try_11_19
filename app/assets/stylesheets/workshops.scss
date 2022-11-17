@@ -97,6 +97,14 @@
     border-radius: 5%;
     color: #004A54;
 }
+//index
+.p_s_body{
+    margin-top:10%;
+    margin-bottom: 5%;
+}
+.p_t_h{
+    margin-bottom: 5%;
+}
 //new
 .W_body{
     margin-top:2%;
@@ -130,4 +138,25 @@
 }
 .w_img p{
     margin-left: 10px;
+}
+//show
+
+.review-content{
+    text-align: center;
+}
+.review-title{
+    padding-top: 5%;
+    padding-bottom:5%;
+    font-weight: bolder;
+    font-size: x-large;
+    background-color:rgba(220, 250, 239, 0.5);   
+}
+.review-title p{
+    font-size: medium;
+    text-align: right;
+}
+//link
+.link_text{
+    color: #004A54;
+    text-decoration:none;
 }

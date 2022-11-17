@@ -1,2 +1,15 @@
-<h1>Workshops#show</h1>
-<p>Find me in app/views/workshops/show.html.erb</p>
+<div class="review-content">
+  <div class="review-title"><span><%=@workshop.w_title%><p>レビューページ！</p></span></div>
+    <p> <%=image_tag @workshop.image.url, size: '300x300'%>  
+    <div class="content average-score">
+      <div class="star-rating mb-2">
+        <div class="star-rating-front" style="width: %"> ★★★★★</div>
+        <div class="star-rating-back">★★★★★</div>
+      </div>
+      <div class="average-score-display ml-3 pt-2">
+        点（<%= @workshop.posts.count %>件のレビュー）
+      </div>
+    </div>
+  </div>
+    <%= render 'posts/form', post: @post, workshop: @workshop %>
+</div>

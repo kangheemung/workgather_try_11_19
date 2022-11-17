@@ -26,7 +26,7 @@
     margin-bottom: 5%;
 }
 .p_title{
-    background-color: whitesmoke;
+   
     font-weight: 150;
     font-weight: bolder;
     text-align:center;
@@ -99,4 +99,28 @@
 }
 .w_img p{
     margin-left: 10px;
+}
+//form
+.review_textarea_box{
+    width: 80%;
+    height: 150px;
+}
+.review_title_box{
+    width: 80%;
+}
+.review_check{
+    color: #004A54;
+    text-decoration:none;
+}
+.b_b_t{
+    font-size: large;
+    font-weight: bold;
+}
+.b_b_i{
+    margin-bottom: 5%;
+}
+//link
+.link_text{
+    color: #004A54;
+    text-decoration:none;
 }

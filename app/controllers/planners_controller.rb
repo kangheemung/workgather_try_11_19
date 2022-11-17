@@ -35,9 +35,9 @@ include  PlannerSessionsHelper
  end
 private
   def update_planner_params
-    params.require(:planner).permit(:user_name,:email,:password,:password_confirmation,:first_name,:last_name,:birthday,:gender)
+    params.require(:planner).permit(:user_name,:email,:password,:password_confirmation,:first_name,:last_name,:birthday,:gender,:workshop_id)
   end
   def planner_params
-    params.require(:planner).permit(:user_name,:email,:password,:password_confirmation,:first_name,:last_name,:birthday,:gender)
+    params.require(:planner).permit(:user_name,:email,:password,:password_confirmation,:first_name,:last_name,:birthday,:gender,:workshop_id)
   end
 end

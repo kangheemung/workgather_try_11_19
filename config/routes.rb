@@ -37,7 +37,8 @@ Rails.application.routes.draw do
   get 'planners/index'=>'planners#index',as:'planners_index'
   post'planners/create'=>'planners#create',as:'planners_create'
   get 'planners/:id/edit' => 'planners#edit',as:'planners_edit'
-  patch 'planners/:id/edit' => 'planners#update',as:'planners_update'
+  post 'planners/:id/edit' => 'planners#update',as:'planners_update'
+ 
   get 'planners/:id' => 'planners#show',as:'planners_show'
  
   #workshops投稿

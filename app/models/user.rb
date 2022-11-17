@@ -8,7 +8,7 @@ class User < ApplicationRecord
     #validates :birthday, presence: true
     #validates :gender,{presence: true}
     has_secure_password 
-    has_many :posts
+    has_many :posts#, dependent::destroy
     has_many :workshops
     has_many :reviews
     has_many :images, class_name: "Image"

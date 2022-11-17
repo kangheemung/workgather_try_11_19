@@ -35,6 +35,6 @@ include  UserSessionsHelper
   end
 private
  def user_params
-      params.require(:user).permit(:user_name,:email,:password,:password_confirmation,:first_name,:last_name,:birthday,:gender)
+      params.require(:user).permit(:user_name,:email,:password,:password_confirmation,:first_name,:last_name,:birthday,:gender,:post_id)
   end
 end

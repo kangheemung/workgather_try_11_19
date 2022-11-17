@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 2022_11_09_134742) do
     t.string "image"
     t.string "content"
     t.integer "user_id"
+    t.integer "score"
+    t.integer "workshop_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -72,6 +74,7 @@ ActiveRecord::Schema.define(version: 2022_11_09_134742) do
     t.string "address1"
     t.string "address2"
     t.integer "planner_id"
+    t.integer "post_id"
     t.text "w_detail"
     t.text "p_text"
     t.text "p_detail"

@@ -1,4 +1,4 @@
-
+<内容削除予定>
 <header class="card-header">
             <p class="card-header-title">
               <%= @workshop.w_title %>
@@ -7,15 +7,15 @@
           <div class="card-content">
             <div class="content average-score">
               <div class="star-rating mb-2">
-                <div class="star-rating-front" style="width: <%= @workshop.review_score_percentage %>%">★★★★★</div>
+                <div class="star-rating-front"> ★★★★★</div>
                 <div class="star-rating-back">★★★★★</div>
               </div>
               <div class="average-score-display ml-3 pt-2">
-              <%=@post.title%> の詳細ぺーじです。
-                <%= @workshop.avg_score %>点（<%= @workshop.reviews.count %>件のレビュー）
+                <%=@post.title%> の詳細ぺーじです。
+                点（<%= @workshop.posts.count %>件のレビュー）
               </div>
             </div>
           </div>
         </div>
-        <%= render 'reviews/form', review: @review, workshop: @rworkshop %>
+        <%= render 'posts/form', post: @post, workshop: @workshop %>
       </div>
