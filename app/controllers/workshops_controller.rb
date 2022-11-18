@@ -14,7 +14,7 @@ class WorkshopsController < ApplicationController
      if workshop.save
        redirect_to ("/workshops/index")
      else
-       render "new"
+       render "show"
      end
   end
   def show #レビュー作成

@@ -22,7 +22,7 @@ class PostsController < ApplicationController
      @post=Post.new
     end
     def edit
-      @post=Post.find_by( params[:id])
+      @post=Post.find_by(params[:id])
     end
     def update
       @post=Post.find_by(params[:id])
