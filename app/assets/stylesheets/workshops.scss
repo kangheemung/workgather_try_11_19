@@ -78,20 +78,24 @@
     width: 95%;
     height: 60%;
     margin-top:10%;
-    padding-top: 3%;
-    padding-bottom: 3%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 15%;
+    padding-right: 15%;
     border: solid 1px;
     font-size: large;
     border-radius: 5%;
-    color:whitesmoke
+    color:whitesmoke;
+    text-decoration:none;
 }
 .w_btn_r{ background-color:whitesmoke;
     width:95%;
     height: 60%;
-    margin-top:3% ;
-    margin-bottom: 10%;
-    padding-top: 3%;
-    padding-bottom: 3%;
+    text-decoration:none;
+    padding-top: 5%;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 5%;
     border: solid 1px;
     font-size: large;
     border-radius: 5%;
@@ -160,3 +164,26 @@
     color: #004A54;
     text-decoration:none;
 }
+.star-rating {
+    position: relative;
+    width: 5em;
+    height: 1em;
+    font-size: 25px;
+  }
+  .star-rating-front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    color: #ffcc33;
+  }
+  .star-rating-back {
+    color: #ccc;
+  }
+  
+  .average-score {
+    display: flex;
+  }
+  .average-score-display {
+    font-size: 16px;
+  }

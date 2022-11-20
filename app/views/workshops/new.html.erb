@@ -58,7 +58,7 @@
                       <p><%= f.text_field :precautions, :placeholder => "●マスクをされてない方,37.5度以上の場合は参加をお断り致します。"%></p>
                   </div>
                 <div class="sign_btn">
-                    <p><%= f.button "投稿", class: "button" %></p>
+                    <p><%= f.button "投稿", class: "button" , data: {"turbolinks" => false}%></p>
                 </div>
           </div>   
         <%end%> 

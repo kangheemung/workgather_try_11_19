@@ -11,5 +11,8 @@
       </div>
     </div>
   </div>
-    <%= render 'posts/form', post: @post, workshop: @workshop %>
+    <% if current_user%>
+      <%= render 'workshops/form', post: @post, workshop: @workshop %>
+    <%end%>
+    <div class="s_b"><p> <%=link_to "他のレビューを見る",posts_index_path(@workshop), class: "review_check"%></p></div>
 </div>

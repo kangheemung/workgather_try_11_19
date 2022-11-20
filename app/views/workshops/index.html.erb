@@ -33,8 +33,8 @@
         <p><%= workshop.address2%></p>
         <p>駐車場ありなし</p>
         <p>like</p>
-        <p><input type="button" value="予約する" class= "w_btn_b"  onclick="location.href = '/home/select_position'"></p> 
-        <p><input type="button" value="レビュー" class= "w_btn_r"  onclick="location.href = '/posts/index/'"></p> 
+        <p><%=link_to "予約する",homes_select_position_path ,class: "w_btn_b"%></p>
+        <p><%=link_to "レビュー",workshops_show_path(workshop),class: "w_btn_r"%></p>
       <% else %>
         <p>空き状況</p>
         <p><%= workshop.time%></p>

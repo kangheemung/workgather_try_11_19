@@ -10,6 +10,5 @@ class User < ApplicationRecord
     has_secure_password 
     has_many :posts#, dependent::destroy
     has_many :workshops
-    has_many :reviews
     has_many :images, class_name: "Image"
 end

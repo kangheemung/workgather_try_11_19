@@ -16,7 +16,7 @@
       <p>gender: <%= current_user.gender%></p>
     </div>
     <div class = "signup_body">
-     <p> <%= link_to("編集", "/users/#{@user.id}/edit/") %> |
+     <p> <%= link_to("編集", "/users/#{@user.id}/edit/", data: {"turbolinks" => false}) %> |
          <%= link_to("ワークショップを見に行く！", "/workshops/index") %>
      </p>
     </div>

@@ -27,8 +27,6 @@
             <p><%= f.text_field :title, :placeholder => "タイトル",class: "review_title_box"%></p>
             <p><%= f.text_field :content, :placeholder => "あなたの感想を書いて下さい。",class: "review_textarea_box"%></p>
             <p> <%= f.submit "投稿", class: "button" %></p>
-             <div class="s_b"><p> <%=link_to "他のレビューを見る",posts_index_path(workshop), class: "review_check"%></p></div>
           </div>  
     <%end%>
 </div>
-  

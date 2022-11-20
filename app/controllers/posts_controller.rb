@@ -9,12 +9,12 @@ class PostsController < ApplicationController
       @workshop =Workshop.new
     end
     def create
-       #p "params: #{params}"
+      
        post = current_user.posts.build(post_params)
        if post.save 
-        redirect_to posts_index_path(post.id)
+        redirect_to workshops_show_path(post.workshop_id)
        else
-         render :new
+         render :show
        end
     end
     def show

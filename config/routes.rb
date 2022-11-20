@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   #top
   root 'homes#top'
 
-  get  'homes/select_position'=>'homes#select_position'
+  get  'homes/select_position'=>'homes#select_position',as:'homes_select_position'
   get 'homes/select_position_E'=>'homes#select_position_E'
   get  'homes/select_position_K'=>'homes#select_position_K'
   get 'homes/sign_in'=>'homes#sign_in',as:'home_sign_in'
@@ -38,7 +38,6 @@ Rails.application.routes.draw do
   post'planners/create'=>'planners#create',as:'planners_create'
   get 'planners/:id/edit' => 'planners#edit',as:'planners_edit'
   post 'planners/:id/edit' => 'planners#update',as:'planners_update'
- 
   get 'planners/:id' => 'planners#show',as:'planners_show'
  
   #workshops投稿
