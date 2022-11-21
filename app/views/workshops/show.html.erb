@@ -1,18 +1,31 @@
 <div class="review-content">
   <div class="review-title"><span><%=@workshop.w_title%><p>レビューページ！</p></span></div>
     <p> <%=image_tag @workshop.image.url, size: '300x300'%>  
-    <div class="content average-score">
-      <div class="star-rating mb-2">
+    <div class="average-score">
+      <div class="star-rating">
         <div class="star-rating-front" style="width: %"> ★★★★★</div>
         <div class="star-rating-back">★★★★★</div>
       </div>
-      <div class="average-score-display ml-3 pt-2">
-        点（<%= @workshop.posts.count %>件のレビュー）
+      <div class="average-score-display">
+       <p> 点（<%= @workshop.posts.count %>件のレビュー）</p>
       </div>
     </div>
   </div>
     <% if current_user%>
       <%= render 'workshops/form', post: @post, workshop: @workshop %>
     <%end%>
+     <% @posts.each do |post| %>
+       <div class="reviews">
+          <div class="reviews_box_image">
+            <%=image_tag post.image.url, size: '200x200' %>
+          </div>
+          <div class="reviews_box_text">
+            <div class="reviews_box_text1">
+             <p>タイトル：<%= post.title%></p>
+            </div> 
+                <p>コメント<%= post.content%></p>
+          </div> 
+       </div>
+     <%end%>
     <div class="s_b"><p> <%=link_to "他のレビューを見る",posts_index_path(@workshop), class: "review_check"%></p></div>
 </div>

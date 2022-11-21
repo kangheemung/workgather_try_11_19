@@ -18,11 +18,9 @@ class WorkshopsController < ApplicationController
      end
   end
   def show #レビュー作成
-    p"============="
-    params
-    p"============="
     @workshop = Workshop.find(params[:id])
     @post = Post.new
+    @posts=Post.all
   end
   
   private
