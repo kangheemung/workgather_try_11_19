@@ -14,18 +14,20 @@
     <% if current_user%>
       <%= render 'workshops/form', post: @post, workshop: @workshop %>
     <%end%>
-     <% @posts.each do |post| %>
+     <% @workshop.posts.each do |post| %>
        <div class="reviews">
           <div class="reviews_box_image">
             <%=image_tag post.image.url, size: '200x200' %>
           </div>
-          <div class="reviews_box_text">
-            <div class="reviews_box_text1">
-             <p>タイトル：<%= post.title%></p>
+          <div class= "reviews_box_text">
+            <div class= "reviews_box_text1">
+             <span>タイトル：<%= post.title%></span>
             </div> 
-                <p>コメント<%= post.content%></p>
+            <div class= "reviews_box_content">
+              <p>コメント<%= post.content%></p>
+            </div>   
           </div> 
        </div>
      <%end%>
-    <div class="s_b"><p> <%=link_to "他のレビューを見る",posts_index_path(@workshop), class: "review_check"%></p></div>
+    <div class="s_b"><p><%=link_to "他のworkshopを見る",workshops_index_path(@workshop), class: "review_check"%></p></div>
 </div>

@@ -1,6 +1,7 @@
 <div class="p_body">
   <div class="p_title">
   </div>  
+  <div class="rating-box">
     <%= form_for @post, url: posts_create_path(workshop) do |f| %>
           <div class="body_box">
             <div class="b_b_t">
@@ -10,23 +11,32 @@
               <p><%=f.file_field :image%></p>
             </div>
           </div>
-          <div>
-            <!-星マーク>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div>
-            <span></span>
-          </div>
-          <div class="body_box">    
-            <p> <%=f.hidden_field :score, id:"rating-value"%></p>   
-            <p> <%=f.hidden_field :workshop_id, value: workshop.id%></p>
-            <p><%= f.text_field :title, :placeholder => "タイトル",class: "review_title_box"%></p>
-            <p><%= f.text_field :content, :placeholder => "あなたの感想を書いて下さい。",class: "review_textarea_box"%></p>
+          #다시생각해보자.
+          <%= form_with(model: @model, local: true) do |f| %>
+            <div class="main-rating">
+              <div class="ratings mb-3">
+                <div class="star-form-group" id="star1"> 
+                   <%= f.label :comfort,'乗り心地', class:'star-title' %>
+                 </div>  
+          <%end%>       
+                <!-星マーク>
+                <span class="fa fa-star-o" id="star"></span>
+                <span class="fa fa-star-o" id="star"></span>
+                <span class="fa fa-star-o" id="star"></span>
+                <span class="fa fa-star-o" id="star"></span>
+                <span class="fa fa-star-o" id="star"></span>
+              </div>
+              <div class="rating-value-display">
+                <span id="rating-value-display">0</span>/5
+              </div>
+            </div> 
+          <div class= "body_box">   
+            <p> <%= f.hidden_field :score, id:"rating-value" %></p>   
+            <p> <%= f.hidden_field :workshop_id, value: workshop.id %></p>
+            <p> <%= f.text_field :title, :placeholder => "タイトル",class: "review_title_box"%></p>
+            <p> <%= f.text_field :content, :placeholder => "あなたの感想を書いて下さい。",class: "review_textarea_box"%></p>
             <p> <%= f.submit "投稿", class: "button" %></p>
           </div>  
     <%end%>
+  </div>
 </div>
