@@ -4,15 +4,24 @@
 <div class="w_body">
   <% @workshops.each do |workshop| %>
     <div class="w_table_left">
-        <div class="w_title">
-          <span><%= workshop.w_title%></span>
+        <div class="w_header_left">
+          <div class="w_title">
+            <span><%= workshop.w_title%></span>
+          </div>
+          <div class="w_theme">
+            <span><%= workshop.w_theme%></span>
+          </div>
+        </div>  
+        <div class="w_img_d">
+          <p> <%= image_tag workshop.image.url,class:"w_img"%>  
         </div>
-        <div class="w_theme">
-          <span><%= workshop.w_theme%></span>
-        </div>
-        <div class="w_img">
-          <p> <%= image_tag workshop.image.url, size: '300x300'%>  
-        </div>
+          <div class="average-score">
+            <div class="w_star-rating">
+                 <div class="star-rating-front" style="width:<%= @workshop.review_score_percentage %>%"> ★★★★★</div>
+                 <div class="star-rating-back">★★★★★</div>
+            </div>
+            <p>  <%= @workshop.avg_score %>点（<%= @workshop.posts.count %>件のレビュー）</p>
+          </div>
     </div>
     <div class="w_table_right">
       <% if current_planner.present? %>

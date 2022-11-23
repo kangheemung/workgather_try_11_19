@@ -9,7 +9,6 @@ class PostsController < ApplicationController
       @workshop =Workshop.new
     end
     def create
-      
        post = current_user.posts.build(post_params)
        if post.save 
         redirect_to workshops_show_path(post.workshop_id)
@@ -36,6 +35,6 @@ class PostsController < ApplicationController
     end
     private
     def post_params
-      params.require(:post).permit(:title,:content,:image,:workshop_id,:user_id,:score )
+      params.require(:post).permit(:title,:content,:image,:workshop_id,:score )
     end 
 end

@@ -2,7 +2,8 @@ class WorkshopsController < ApplicationController
   include  PlannerSessionsHelper
   def index
     @workshops = Workshop.all
-    @workshop = Workshop.new
+    @workshop=Workshop.new
+   
   end
   def new
     @workshop = Workshop.new
@@ -14,6 +15,7 @@ class WorkshopsController < ApplicationController
      if workshop.save
        redirect_to ("/workshops/index")
      else
+      @workshop = Workshop.find(params[:workshop_id])
        render "show"
      end
   end
