@@ -3,6 +3,7 @@ class WorkshopsController < ApplicationController
   def index
     @workshops = Workshop.all
     @workshop=Workshop.new
+    @posts=Post.all
    
   end
   def new
