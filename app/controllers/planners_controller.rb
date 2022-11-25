@@ -17,11 +17,15 @@ include  PlannerSessionsHelper
       render :new
     end
   end
+  def mypage
+    @planner = Planner.find_by(id: params[:id])
+    @workshop = Workshop.find_by(id:params[:id])
+  end
   def show
-    @planner=Planner.find_by(id: params[:id])
+    @planner = Planner.find_by(id: params[:id])
   end
   def edit 
-    @planner=Planner.find_by(id: params[:id])
+    @planner = Planner.find_by(id: params[:id])
   end
   def update
     @planner=Planner.find_by(id: params[:id])
