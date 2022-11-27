@@ -16,9 +16,9 @@
 }
 .w_s_header1{ 
     color: whitesmoke;
-   margin-left: 30%;
-   margin-top: 2%;
-   font-size:large;
+    margin-left: 30%;
+    margin-top: 2%;
+    font-size:large;
    font-weight: bolder;
    
    
@@ -55,6 +55,7 @@
     text-align: center;
     margin-left: 1%;
     margin-bottom: 5%;
+    padding-bottom:3%;
 }
 .w_title{
     background-color: whitesmoke;
@@ -97,10 +98,15 @@
     padding-left: 15%;
     padding-right: 15%;
     padding-bottom: 5%;
+    margin-bottom: 10%;
     border: solid 1px;
     font-size: large;
     border-radius: 5%;
     color: #004A54;
+}
+.w_p_table_text{
+    margin:10%;
+    padding-bottom: 5%;
 }
 //index
 .p_s_body{

@@ -12,12 +12,14 @@ class WorkshopsController < ApplicationController
   end
   def create
      #p "params: #{params}"#
-     workshop = current_planner.workshops.build(workshop_params)
-     if workshop.save
+     @workshop = current_planner.workshops.build(workshop_params)
+     if @workshop.save
        redirect_to ("/workshops/index")
      else
-      @workshop = Workshop.find(params[:workshop_id])
-       render "show"
+       #p"========"
+       #p @workshop.errors.full_messages
+       #p"==========="
+       render "new"
      end
   end
   def show #レビュー作成

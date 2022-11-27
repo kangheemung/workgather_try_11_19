@@ -87,6 +87,7 @@
 .mypage_body{
     background-color: #626A67;
     color: whitesmoke;
+    padding-bottom: 10%;
 }
 .planner_info{
     display: flex;
@@ -114,14 +115,48 @@
     margin-left:5%;
     margin-top:5%
 }
+//mypage
+.mypage_body{
+    color: #DBE5E6;
+    text-decoration: none;
+    text-align: center;
+}
 .booking_detail{
     text-align: center;
 }
 .booking_detail1{
-    border:solid 3px; 
+    border:solid 3px #dedede  ;
+    border-radius: 30px;
+    background-color:   #dedede ;
     width:90%;
     height: 20%;
+    margin-left: 5%;
+    margin-right: 5%;  
 }
-.booking_detail2{
-    
+.link{
+    color: #DBE5E6;
+    font-size: x-large;
+    font-weight: bolder;
+    text-decoration: none;
+}
+.link_box{
+    margin-top: 7%;
+}
+.planner_schedule{
+    display: flex;
+}
+.p_schedule{
+    text-decoration: none;
+    width: 23%;  
+    text-align: center;
+    margin-top: 10%;
+    margin-left: 8%;
+}
+.p_schedule_i{
+    width: 100%;  
+    text-align: center;
+}
+.p_schedule a{
+    text-decoration: none;
+    color:#004A54;
 }
