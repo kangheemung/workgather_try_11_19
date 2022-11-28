@@ -3,7 +3,7 @@
  <div class="header1">
     <div class="s_header">ASOBINAGARA</div><!三本のイメージを押したら　カテゴリーが開きます。-->
       <div class="s_header1">
-        <%= link_to "mypage",planners_mypage_path, data: {"turbolinks" => false}%>
+        <%= link_to "mypage",planners_show_path(planner),data: {"turbolinks" => false}  %>
         <%= link_to "workshop作成",workshops_new_path, data: {"turbolinks" => false}%>|
         <%= link_to "workshop見に行く",workshops_index_path, data: {"turbolinks" => false} %>|
         <%= link_to "ログアウト",planners_logout_path, method: :delete %>
@@ -14,7 +14,7 @@
     <div class="s_header">ASOBINAGARA</div><!三本のイメージを押したら　カテゴリーが開きます。-->
     <div class="s_header1">
       <%= link_to "top",root_path%>|
-      <%= link_to "mypage",planners_mypage_path, data: {"turbolinks" => false}%>|
+      <%= link_to "mypage",users_show_path, data: {"turbolinks" => false}%>|
       <%= link_to "workshopを見に行く",workshops_index_path, data: {"turbolinks" => false} %>|
       <%= link_to "ログアウト",users_logout_path, method: :delete %>
     </div>

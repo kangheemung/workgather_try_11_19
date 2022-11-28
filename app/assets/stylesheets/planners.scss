@@ -10,21 +10,13 @@
 }
 .signup{
     text-align: left;
-    border: solid 3px;
-    border-radius: 10px;
-    margin-top: 5%;
    
-   
+    border-radius: 10px;  
 }
 .sign_up_main{
     padding-left:10% ;
 }
-.signup_body{
-    background-color:whitesmoke;
-    padding-bottom: 1%;
-    border-radius: 10px;
-    color: #004A54;
-}
+
 .signup_body p{
     padding-top: 4%;
     text-align: center;
@@ -83,20 +75,20 @@
     font-size: x-small;
     color: whitesmoke;
 }
-//mypage
+//show
 .mypage_body{
     background-color: #626A67;
     color: whitesmoke;
+    padding-top: 5%;
     padding-bottom: 10%;
+    color: #DBE5E6;
+    text-decoration: none;
+    text-align: center;
 }
 .planner_info{
     display: flex;
     text-align: center;
     
-}
-.planner_info_left{
-    margin-right: 10%;
-    margin-left:10%;
 }
 .planner_info_right{
     border:solid 3px; 
@@ -113,9 +105,9 @@
 .planner_info_right p{
     padding-right:5%;
     margin-left:5%;
-    margin-top:5%
+    margin-top:5%;
+    padding-left:5%;
 }
-//mypage
 .mypage_body{
     color: #DBE5E6;
     text-decoration: none;

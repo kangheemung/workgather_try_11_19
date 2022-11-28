@@ -82,3 +82,77 @@
 .gender_box{
     margin-top: 3%;
 }
+.u_mypage_body{
+    background-color: #626A67;
+    color: whitesmoke;
+    padding-bottom: 10%;
+    color: #DBE5E6;
+    text-decoration: none;
+    text-align: center;
+}
+.user_info{
+    display: flex;
+    text-align: center;
+    
+}
+.user_info_left{
+    margin-right: 10%;
+    margin-left:10%;
+}
+.user_info_right{
+    border:solid 3px; 
+    width: 50%;
+    border-radius: 2;
+    margin-top:5%;
+    margin-right:5%;
+    margin-bottom: 5%;
+    padding-right: 5%;
+    padding-left:5%;
+    padding-top:5%;
+    padding-bottom: 5%;
+}
+.user_info_right p{
+    padding-right:5%;
+    margin-left:5%;
+    margin-top:5%
+}
+
+.u_booking_detail{
+    text-align: center;
+}
+.u_booking_detail1{
+    border:solid 3px #dedede  ;
+    border-radius: 30px;
+    background-color:   #dedede ;
+    width:90%;
+    height: 20%;
+    margin-left: 5%;
+    margin-right: 5%;  
+}
+.u_link{
+    color: #DBE5E6;
+    font-size: x-large;
+    font-weight: bolder;
+    text-decoration: none;
+}
+.u_link_box{
+    margin-top: 7%;
+}
+.user_schedule{
+    display: flex;
+}
+.u_schedule{
+    text-decoration: none;
+    width: 23%;  
+    text-align: center;
+    margin-top: 10%;
+    margin-left: 8%;
+}
+.u_schedule_i{
+    width: 100%;  
+    text-align: center;
+}
+.u_schedule a{
+    text-decoration: none;
+    color:#004A54;
+}

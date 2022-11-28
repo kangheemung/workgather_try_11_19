@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :last_name
       t.string :birthday
       t.integer :gender
-      t.integer :post_id
+      t.string :u_profile_id
       t.timestamps
     end
   end

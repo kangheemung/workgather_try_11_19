@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   get 'users/index' => 'users#index'
   get 'users/new'=>'users#new', as:'signup'
   post 'users/create'=>'users#create',as:'users'
-  get 'users/mypage'=>'users#mypage',as:'user_mypage'
+  get 'users/mypage'=>'users#mypage',as:'users_mypage'
   get 'users/:id/edit' => 'users#edit',as:'users_edit'
   patch 'users/:id/edit'=>'users#update',as:'users_update'
   get 'users/:id' => 'users#show',as:'users_show'

@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2022_10_30_110220) do
     t.string "last_name"
     t.string "birthday"
     t.integer "gender"
-    t.integer "post_id"
+    t.string "u_profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -31,7 +31,7 @@
                 <div class="body_box">
                 <%= f.label :誕生日%>
                 </div> 
-                <%= f.date_field :birthday, :placeholder => "birthday" %>
+                <%= f.date_field :birthday, :placeholder => "birthday",value: @user.birthday %>
                 <div class="gender_box">
                     <div class="body_box">
                     <%= f.label :gender,'性別' %>

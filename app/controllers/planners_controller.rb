@@ -12,19 +12,17 @@ include  PlannerSessionsHelper
         log_in(planner)
         #  session[:planner_id]=planner.id
         flash[:notice]="ユーザー登録が完了しました。"
-        redirect_to planners_show_path(@planner.id)
+        redirect_to planners_show_path(planner.id)
       else
       render :new
     end
   end
-  def mypage
-    @planner = Planner.find_by( params[:id])
+  def show  
+    @planner = Planner.find_by(params[:id])
+   
       #p"========"
       #p @planner.errors.full_messages
       #p"==========="
-  end
-  def show
-    @planner = Planner.find_by(id: params[:id])
   end
   def edit 
     @planner = Planner.find_by(id: params[:id])
