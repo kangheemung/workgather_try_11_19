@@ -24,10 +24,15 @@
                 </div> 
                 <%= f.password_field  :password_confirmation, :placeholder => "password_confirmation"%>
                 <div class="body_box">
-                <%= f.label :name %>
+                <%= f.label :プロフィールの写真　%></p>
+                <%= attachment_image_tag @user, :u_profile_id ,size:'100x100'%></p>
+                <%= f.attachment_field :u_profile_id , placeholder: "プロフィール画像" %>
                 </div> 
+                <div class="body_box">
+                <%= f.label :name %>
                 <%= f.text_field :first_name, :placeholder => "first_name",class:"name" %>
                 <%= f.text_field :last_name, :placeholder => "last_name",class:"name" %>
+                </div>
                 <div class="body_box">
                 <%= f.label :誕生日%>
                 </div> 

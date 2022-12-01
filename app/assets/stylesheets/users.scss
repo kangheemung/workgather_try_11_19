@@ -13,37 +13,33 @@
     border: solid 3px;
     border-radius: 10px;
     margin-top: 5%;
-   
-   
 }
 .sign_up_main{
-    padding-left:10% ;
+    padding-left:10%;
 }
 .signup_body{
     background-color:whitesmoke;
     padding-bottom: 1%;
     border-radius: 10px;
-    text-decoration: none
+    text-decoration: none;
 }
 .signup_body p{
     padding-top: 4%;
     text-align: center;
-    text-decoration: none
-    
+    text-decoration: none;  
 }
 .signup_body a{
     color: #004A54;
-    text-decoration: none
+    text-decoration: none;
 }
 .signup_text{ 
-    margin-top: 5%;
     font-size: x-large;
     font-weight: bolder;
     margin-bottom: 10%;
     text-align: center;
 }
 .body{
-    margin-left: 5%;
+    margin-left:5%;
     text-align: center;
 }
 .button{
@@ -57,7 +53,7 @@
     border: solid 1px;
     font-size: large;
     border-radius: 5%;
-    color:whitesmoke
+    color:whitesmoke;
 }
 .login{
     margin-bottom: 5%;
@@ -67,7 +63,6 @@
     width: 100%;
     margin-top: 3%;   
 }
-
 .name{
     width:20%;
     margin-top: 3%; 
@@ -83,6 +78,7 @@
     margin-top: 3%;
 }
 .u_mypage_body{
+    padding-top: 10%;
     background-color: #626A67;
     color: whitesmoke;
     padding-bottom: 10%;
@@ -91,39 +87,36 @@
     text-align: center;
 }
 .user_info{
-    display: flex;
     text-align: center;
-    
 }
 .user_info_left{
-    margin-right: 10%;
-    margin-left:10%;
+    width: 80%;
+    margin-top: 15%;
+    margin-left: 10%;
+}
+.round-img{
+    width: 100%;
 }
 .user_info_right{
     border:solid 3px; 
-    width: 50%;
-    border-radius: 2;
-    margin-top:5%;
-    margin-right:5%;
-    margin-bottom: 5%;
-    padding-right: 5%;
-    padding-left:5%;
-    padding-top:5%;
-    padding-bottom: 5%;
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;
 }
 .user_info_right p{
     padding-right:5%;
     margin-left:5%;
-    margin-top:5%
+    margin-top:5%;
+    margin-bottom:5%;
 }
 
 .u_booking_detail{
     text-align: center;
 }
 .u_booking_detail1{
-    border:solid 3px #dedede  ;
+    border:solid 3px #dedede;
     border-radius: 30px;
-    background-color:   #dedede ;
+    background-color:#dedede;
     width:90%;
     height: 20%;
     margin-left: 5%;
@@ -155,4 +148,7 @@
 .u_schedule a{
     text-decoration: none;
     color:#004A54;
+}
+.u_profile{
+    width: 90%;
 }

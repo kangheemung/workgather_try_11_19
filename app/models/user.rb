@@ -8,6 +8,9 @@ class User < ApplicationRecord
     #validates :birthday, presence: true
     #validates :gender,{presence: true}
     has_secure_password 
+    mount_uploader :u_profile_id,UProfileIdUploader 
+    attachment :u_profile_id
+    #resource :user, only: %i[show edit update]
     has_many :posts#, dependent::destroy
     has_many :workshops
     has_many :images, class_name: "Image"
