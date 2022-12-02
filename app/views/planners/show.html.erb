@@ -4,6 +4,9 @@
   </div>
   <div class="planner_info">
     <div class="planner_info_left">
+    <% if @workshop.profile_img? %>
+      <%= image_tag @workshop.profile_img.url ,size: '300x300'%>
+      <% end %>
       <span>フロフィル写真</span>
     </div>
     <div class="planner_info_right">

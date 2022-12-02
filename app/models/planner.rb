@@ -9,4 +9,5 @@ class Planner < ApplicationRecord
     #validates :gender,{presence: true}
     has_secure_password
     has_many :workshops
+   
 end

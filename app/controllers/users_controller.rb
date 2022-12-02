@@ -23,6 +23,7 @@ include  UserSessionsHelper
   end
   def edit
     @user=User.find_by(id: params[:id])
+  
     p"============"
     p @user.errors.full_messages
     p"============"
