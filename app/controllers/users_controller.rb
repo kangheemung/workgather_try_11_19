@@ -23,11 +23,14 @@ include  UserSessionsHelper
   end
   def edit
     @user=User.find_by(id: params[:id])
+    p"============"
+    p @user.errors.full_messages
+    p"============"
   end
   def update
-    p"============"
-        p @user.errors.full_messages
-    p"============"
+    #p"============"
+     #   p @user.errors.full_messages
+    #p"============"
     @user=User.find_by(id: params[:id])
     if @user.update(user_params)
         #  session[:user_id]=user.id

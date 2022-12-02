@@ -118,7 +118,7 @@
   </div>  
     <hr>
     <div class="link_box">
-        <%= link_to "編集", "/users/#{@user.id}/edit/" , class:"link"%> |
+        <%= link_to "編集", "/users/#{@user.id}/edit/" , class:"link", data: {"turbolinks" => false} %> |
         <%= link_to "ワークショップを見に行く！", "/workshops/index", class:"link" %>
         <%=link_to "userの詳細ページに行く!",users_show_path(@user.id), class:"link"%>
     </div>
