@@ -4,7 +4,9 @@
   </div>
   <div class="user_info">
     <div class="user_info_left">
-        <%= attachment_image_tag @user, :u_profile_id ,size:'100x100'%></p>
+      <% if @user.u_profile_id? %>
+      <%= image_tag @user.u_profile_id.url ,size: '300x300'%>
+      <% end %>
        <p><span>フロフィル写真</span></p>
     </div> 
     <div class="user_info_right">

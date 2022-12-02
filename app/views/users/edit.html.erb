@@ -23,10 +23,9 @@
                 <%= f.label :password_confirmation %>
                 </div> 
                 <%= f.password_field  :password_confirmation, :placeholder => "password_confirmation"%>
-                <div class="body_box">
+                 <div class="body_box">
                 <%= f.label :プロフィールの写真　%></p>
-                <%= attachment_image_tag @user, :u_profile_id ,size:'100x100'%></p>
-                <%= f.attachment_field :u_profile_id , placeholder: "プロフィール画像" %>
+                <%=  f.file_field :u_profile_id %></p>
                 </div> 
                 <div class="body_box">
                 <%= f.label :name %>
