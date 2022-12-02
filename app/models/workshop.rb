@@ -3,6 +3,7 @@ class Workshop < ApplicationRecord
     mount_uploader :image, WorkshopPhotoUploader 
     mount_uploader :profile_img, WorkshopPhotoUploader 
     belongs_to :planner,class_name: "Planner",optional: true 
+    mount_uploader :planner_profile,  PlannerProfileUploader
     has_many :posts#, dependent::destroy
     def avg_score
         unless self.posts.empty?#workshopsが空では無かったら下記を返す。

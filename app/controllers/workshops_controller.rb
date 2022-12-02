@@ -4,7 +4,6 @@ class WorkshopsController < ApplicationController
     @workshops = Workshop.all
     @workshop=Workshop.new
     @posts=Post.all
-   
   end
   def new
     @workshop = Workshop.new

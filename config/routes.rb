@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   #top
   root 'homes#top'
 
@@ -41,7 +42,10 @@ Rails.application.routes.draw do
   get 'planners/:id/edit' => 'planners#edit',as:'planners_edit'
   post 'planners/:id/edit' => 'planners#update',as:'planners_update'
   get 'planners/:id' => 'planners#show',as:'planners_show'
+ #planner_profile_img
+ post 'profile_p/create'=>'profile_p#create',as:'profile_p'
  
+
   #workshops投稿
   get 'workshops/index'=>'workshops#index',as:'workshops_index'
   get 'workshops/new'=>'workshops#new',as:'workshops_new'

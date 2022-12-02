@@ -8,6 +8,10 @@
       <%= image_tag @user.u_profile_id.url ,size: '300x300'%>
       <% end %>
        <p><span>フロフィル写真</span></p>
+         <%= form_for :profile_ps , url: profile_p_path do |f| %>
+         <%= f.label :プロフィールの写真　%></p>
+                <%=  f.file_field :profile_img %></p>
+                </div> 
     </div> 
     <div class="user_info_right">
       <p>name: <%= current_user.user_name %></p>

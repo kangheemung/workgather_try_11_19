@@ -20,18 +20,15 @@ include  PlannerSessionsHelper
   end
   def show  
     @planner = Planner.find(params[:id])
-    @workshop = Workshop.find(params[:id])
-   
       #p"========"
       #p @planner.errors.full_messages
       #p"==========="
   end
   def edit 
     @planner = Planner.find(params[:id])
-    
   end
   def update
-    @planner=Planner.find( params[:id])
+     @planner=Planner.find( params[:id])
     if @planner.update(planner_params)
         #  session[:planner_id]=planner.id
         flash[:notice]="プランナー情報を更新しました。"

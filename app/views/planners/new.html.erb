@@ -6,38 +6,40 @@
  <div class="body">
     <%= form_for @planner, url:planners_create_path do |f| %>
         <div class="body_box">    
-        <%= f.label :user_name %><br>
+        <p><%= f.label :user_name %></p>
         </div>  
-        <%= f.text_field :user_name, :placeholder => "User name"%><br>
+        <p><%= f.text_field :user_name, :placeholder => "User name"%></p>
         <div class="body_box">  
-        <%= f.label :email%><br>
+        <p><%= f.label :email%></p>
         </div>  
-        <%= f.text_field :email, :placeholder => "email"  %><br>
+        <p><%= f.text_field :email, :placeholder => "email"  %></p>
         <div class="body_box">  
-        <%= f.label :password %><br>
+        <p><%= f.label :password %></p>
         </div>  
         <%= f.password_field :password, :placeholder => "password" %><br>
         <div class="body_box">  
-        <%= f.label :password_confirmation %><br>
+        <p><%= f.label :password_confirmation %></p>
         </div>  
-        <%= f.password_field :password_confirmation, :placeholder => "password_confirmation"%><br>
-        <div class="body_box">  
-        <%= f.label :name %><br>
+        <p><%= f.password_field :password_confirmation, :placeholder => "password_confirmation"%></p>
+        <div class="body_box"> 
+        <p><%= f.label :name %></p>
+        </div>     
+        <div class="body_box"> 
+        <p><%= f.text_field :first_name, :placeholder => "first_name", class:"name"%>
+        <%= f.text_field :last_name, :placeholder => "last_name" ,class:"name" %> </p>
         </div>  
-        <%= f.text_field :first_name, :placeholder => "first_name", class:"name"%>
-        <%= f.text_field :last_name, :placeholder => "last_name" ,class:"name" %> 
         <div class="body_box">
-        <%= f.label :誕生日%><br>
+        <p><%= f.label :誕生日%></p>
         </div>
-        <%= f.date_field :birthday, :placeholder => "birthday",value: @planner.birthday%>
+        <p><%= f.date_field :birthday, :placeholder => "birthday",value: @planner.birthday%></p>
             <div class="gender_box">
                 <div class="body_box">
-                <%= f.label :gender,'性別' %><br>
+                <p><%= f.label :gender,'性別' %></p>
                 </div>
-                <%= f.select :gender, {'男性': 1,'女性': 2,'その他': 3},{ include_blank: '選択してください'}, { class: 'form-control' , required: true } %></td>
+                <p><%= f.select :gender, {'男性': 1,'女性': 2,'その他': 3},{ include_blank: '選択してください'}, { class: 'form-control' , required: true } %></p></td>
             </div>
         <div class="sign_btn">
-            <%= f.submit "会員登録", class: "button" %><br>
+            <p><%= f.submit "会員登録", class: "button" %></p>
         </div>
     <% end %>
     <div class= "login">

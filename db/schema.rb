@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_30_110220) do
+ActiveRecord::Schema.define(version: 2022_12_02_064446) do
 
   create_table "images", force: :cascade do |t|
     t.string "name"
@@ -40,6 +40,12 @@ ActiveRecord::Schema.define(version: 2022_10_30_110220) do
     t.integer "user_id"
     t.integer "score"
     t.integer "workshop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "profile_ps", force: :cascade do |t|
+    t.string "planner_profile"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
