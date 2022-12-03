@@ -1,9 +1,10 @@
 class Workshop < ApplicationRecord
-    #validates :w_title,:w_theme,:image,:prefecture,:address1,:address2,:planner_id,:w_detail,:p_text,:p_detail,:profile_img,:time,:personnel,:precautions,{presence: true}
+   #validates :w_title,:w_theme,:image,:prefecture,:address1,:address2,:planner_id,:w_detail,:p_text,:p_detail,:profile_img,:time,:personnel,:precautions,{presence: true}
     mount_uploader :image, WorkshopPhotoUploader 
     mount_uploader :profile_img, WorkshopPhotoUploader 
-    belongs_to :planner,class_name: "Planner",optional: true 
+   #workshopと別にプロフィールイメージ作成してみる 
     mount_uploader :planner_profile,  PlannerProfileUploader
+    belongs_to :planner,class_name: "Planner",optional: true 
     has_many :posts#, dependent::destroy
     def avg_score
         unless self.posts.empty?#workshopsが空では無かったら下記を返す。

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+ 
+  get 'profiles/new'
+  get 'profiles/create'
+  get 'profiles/update'
   #top
   root 'homes#top'
 
@@ -17,6 +21,11 @@ Rails.application.routes.draw do
   get 'planners/login_form' => 'planner_sessions#new',as:'planners_login'
   post 'planners/login' => 'planner_sessions#create',as:'planners_login_create'
   delete 'planners/logout' => 'planner_sessions#destroy',as:'planners_logout'
+  #plannerフロフール写真
+  get 'profiles/new'=>'profiles#new',as:'profile_new'
+  post 'profiles/create'=>'profile#create',as:'profile_create'
+  get 'profiles/update'=>'profiles#update'
+  patch 'profiles/:id/edit'=>'profile_ps#edit',as:'profile_edit'
   #投稿
   get 'posts/index'=>'posts#index',as:'posts_index'
   get 'posts/new'=>'posts#new',as:'posts_new'

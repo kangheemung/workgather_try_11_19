@@ -10,6 +10,9 @@ include  PlannerSessionsHelper
   def create
     planner = Planner.new(planner_params)
     if planner.save
+       #p"========"
+      #p @planner.errors.full_messages
+      #p"==========="
         log_in(planner)
         #  session[:planner_id]=planner.id
         flash[:notice]="ユーザー登録が完了しました。"
@@ -20,6 +23,8 @@ include  PlannerSessionsHelper
   end
   def show  
     @planner = Planner.find(params[:id])
+    @workshop =Workshop.find_by(params[:id])
+    @profile=Profile.new
       #p"========"
       #p @planner.errors.full_messages
       #p"==========="
@@ -39,6 +44,6 @@ include  PlannerSessionsHelper
  end
 private
   def planner_params
-    params.require(:planner).permit(:user_name,:email,:password,:password_confirmation,:first_name,:last_name,:birthday,:gender,:workshop_id)
+    params.require(:planner).permit(:user_name,:email,:password,:password_confirmation,:first_name,:last_name,:birthday,:gender,:workshop_id,:planner_profile,:p_detail)
   end
 end

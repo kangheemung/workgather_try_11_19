@@ -9,5 +9,7 @@ class Planner < ApplicationRecord
     #validates :gender,{presence: true}
     has_secure_password
     has_many :workshops
-    mount_uploader :planner_profile,  PlannerProfileUploader
+    has_many :profiles
+    mount_uploader :planner_profile,PlannerProfileUploader
+   
 end

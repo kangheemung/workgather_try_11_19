@@ -83,24 +83,23 @@
     padding-bottom: 10%;
     text-decoration: none;
     text-align: center; 
-}
-    
+}   
 .planner_info{
-    display: flex;
-    text-align: center;
-    
+    text-align: center; 
+}
+.planner_info_left{
+    width: 70%;
+    margin:  0 auto; 
 }
 .planner_info_right{
     border:solid 3px; 
     width: 50%;
     border-radius: 2;
-    margin-top:5%;
-    margin-right:5%;
-    margin-bottom: 5%;
     padding-right: 5%;
     padding-left:5%;
     padding-top:5%;
     padding-bottom: 5%;
+    margin:  0 auto; 
 }
 .planner_info_right p{
     padding-right:5%;
@@ -146,4 +145,10 @@
 .p_schedule a{
     text-decoration: none;
     color:#004A54;
+}
+.planner_profile{
+     margin-top: 10%;
+     width: 80%;
+     height: 80%;
+     border-radius:50%;
 }

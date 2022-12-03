@@ -4,10 +4,12 @@
   </div>
   <div class="planner_info">
     <div class="planner_info_left">
-      <% if @planner.planner_profile? %>
-        <%= image_tag @plannner.planner_profile.url %>
+      <% if @planner.planner_profile.present? %>
+      <%= image_tag @planner.planner_profile.url ,class:"planner_profile"%>
+      <% else %>
+      <%= image_tag 'noname.png' ,class:"planner_profile"%>
       <% end %>
-      <span>フロフィル写真</span>
+      <p><span>フロフィル写真</span></p>
     </div>
     <div class="planner_info_right">
       <p>name: <%= current_planner.user_name %></p>
@@ -16,6 +18,7 @@
       <p>last_name: <%= current_planner.last_name%></p>
       <p>birthday: <%= current_planner.birthday%></p>
       <p>gender: <%= current_planner.gender%></p>
+      <p>profile_detail: <%= current_planner.p_detail%></p>
       <span>予約0件</span>
       <span>投稿0件</span>
     </div>
@@ -119,7 +122,7 @@
   </div>  
     <hr>
     <div class="link_box">
-        <%= link_to "編集", "/planners/#{@planner.id}/edit/" , class:"link"%> |
+        <%= link_to "編集", "/planners/#{@planner.id}/edit/" , class:"link", data: {"turbolinks" => false}%> |
         <%= link_to "ワークショップを見に行く！", "/workshops/index" , class:"link" %>
         <%=link_to "plannnerの詳細ページに行く!",planners_show_path(@planner.id), class:"link"%>
     </div>
