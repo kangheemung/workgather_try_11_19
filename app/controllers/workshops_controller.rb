@@ -21,18 +21,24 @@ class WorkshopsController < ApplicationController
        render "new"
      end
   end
-  def show #詳細
-    @workshop = Workshop.find(params[:id])
-    @post = Post.new
-    @posts=Post.all
-  end
   def review #レビュー作成
     @workshop = Workshop.find(params[:id])
+      #p"========"
+      #p @workshop.errors.full_messages
+      #p"==========="
     @post = Post.new
     @posts=Post.all
+    
+  end
+  def show #詳細
+    @workshop = Workshop.find(params[:id])
+    #p"========"
+    #p @workshop.errors.full_messages
+    #p"==========="
+  @post = Post.new
+  @posts=Post.all
   end
   def edit #詳細
-    
   end
   def update
     @workshop=workshop.find(params[:id])

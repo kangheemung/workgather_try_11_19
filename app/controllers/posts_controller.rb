@@ -13,7 +13,7 @@ class PostsController < ApplicationController
        if post.save 
         redirect_to workshops_review_path(post.workshop_id)
        else
-         render :review
+        redirect_to workshops_review_path(post.workshop_id)
        end
     end
     def show
