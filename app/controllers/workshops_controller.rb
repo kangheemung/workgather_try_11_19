@@ -38,7 +38,7 @@ class WorkshopsController < ApplicationController
     @workshop=workshop.find(params[:id])
     if @workshop.update(workshop_params)
         flash[:notice]="プランナー情報を更新しました。"
-        redirect_to workshops_show_path(@workshop.id)
+        redirect_to workshops_review_path(@workshop.id)
     else
       render :edit
     end
