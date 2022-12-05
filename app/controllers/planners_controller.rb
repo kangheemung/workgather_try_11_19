@@ -44,6 +44,6 @@ include  PlannerSessionsHelper
  end
 private
   def planner_params
-    params.require(:planner).permit(:user_name,:email,:password,:password_confirmation,:first_name,:last_name,:birthday,:gender,:workshop_id,:planner_profile,:p_detail)
+    params.require(:planner).permit(:user_name,:email,:password,:password_confirmation,:first_name,:last_name,:birthday,:gender,:planner_profile,:p_detail)
   end
 end

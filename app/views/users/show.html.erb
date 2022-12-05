@@ -5,7 +5,7 @@
   <div class="user_info">
     <div class="user_info_left">
       <% if @user.u_profile_id? %>
-        <%= image_tag @user.u_profile_id.url ,size: '300x300'%>
+        <%= image_tag @user.u_profile_id.url ,class: "u_profile_img"%>
       <% end %>
        <p><span>フロフィル写真</span></p>
     </div> 

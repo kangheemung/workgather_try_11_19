@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  
- 
-  get 'profiles/new'
-  get 'profiles/create'
-  get 'profiles/update'
   #top
   root 'homes#top'
 
@@ -51,16 +46,13 @@ Rails.application.routes.draw do
   get 'planners/:id/edit' => 'planners#edit',as:'planners_edit'
   post 'planners/:id/edit' => 'planners#update',as:'planners_update'
   get 'planners/:id' => 'planners#show',as:'planners_show'
- #planner_profile_img
- post 'profile_p/create'=>'profile_p#create',as:'profile_p'
- 
-
   #workshops投稿
   get 'workshops/index'=>'workshops#index',as:'workshops_index'
   get 'workshops/new'=>'workshops#new',as:'workshops_new'
+  post 'workshops/create'=>'workshops#create',as:'workshops_create'
+  get 'workshops/:id/review'=>'workhshops#review',as:'workshops_review'
   get 'workshops/:id/edit' => 'workshops#edit',as:'workshops_edit'
   patch 'workshops/:id/edit' => 'workshops#update',as:'workshops_update'
-  post 'workshops/create'=>'workshops#create',as:'workshops_create'
   get 'workshops/:id'=> 'workshops#show',as:'workshops_show'
   #album
   get 'images/index'=>'images#index'

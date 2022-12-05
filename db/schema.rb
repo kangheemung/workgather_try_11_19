@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2022_12_03_110730) do
     t.string "birthday"
     t.string "gender"
     t.string "planner_profile"
-    t.string "p_detail"
+    t.text "p_detail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -74,9 +74,6 @@ ActiveRecord::Schema.define(version: 2022_12_03_110730) do
     t.string "address2"
     t.integer "planner_id"
     t.text "w_detail"
-    t.text "p_text"
-    t.text "p_detail"
-    t.string "profile_img"
     t.string "time"
     t.string "personnel"
     t.text "precautions"

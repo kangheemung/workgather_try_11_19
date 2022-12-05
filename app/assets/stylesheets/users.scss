@@ -88,21 +88,24 @@
 }
 .user_info{
     text-align: center;
-    
 }
 .user_info_left{
-    width: 80%;
-    margin-top: 15%;
-    margin-left: 10%;
+    width: 70%;
+    margin:  0 auto; 
+    
 }
 .round-img{
     width: 100%;
 }
 .user_info_right{
     border:solid 3px; 
-    width: 80%;
-    text-align: center;
-    margin-left: 10%;
+    width: 50%;
+    border-radius: 2;
+    padding-right: 5%;
+    padding-left:5%;
+    padding-top:5%;
+    padding-bottom: 5%;
+    margin:  0 auto; 
 }
 .user_info_right p{
     padding-right:5%;
@@ -152,4 +155,9 @@
 }
 .user_profile{
     width: 50%;
+}
+.u_profile_img{
+     width: 350px;
+     height:350px;
+     border-radius:50%;
 }
