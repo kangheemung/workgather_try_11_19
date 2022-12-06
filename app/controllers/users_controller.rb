@@ -12,8 +12,8 @@ include  UserSessionsHelper
     if user.save
       #session[:user_id]=user.id
       log_in(user)
-      flash[:notice]="ユーザー登録が完了しました"
-      redirect_to users_show_path(user.id)
+       flash[:notice]="ユーザー登録が完了しました"
+       redirect_to users_show_path(user.id)
     else
       render :new
     end
@@ -23,10 +23,9 @@ include  UserSessionsHelper
   end
   def edit
     @user=User.find_by(id: params[:id])
-  
-    p"============"
-    p @user.errors.full_messages
-    p"============"
+    #p"============"
+    #p @user.errors.full_messages
+    #p"============"
   end
   def update
     #p"============"

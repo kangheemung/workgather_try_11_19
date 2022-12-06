@@ -58,5 +58,11 @@ header{
     margin-left: 20%;
     text-decoration:none
 }
-
+li {
+    list-style: none;
+    display: flex;
+  }
+.s_header1{
+    display: flex;
+}
 

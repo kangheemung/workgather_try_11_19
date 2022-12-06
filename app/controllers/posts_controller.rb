@@ -11,9 +11,9 @@ class PostsController < ApplicationController
     def create
        post = current_user.posts.build(post_params)
        if post.save 
-        redirect_to workshops_review_path(post.workshop_id)
+        redirect_to workshops_show_path(post.workshop_id)
        else
-        redirect_to workshops_review_path(post.workshop_id)
+        redirect_to workshops_show_path(post.workshop_id)
        end
     end
     def show

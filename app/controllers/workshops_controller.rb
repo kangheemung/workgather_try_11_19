@@ -27,16 +27,15 @@ class WorkshopsController < ApplicationController
       #p @workshop.errors.full_messages
       #p"==========="
     @post = Post.new
-    @posts=Post.all
-    
+    @posts=Post.all 
   end
   def show #詳細
     @workshop = Workshop.find(params[:id])
     #p"========"
     #p @workshop.errors.full_messages
     #p"==========="
-  @post = Post.new
-  @posts=Post.all
+    @post = Post.new
+    @posts=Post.all
   end
   def edit #詳細
   end
@@ -44,7 +43,7 @@ class WorkshopsController < ApplicationController
     @workshop=workshop.find(params[:id])
     if @workshop.update(workshop_params)
         flash[:notice]="プランナー情報を更新しました。"
-        redirect_to workshops_review_path(@workshop.id)
+        redirect_to workshops_show_path(@workshop.id)
     else
       render :edit
     end
