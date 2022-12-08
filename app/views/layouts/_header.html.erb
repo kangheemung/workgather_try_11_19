@@ -2,40 +2,128 @@
 <% if current_planner.present? %>
  <div class="header1">
     <div class="s_header">ASOBINAGARA</div><!三本のイメージを押したら　カテゴリーが開きます。-->
-      <div class="s_header1">
-          <%= link_to "mypage",planners_show_path(current_planner.id),data: {"turbolinks" => false}  %>
-          <%= link_to "workshop作成",workshops_new_path, data: {"turbolinks" => false}%>|
-          <%= link_to "workshop見に行く",workshops_index_path, data: {"turbolinks" => false} %>|
-          <%= link_to "ログアウト",planners_logout_path, method: :delete %>
-        <select id="country" name="country" onchange="window.open(value,'_blank')";>
-          <option value="/homes/select_position">Japanese</option>
-          <option value="/homes/select_position_K">Korean</option>
-          <option value="/homes/select_position_E">English</option>
-        </select>
+      <div class="s_h_1">
+        <ul>
+          <li>
+            <div class="menu">
+                <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve"  class="menu_icon1">
+                  <style type="text/css">
+                    .st0{fill:”#fff”;}
+                  </style>
+                  <g>
+                    <circle class="st0" cx="48" cy="64" r="48"></circle>
+                    <rect x="160" y="16" class="st0" width="352" height="96"></rect>
+                    <circle class="st0" cx="48" cy="256" r="48"></circle>
+                    <rect x="160" y="208" class="st0" width="352" height="96"></rect>
+                    <circle class="st0" cx="48" cy="448" r="48"></circle>
+                    <rect x="160" y="400" class="st0" width="352" height="96"></rect>
+                  </g>
+                </svg>
+            </div>
+              <ul>  
+                <li><%= link_to "mypage",planners_show_path(current_planner.id),data: {"turbolinks" => false}  %></li>
+                <li> <%= link_to "workshop作成",workshops_new_path, data: {"turbolinks" => false}%>|</li>
+                <li><%= link_to "workshop見に行く",workshops_index_path, data: {"turbolinks" => false} %>|</li>
+                <li><%= link_to "ログアウト",planners_logout_path, method: :delete %></li>
+                <li><select id="country" name="country" onchange="window.open(value,'_blank')";>
+                      <option value="/homes/select_position">Japanese</option>
+                      <option value="/homes/select_position_K">Korean</option>
+                      <option value="/homes/select_position_E">English</option>
+                    </select>
+                </li>
+              </ul>  
+          </li>
+        </ul>    
       </div>
     </div> 
  </div>
 <% elsif current_user.present? %>
   <div class="header1">
     <div class="s_header">ASOBINAGARA</div><!三本のイメージを押したら　カテゴリーが開きます。-->
-      <div class="s_header1">
-       <%= link_to "top",root_path%>|
-       <%= link_to "mypage",users_show_path(current_user.id), data: {"turbolinks" => false}%>|
-       <%= link_to "workshopを見に行く",workshops_index_path, data: {"turbolinks" => false} %>|
-       <%= link_to "ログアウト",users_logout_path, method: :delete %>
-      </div>
-    </div> 
+      <div class="s_h_1">
+        <ul>
+          <li><div class="menu">
+                <a href="#">
+                  <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve" class="menu_icon1">
+                    <style type="text/css">
+                      .st0{fill:”#fff”;}
+                    </style>
+                    <g>
+                      <circle class="st0" cx="48" cy="64" r="48"></circle>
+                      <rect x="160" y="16" class="st0" width="352" height="96"></rect>
+                      <circle class="st0" cx="48" cy="256" r="48" ></circle>
+                      <rect x="160" y="208" class="st0" width="352" height="96"></rect>
+                      <circle class="st0" cx="48" cy="448" r="48" ></circle>
+                      <rect x="160" y="400" class="st0" width="352" height="96"></rect>
+                    </g>
+                  </svg>
+                </a>
+             </div>
+          </li>
+          <li><select id="country" name="country" onchange="window.open(value,'_blank')";></li>
+                <option value="/homes/select_position">Japanese</option>
+                <option value="/homes/select_position_K">Korean</option>
+                <option value="/homes/select_position_E">English</option>
+              </select>
+          </li>  
+          <li><%= link_to "top",root_path%>|</li>
+          <li><%= link_to "mypage",users_show_path(current_user.id), data: {"turbolinks" => false}%>|</li>
+          <li><%= link_to "workshopを見に行く",workshops_index_path, data: {"turbolinks" => false} %>|</li>
+          <li><%= link_to "ログアウト",users_logout_path, method: :delete %></li>
+        </ul> 
+      </div> 
   </div>  
 <% else %>
   <span>ログインしましょう！</span>
   <div class="header1">
     <div class="s_header">ASOBINAGARA</div><!三本のイメージを押したら　カテゴリーが開きます。-->
-      <div class="s_header1">
-        <%= link_to "top",root_path%>|
-        <%= link_to "ログイン",home_sign_in_path, data: {"turbolinks" => false}  %>|
-        <%= link_to "会員登録",home_sign_up_path, data: {"turbolinks" => false} %>
+      <div class="s_h_1">
+        <ul>
+          <div class="menu">
+            <a href="#">
+              <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve" class="menu_icon1">
+                <style type="text/css">
+                  .st0{fill:”#fff”;}
+                </style>
+                <g>
+                  <circle class="st0" cx="48" cy="64" r="48" ></circle>
+                  <rect x="160" y="16" class="st0" width="352" height="96" ></rect>
+                  <circle class="st0" cx="48" cy="256" r="48" ></circle>
+                  <rect x="160" y="208" class="st0" width="352" height="96" ></rect>
+                  <circle class="st0" cx="48" cy="448" r="48" ></circle>
+                  <rect x="160" y="400" class="st0" width="352" height="96" ></rect>
+                </g>
+              </svg>
+            </a>
+          </div>
+          <li><%= link_to "top",root_path%>|</li>
+          <li><%= link_to "ログイン",home_sign_in_path, data: {"turbolinks" => false} %>|</li>
+          <li><%= link_to "会員登録",home_sign_up_path, data: {"turbolinks" => false} %></li>
+              <select id="country" name="country" onchange="window.open(value,'_blank')";>
+                <option value="/homes/select_position">Japanese</option>
+                <option value="/homes/select_position_K">Korean</option>
+                <option value="/homes/select_position_E">English</option>
+              </select>
+        </ul>    
       </div>
+    </div> 
   </div>   
 <% end %>
+<script>
+    // html dom 이 다 로딩된 후 실행된다.
+    $(document).ready(function(){
+        // menu 클래스 바로 하위에 있는 a 태그를 클릭했을때
+        $(".menu>a").click(function(){
+            var submenu = $(this).next("ul");
+ 
+            // submenu 가 화면상에 보일때는 위로 보드랍게 접고 아니면 아래로 보드랍게 펼치기
+            if( submenu.is(":visible") ){
+                submenu.slideUp();
+            }else{
+                submenu.slideDown();
+            }
+        });
+    });
+</script>
 
        

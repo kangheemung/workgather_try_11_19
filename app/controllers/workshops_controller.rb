@@ -21,14 +21,6 @@ class WorkshopsController < ApplicationController
        render "new"
      end
   end
-  def review #レビュー作成
-    @workshop = Workshop.find(params[:id])
-      #p"========"
-      #p @workshop.errors.full_messages
-      #p"==========="
-    @post = Post.new
-    @posts=Post.all 
-  end
   def show #詳細
     @workshop = Workshop.find(params[:id])
     #p"========"
@@ -38,12 +30,13 @@ class WorkshopsController < ApplicationController
     @posts=Post.all
   end
   def edit #詳細
+    @workshop = Workshop.find(params[:id])
   end
   def update
-    @workshop=workshop.find(params[:id])
+    @workshop=Workshop.find(params[:id])
     if @workshop.update(workshop_params)
         flash[:notice]="プランナー情報を更新しました。"
-        redirect_to workshops_show_path(@workshop.id)
+        redirect_to workshops_show_path(@workshop.id),data: {"turbolinks" => false}
     else
       render :edit
     end

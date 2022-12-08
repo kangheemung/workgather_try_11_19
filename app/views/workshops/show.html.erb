@@ -10,6 +10,7 @@
        <p>  <%= @workshop.avg_score %>点（<%= @workshop.posts.count %>件のレビュー）</p>
       </div>
     </div>
+    <%link_to"ワークショップ詳細内容編集",workshops_edit_path(@workshop.id)%>
   </div>
     <% if current_user%>
       <%= render 'workshops/form', post: @post, workshop: @workshop %>
@@ -30,5 +31,6 @@
           </div> 
        </div>
      <%end%>
+      <div class="s_b"><p><%=link_to "workshopを編集する。",workshops_edit_path(@workshop), class: "review_check"%></p></div>
     <div class="s_b"><p><%=link_to "他のworkshopを見る",workshops_index_path(@workshop), class: "review_check"%></p></div>
 </div>

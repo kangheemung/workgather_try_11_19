@@ -50,7 +50,6 @@ Rails.application.routes.draw do
   get 'workshops/index'=>'workshops#index',as:'workshops_index'
   get 'workshops/new'=>'workshops#new',as:'workshops_new'
   post 'workshops/create'=>'workshops#create',as:'workshops_create'
-  get 'workshops/review'=>'workshops#review',as:'workshops_review'
   get 'workshops/:id/edit' => 'workshops#edit',as:'workshops_edit'
   patch 'workshops/:id/edit' => 'workshops#update',as:'workshops_update'
   get 'workshops/:id'=> 'workshops#show',as:'workshops_show'

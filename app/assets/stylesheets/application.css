@@ -30,12 +30,13 @@ header{
     background-color:  #004A54; 
     text-align: left;
     font-family: 'Mali', cursive; 
-    padding-top: 5%;
-    padding-bottom: 5%;  
+    padding-top: 5%; 
+    padding-bottom: 5%;
 }
 .header1 a { 
     color: #DBE5E6;
     text-decoration: none;
+    margin-right: 2%;
 }
 .header1{
     color: #DBE5E6;
@@ -44,25 +45,32 @@ header{
     font-family: 'Mali', cursive; 
     padding-top: 5%;
     padding-bottom: 5%; 
-    display: flex;        
+    display: flex;
+    width: 1000px;
  }
  .s_header{
-    margin-left:3%;
     font-size: x-large;    
     color: whitesmoke;
 }
-.s_header1{ 
+.s_h_1{ 
     color: whitesmoke;
     font-weight: bolder;  
     font-size:larger;
-    margin-left: 20%;
-    text-decoration:none
+    margin-left: 5%;
+    text-decoration:none;
+    display: flex; 
 }
+
 li {
     list-style: none;
     display: flex;
   }
-.s_header1{
-    display: flex;
+.menu{
+    margin-right :5%;
+    margin-left :5%;
+    margin-top: 5%
+}
+.menu_icon1{
+    fill:#DBE5E6;
 }
 
