@@ -22,12 +22,14 @@ class WorkshopsController < ApplicationController
      end
   end
   def show #詳細
+    @workshops=Workshop.all
     @workshop = Workshop.find(params[:id])
     #p"========"
     #p @workshop.errors.full_messages
     #p"==========="
     @post = Post.new
     @posts=Post.all
+   
   end
   def edit #詳細
     @workshop = Workshop.find(params[:id])

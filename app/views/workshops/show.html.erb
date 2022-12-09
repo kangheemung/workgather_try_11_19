@@ -1,5 +1,11 @@
 <div class="review-content">
+ <% if current_planner%>
+<%= current_planner.user_name %>様が投稿したworkshop!
+ <div class="review-title"><span><%=@workshop.w_title%><p>Workshop詳細ページ！</p></span></div>
+<%end%>
+<% if current_user%>
   <div class="review-title"><span><%=@workshop.w_title%><p>レビューページ！</p></span></div>
+<%end%>
     <p> <%=image_tag @workshop.image.url, size: '300x300'%>  
     <div class="average-score">
       <div class="star-rating">
@@ -15,6 +21,17 @@
     <% if current_user%>
       <%= render 'workshops/form', post: @post, workshop: @workshop %>
     <%end%>
+      <% if current_planner%>
+          <div class="workshop_detail">
+            <p><%= @workshop.prefecture %></p>
+            <p><%= @workshop.address1%> </p>
+            <p><%= @workshop.address2%> </p>
+            <p><%= @workshop.w_detail%> </p>
+            <p><%= @workshop.time%> </p>
+            <p><%= @workshop.personnel%> </p>
+            <p><%= @workshop.precautions%> </p>
+          </div>  
+      <% end %>
      <% @workshop.posts.each do |post| %>
        <div class="reviews">
           <div class="reviews_box_image">
@@ -31,6 +48,7 @@
           </div> 
        </div>
      <%end%>
-      <div class="s_b"><p><%=link_to "workshopを編集する。",workshops_edit_path(@workshop), class: "review_check"%></p></div>
+   
+      <div class="s_b"><p><%=link_to "workshopの内容を編集する。",workshops_edit_path(@workshop), class: "review_check"%></p></div>
     <div class="s_b"><p><%=link_to "他のworkshopを見る",workshops_index_path(@workshop), class: "review_check"%></p></div>
 </div>
