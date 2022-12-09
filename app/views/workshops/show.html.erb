@@ -49,6 +49,6 @@
        </div>
      <%end%>
    
-      <div class="s_b"><p><%=link_to "workshopの内容を編集する。",workshops_edit_path(@workshop), class: "review_check"%></p></div>
+    <div class="s_b"><p><%=link_to "workshopの内容を編集する。",workshops_edit_path(@workshop), class: "review_check", data: {"turbolinks" => false}%></p></div>
     <div class="s_b"><p><%=link_to "他のworkshopを見る",workshops_index_path(@workshop), class: "review_check"%></p></div>
 </div>
