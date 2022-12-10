@@ -22,16 +22,12 @@
                 <div class="body_box">    
                   <%= f.label :住所 %>
                 </div>  
+             
                 <div class="text_box">
-                ユーザが入力したテキストボックスの値を保持します
-                <% strPrefecture = request.form("workshop[prefecture]");
-                   strAddress1= request.form("workshop[address1]");
-                   strAddress2= request.form("workshop[address2]");
-                %>
                   <p><input type="text" id="postal" onKeyUp="$('#postal').zip2addr('#workshop_prefecture','#workshop_address1');"  ></p>
-                  <p><input type="text" id="workshop_prefecture" name="workshop[prefecture]" value:"<%= strPrefecture %>"></p>
-                  <p><input type="text" id="workshop_address1" name="workshop[address1]" value:"<%= strAddress1 %>"></p>
-                  <p><input type="text" id="workshop_address2" name="workshop[address2]" value:"<%= strAddress2 %>"></p>
+                  <p><input type="text" id="workshop_prefecture" name="workshop[prefecture]" value="<%=@workshop.prefecture%>"></p>
+                  <p><input type="text" id="workshop_address1" name="workshop[address1]" value="<%= @workshop.address1%>"></p>
+                  <p><input type="text" id="workshop_address2" name="workshop[address2]" value="<%= @workshop.address2%>"></p>
                 </div>      
                 <div class="body_box"> 
                   <p><%= f.label :workshopのイメージ %></p>
