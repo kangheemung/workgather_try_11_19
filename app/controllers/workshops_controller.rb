@@ -1,8 +1,10 @@
 class WorkshopsController < ApplicationController
   include  PlannerSessionsHelper
+
   def index
     @workshops = Workshop.all
     @workshop=Workshop.new
+    
     @posts=Post.all
   end
   def new
@@ -12,6 +14,7 @@ class WorkshopsController < ApplicationController
   def create
      #p "params: #{params}"#
      @workshop = current_planner.workshops.build(workshop_params)
+     @workshop.planner_id=current_planner.id
      if @workshop.save
        redirect_to ("/workshops/index")
      else
