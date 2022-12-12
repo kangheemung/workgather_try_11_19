@@ -37,10 +37,8 @@
           <p>駐車場ありなし</p>
           <p>like</p>
         </div>
-        
-            <p><%=link_to "レビュー",workshops_show_path(workshop),class: "w_btn_r"%></p>
-      
-      <% elsif current_user.present? %>
+          <p><%=link_to "レビュー",workshops_show_path(workshop),class: "w_btn_r"%></p>
+     <% elsif current_user.present? %>
         <p>空き状況</p>
         <p><%= workshop.time%></p>
         <p>定員<%= workshop.personnel%></p>

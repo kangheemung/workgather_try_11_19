@@ -17,7 +17,7 @@
       <p>birthday: <%= current_user.birthday%></p>
       <p>gender: <%= current_user.gender%></p>
       <span>予約0件</span>
-      <span>投稿0件</span>
+      <span>投稿 <%=current_user.posts.count%>件</span>
     </div>
   </div>
   <div class="booking_detail">

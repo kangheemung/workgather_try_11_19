@@ -168,11 +168,11 @@
     padding-bottom:5%;
     font-weight: bolder;
     font-size: x-large;
-    background-color:rgba(220, 250, 239, 0.5);   
+    background-color:rgba(220, 250, 239, 0.5);  
 }
 .review-title p{
     font-size: medium;
-    text-align: right;
+    
 }
 //link
 .link_text{
@@ -222,6 +222,7 @@
   }
   .average-score-display p{
     font-size: 16px;
+    text-align:right;
   }
   .reviews{
     display: flex;
@@ -270,6 +271,9 @@
 
 }  
 .w_p_u{
-   
     margin-right: 7%;
 }  
+.reviews_box_image{
+    text-align:center;
+    margin:auto;
+}
