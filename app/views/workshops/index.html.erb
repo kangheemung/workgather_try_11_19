@@ -1,5 +1,5 @@
 <div class="w_side_header_p">
-  <p>Home> workshopsの詳細ページ</p>
+  <p>Home> workshopsの一覧ページ</p>
 </div><!三本のイメージを押したら　カテゴリーが開きます。-->
 <div class="w_body">
   <% @workshops.each do |workshop| %>
@@ -21,7 +21,7 @@
                  <div class="star-rating-front" style="width:<%= workshop.review_score_percentage%>%"> ★★★★★</div>
                  <div class="star-rating-back">★★★★★</div>
             </div>
-              <p><%=workshop.avg_score %>点（<%=workshop.posts.count %>件のレビュー）</p>
+              <p><%= workshop.avg_score %>点（<%=workshop.posts.count %>件のレビュー）</p>
           </div>
     </div>
     <div class="w_table_right">

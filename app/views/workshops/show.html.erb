@@ -1,62 +1,13 @@
 <div class="review-content">
-  <div class="review-title">
-    <% if current_planner  %>
-      <span><%=@workshop.w_title%></span>
-        <div class="w_p_u"><p><%= current_planner.user_name %>様が投稿したworkshopの詳細ページ</p></div>
-        <div class="eviews_box_image">
-          <p> <%=image_tag @workshop.image.url, size: '300x300'%>
-        </div>  
-          <div class="average-score">
-            <div class="star-rating">
-              <div class="star-rating-front" style="width:<%= @workshop.review_score_percentage %>%"> ★★★★★</div>
-              <div class="star-rating-back">★★★★★</div>
-           </div>
-            <div class="average-score-display">
-            <p><%= @workshop.avg_score %>点（<%= @workshop.posts.count %>件のレビュー）</p>
-            </div>
-          </div> 
-          <%if @workshop.planner_id === current_planner.id %>
-              <span><%=@workshop.w_title%></span>
-              <div class="w_p_u"><p><%= current_planner.user_name %>様が投稿したworkshopの詳細ページ</p></div>
-                <div class="workshop_detail">
-                  <p><%= @workshop.prefecture %></p>
-                  <p><%= @workshop.address1%> </p>
-                  <p><%= @workshop.address2%> </p>
-                  <p><%= @workshop.w_detail%> </p>
-                  <p><%= @workshop.time%> </p>
-                  <p><%= @workshop.personnel%> </p>
-                  <p><%= @workshop.precautions%> </p>
-                </div>  
-          <%end%>    
-          <% @workshop.posts.each do |post| %>
-            <div class="reviews">
-                <div class="reviews_box_image">
-                  <%=image_tag post.image.url, size: '200x200' %>
-                  <p><%= post.score%> 点</p>
-                  </div>
-                
-                <div class= "reviews_box_text">
-                  <div class= "reviews_box_text1">
-                  <span>タイトル：<%= post.title%></span>
-                  </div> 
-                  <div class= "reviews_box_content">
-                    <p>コメント<%= post.content%></p>
-                  </div>   
-                </div> 
-            </div>
-          <%end%> 
-          <%if @workshop.planner_id === current_planner.id %>
-            <div class="s_b"><p><%=link_to "workshopの内容を編集する",workshops_edit_path(@workshop), class: "review_check", data: {"turbolinks" => false}%></p></div>
-          <%end%>
-          <div class="s_b"><p><%=link_to "他のworkshopを見る",workshops_index_path(@workshop), class: "review_check"%></p></div>
-          </div>       
-    <% end %>
-    
-<% if current_user %>
-  <div class="review-title"><span><%=@workshop.w_title%>
+<div class="review-title">
+<% if current_planner  %>
+<%= render 'planner_show', workshop:@workshop %>
+     
+<% elsif current_user %>
+  <div class="review-title"><span><%=@workshop.w_title %>
       <p>レビューページ！</p></span></div>
       <div class="reviews_box_image">
-      <p> <%=image_tag @workshop.image.url, size: '300x300'%> 
+      <p> <%=image_tag @workshop.image.url, size: '300x300' %> 
       </div> 
       <div class="average-score">
         <div class="star-rating">
@@ -67,25 +18,25 @@
           <p> <%= @workshop.avg_score %>点（<%= @workshop.posts.count %>件のレビュー）</p>
         </div>
       </div>
-      <%link_to"ワークショップ詳細内容編集",workshops_edit_path(@workshop.id)%>
+      <% link_to"ワークショップ詳細内容編集",workshops_edit_path(@workshop.id) %>
   </div>
     <%= render 'workshops/form', post: @post, workshop: @workshop %>
-<% @workshop.posts.each do |post| %>
-  <div class="reviews">
-      <div class="reviews_box_image">
-        <%=image_tag post.image.url, size: '200x200' %>
-        <p><%= post.score%> 点</p>
-      </div>
-      <div class= "reviews_box_text">
-        <div class= "reviews_box_text1">
-        <span>タイトル：<%= post.title%></span>
+  <% @workshop.posts.each do |post| %>
+    <div class="reviews">
+        <div class="reviews_box_image">
+          <%=image_tag post.image.url, size: '200x200' %>
+          <p><%= post.score%> 点</p>
+        </div>
+        <div class= "reviews_box_text">
+          <div class= "reviews_box_text1">
+          <span>タイトル：<%= post.title%></span>
+          </div> 
+          <div class= "reviews_box_content">
+            <p>コメント<%= post.content%></p>
+          </div>   
         </div> 
-        <div class= "reviews_box_content">
-          <p>コメント<%= post.content%></p>
-        </div>   
-      </div> 
-  </div>
-  <div class="s_b"><p><%=link_to "他のworkshopを見る",workshops_index_path(@workshop), class: "review_check"%></p></div>
-  </div>
-<% end %>
+    </div>
+    <div class="s_b"><p><%=link_to "他のworkshopを見る",workshops_index_path(@workshop), class: "review_check"%></p></div>
+    </div>
+  <% end %>
 <% end %>

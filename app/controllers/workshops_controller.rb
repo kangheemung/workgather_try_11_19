@@ -4,25 +4,24 @@ class WorkshopsController < ApplicationController
   def index
     @workshops = Workshop.all
     @workshop=Workshop.new
-    
     @posts=Post.all
   end
   def new
     @workshop = Workshop.new
-    @planner = Planner.new
   end
   def create
      #p "params: #{params}"#
      @workshop = current_planner.workshops.build(workshop_params)
      @workshop.planner_id=current_planner.id
-     if @workshop.save
-       redirect_to ("/workshops/index")
-     else
-       #p"========"
-       #p @workshop.errors.full_messages
-       #p"==========="
-       render "new"
-     end
+      if @workshop.save
+        redirect_to ("/workshops/index")
+      else
+        #p"========"
+        #p @workshop.errors.full_messages
+        #p"==========="
+        
+        render "new"
+      end
   end
   def show #詳細
     @workshops=Workshop.all
