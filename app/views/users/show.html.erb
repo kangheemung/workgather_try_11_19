@@ -1,11 +1,11 @@
 <div class= "u_mypage_body">
   <div class="signup_text">
-      <p><%=@user.user_name%>様のマイページ</p>
+      <p><%= @user.user_name %>様のマイページ</p>
   </div>
   <div class="user_info">
     <div class="user_info_left">
       <% if @user.u_profile_id? %>
-        <%= image_tag @user.u_profile_id.url ,class: "u_profile_img"%>
+        <%= image_tag @user.u_profile_id.url ,class: "u_profile_img" %>
       <% end %>
        <p><span>フロフィル写真</span></p>
     </div> 
@@ -13,11 +13,11 @@
       <p>name: <%= current_user.user_name %></p>
       <p>email: <%= current_user.email %></p>
       <p>first_name: <%=current_user.first_name %></p>
-      <p>last_name: <%= current_user.last_name%></p>
-      <p>birthday: <%= current_user.birthday%></p>
-      <p>gender: <%= current_user.gender%></p>
+      <p>last_name: <%= current_user.last_name %></p>
+      <p>birthday: <%= current_user.birthday %></p>
+      <p>gender: <%= current_user.gender %></p>
       <span>予約0件</span>
-      <span>投稿 <%=current_user.posts.count%>件</span>
+      <span>投稿 <%= current_user.posts.count %>件</span>
     </div>
   </div>
   <div class="booking_detail">

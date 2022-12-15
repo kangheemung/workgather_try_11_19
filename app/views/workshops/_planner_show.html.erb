@@ -1,7 +1,7 @@
 <span><%= workshop.w_title %></span>
 <div class="w_p_u"><p><%= current_planner.user_name %>様が投稿したworkshopの詳細ページ</p></div>
 <div class="eviews_box_image">
-  <p> <%=image_tag @workshop.image.url, size: '300x300' %>
+  <p> <%= image_tag @workshop.image.url, size: '300x300' %>
 </div>  
 <div class="average-score">
   <div class="star-rating">
@@ -32,7 +32,7 @@
   <div class="reviews">
     <div class="reviews_box_image">
       <%= image_tag post.image.url, size: '200x200' %>
-      <p><%= post.score%> 点</p>
+      <p><%= post.score %> 点</p>
     </div>
     <div class= "reviews_box_text">
       <div class= "reviews_box_text1">

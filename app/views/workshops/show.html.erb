@@ -1,13 +1,12 @@
 <div class="review-content">
 <div class="review-title">
-<% if current_planner  %>
-<%= render 'planner_show', workshop:@workshop %>
-     
+<% if current_planner %>
+<%= render 'planner_show',workshop:@workshop %>    
 <% elsif current_user %>
   <div class="review-title"><span><%=@workshop.w_title %>
       <p>レビューページ！</p></span></div>
       <div class="reviews_box_image">
-      <p> <%=image_tag @workshop.image.url, size: '300x300' %> 
+      <p> <%= image_tag @workshop.image.url, size: '300x300' %> 
       </div> 
       <div class="average-score">
         <div class="star-rating">
@@ -25,18 +24,18 @@
     <div class="reviews">
         <div class="reviews_box_image">
           <%=image_tag post.image.url, size: '200x200' %>
-          <p><%= post.score%> 点</p>
+          <p><%= post.score %> 点</p>
         </div>
         <div class= "reviews_box_text">
           <div class= "reviews_box_text1">
-          <span>タイトル：<%= post.title%></span>
+          <span>タイトル：<%= post.title %></span>
           </div> 
           <div class= "reviews_box_content">
-            <p>コメント<%= post.content%></p>
+            <p>コメント<%= post.content %></p>
           </div>   
         </div> 
     </div>
-    <div class="s_b"><p><%=link_to "他のworkshopを見る",workshops_index_path(@workshop), class: "review_check"%></p></div>
+    <div class="s_b"><p><%= link_to "他のworkshopを見る",workshops_index_path(@workshop), class: "review_check" %></p></div>
     </div>
   <% end %>
 <% end %>

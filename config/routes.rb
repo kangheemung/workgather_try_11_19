@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   #user_workshop
   namespace :users do
-    get 'workshops/index'=>'workshops#index'
-    get 'workshops/show'=>'workshops/show'
-    get 'workshops/edit'=>'workshops/edit'
-    get 'workshops/new'=> 'workshops/new'
+    get 'workshops/index'=>'workshops#index',as:'workshops_index'
+    get 'workshops/:id'=>'workshops#show',as:'workshops_show'
+    get 'workshops/edit'=>'workshops#edit'
+    get 'workshops/new'=>'workshops#new'
   end
   #top
   root 'homes#top'

@@ -3,6 +3,7 @@ class Workshop < ApplicationRecord
     mount_uploader :image, WorkshopPhotoUploader 
    #workshopと別にプロフィールイメージ作成してみる 
     belongs_to :planner,class_name: "Planner",optional: true 
+    belongs_to :user,class_name:"User",optional: true
     has_many :posts#, dependent::destroy
     def avg_score
         unless self.posts.empty?#workshopsが空では無かったら下記を返す。

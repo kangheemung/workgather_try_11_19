@@ -1,6 +1,5 @@
 class WorkshopsController < ApplicationController
   include  PlannerSessionsHelper
-
   def index
     @workshops = Workshop.all
     @workshop=Workshop.new
@@ -19,7 +18,6 @@ class WorkshopsController < ApplicationController
         #p"========"
         #p @workshop.errors.full_messages
         #p"==========="
-        
         render "new"
       end
   end
