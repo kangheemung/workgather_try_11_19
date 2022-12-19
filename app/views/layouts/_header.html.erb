@@ -22,8 +22,8 @@
             </div>
               <ul>  
                 <li><%= link_to "mypage",planners_show_path(current_planner.id),data: {"turbolinks" => false}  %></li>
-                <li> <%= link_to "workshop作成",workshops_new_path, data: {"turbolinks" => false}%>|</li>
-                <li><%= link_to "workshop見に行く",workshops_index_path, data: {"turbolinks" => false} %>|</li>
+                <li> <%= link_to "workshop作成",planners_workshops_new_path, data: {"turbolinks" => false}%>|</li>
+                <li><%= link_to "workshop見に行く",planners_workshops_index_path, data: {"turbolinks" => false} %>|</li>
                 <li><%= link_to "ログアウト",planners_logout_path, method: :delete %></li>
                 <li><select id="country" name="country" onchange="window.open(value,'_blank')";>
                       <option value="/homes/select_position">Japanese</option>
@@ -68,7 +68,7 @@
           </li>  
           <li><%= link_to "top",root_path%>|</li>
           <li><%= link_to "mypage",users_show_path(current_user.id), data: {"turbolinks" => false}%>|</li>
-          <li><%= link_to "workshopを見に行く",workshops_index_path, data: {"turbolinks" => false} %>|</li>
+          <li><%= link_to "workshopを見に行く",planners_workshops_index_path, data: {"turbolinks" => false} %>|</li>
           <li><%= link_to "ログアウト",users_logout_path, method: :delete %></li>
         </ul> 
       </div> 

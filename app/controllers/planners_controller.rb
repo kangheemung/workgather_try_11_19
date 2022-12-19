@@ -1,6 +1,5 @@
 class PlannersController < ApplicationController
 include  PlannerSessionsHelper
-
   def index
     @planners= Planner.all
   end

@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 2022_12_03_110730) do
     t.string "address1"
     t.string "address2"
     t.integer "planner_id"
+    t.integer "user_id"
     t.text "w_detail"
     t.string "time"
     t.string "personnel"

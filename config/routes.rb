@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
-  #user_workshop
-  namespace :users do
-    get 'workshops/index'=>'workshops#index',as:'workshops_index'
-    get 'workshops/:id'=>'workshops#show',as:'workshops_show'
-    get 'workshops/edit'=>'workshops#edit'
-    get 'workshops/new'=>'workshops#new'
-  end
+
+
   #top
   root 'homes#top'
 
@@ -53,13 +48,28 @@ Rails.application.routes.draw do
   get 'planners/:id/edit' => 'planners#edit',as:'planners_edit'
   post 'planners/:id/edit' => 'planners#update',as:'planners_update'
   get 'planners/:id' => 'planners#show',as:'planners_show'
+    #user_workshop
+    namespace :users do
+      get '/workshops/new'=>'workshops#new',as:'workshops_new'
+      get '/workshops/:id/edit' => 'workshops#edit',as:'workshops_edit'
+      get '/workshops/:id'=>'workshops#show',as:'workshops_show'
+    end
+      #planner_workshops投稿
+    namespace :planners do
+      get '/workshops/index'=>'workshops#index',as:'workshops_index'
+      post '/workshops/create'=>'workshops#create',as:'workshops_create'
+      get '/workshops/new'=>'workshops#new',as:'workshops_new'
+      get '/workshops/:id/edit' => 'workshops#edit',as:'workshops_edit'
+      patch '/workshops/:id/edit' => 'workshops#update',as:'workshops_update'
+      get '/workshops/:id'=> 'workshops#show',as:'workshops_show'
+    end
   #workshops投稿
-  get 'workshops/index'=>'workshops#index',as:'workshops_index'
-  get 'workshops/new'=>'workshops#new',as:'workshops_new'
-  post 'workshops/create'=>'workshops#create',as:'workshops_create'
-  get 'workshops/:id/edit' => 'workshops#edit',as:'workshops_edit'
-  patch 'workshops/:id/edit' => 'workshops#update',as:'workshops_update'
-  get 'workshops/:id'=> 'workshops#show',as:'workshops_show'
+  #get 'workshops/index'=>'workshops#index',as:'workshops_index'
+  #get 'workshops/new'=>'workshops#new',as:'workshops_new'
+  #post 'workshops/create'=>'workshops#create',as:'workshops_create'
+  #get 'workshops/:id/edit' => 'workshops#edit',as:'workshops_edit'
+  #patch 'workshops/:id/edit' => 'workshops#update',as:'workshops_update'
+  #get 'workshops/:id'=> 'workshops#show',as:'workshops_show'
   #album
   get 'images/index'=>'images#index'
   get 'images/new'=>'images#new'

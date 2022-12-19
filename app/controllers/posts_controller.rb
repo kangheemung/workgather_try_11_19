@@ -11,9 +11,9 @@ class PostsController < ApplicationController
     def create
        post = current_user.posts.build(post_params)
        if post.save 
-        redirect_to workshops_show_path(post.workshop_id)
+        redirect_to planners_workshops_show_path(post.workshop_id)
        else
-        redirect_to workshops_show_path(post.workshop_id)
+        redirect_to planners_workshops_show_path(post.workshop_id)
        end
     end
     def show
@@ -28,7 +28,7 @@ class PostsController < ApplicationController
       if @post.update(post_params)
           #  session[:planner_id]=planner.id
           flash[:notice]="参加者レビュー情報を更新しました。"
-          redirect_to posts_index_path(@post.id)
+          redirect_to planners_workshops_show_path(@post.workshop_id)
       else
         render :edit
       end
