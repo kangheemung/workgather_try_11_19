@@ -51,7 +51,8 @@ Rails.application.routes.draw do
     #user_workshop
     namespace :users do
       get '/workshops/new'=>'workshops#new',as:'workshops_new'
-      get '/workshops/:id/edit' => 'workshops#edit',as:'workshops_edit'
+      get '/workshops/:id/edit'=>'workshops#edit',as:'workshops_edit'
+      patch '/workshops/:id/edit' => 'workshops#update',as:'workshops_update'
       get '/workshops/:id'=>'workshops#show',as:'workshops_show'
     end
       #planner_workshops投稿

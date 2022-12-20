@@ -1,9 +1,5 @@
 class Users::WorkshopsController < ApplicationController
   include  UserSessionsHelper
-    def index #workshopのレビュー一覧
-      @workshop =Workshop.new
-      @posts=Post.all
-    end
     def new
       @post=Post.new
       @workshop =Workshop.new
@@ -28,7 +24,7 @@ class Users::WorkshopsController < ApplicationController
       if @post.update(post_params)
           #  session[:planner_id]=planner.id
           flash[:notice]="参加者レビュー情報を更新しました。"
-          redirect_to planners_workshops_show_path(post.workshop_id)
+          redirect_to planners_workshops_show_path(@post.workshop_id)
       else
         render :edit
       end

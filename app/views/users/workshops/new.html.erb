@@ -4,7 +4,7 @@
 <div class="p_body">
 #ここに写真
     <div class="p_title">
-    <%= link_to "レビューを書く！",workshops_review_path(@posts),class: "link_text"%></span>
+    <%= link_to "レビューを書く！",posts_create_path,class: "link_text"%></span>
     </div>       
         <div class="card mb-6">
         <div class="card-content">
@@ -22,7 +22,7 @@
                         </div>  
                         <div class= "p_t_h"> 
                             <%if current_user%>
-                            <p><%=link_to "編集","/posts/#{post.id}/edit",class: "link_text"%></p>
+                            <p><%=link_to "編集","/posts/#{@post.id}/edit",class: "link_text"%></p>
                             <%end%>
                         </div>
                             <hr>

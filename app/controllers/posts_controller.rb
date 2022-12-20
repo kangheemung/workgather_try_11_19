@@ -16,15 +16,11 @@ class PostsController < ApplicationController
         redirect_to planners_workshops_show_path(post.workshop_id)
        end
     end
-    def show
-     @workshop =Workshop.find(params[:id])
-     @post=Post.new
-    end
     def edit
-      @post=Post.find_by(params[:id])
+      @post=Post.find(params[:id])
     end
     def update
-      @post=Post.find_by(params[:id])
+      @post=Post.find(params[:id])
       if @post.update(post_params)
           #  session[:planner_id]=planner.id
           flash[:notice]="参加者レビュー情報を更新しました。"
