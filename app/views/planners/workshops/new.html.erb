@@ -2,57 +2,57 @@
   <h1>ASOBINAGARA</h1>
 </div>
 <div class="signup">
-    <div class="signup_text">
-        <span>ワークショップ詳細登録</span>
-    </div>
-        <%= form_for @workshop, url: planners_workshops_create_path do |f| %>
-          <div class="body">
-                <div class="body_box">    
-                  <%= f.label :ワークショップタイトル %>
-                </div>  
-                <div class="text_box">
-                  <%= f.text_field :w_title, :placeholder => "例)コービーアートやってみよう！" , :size=>"27"%>
-                </div>
-                <div class="body_box"> 
-                  <%= f.label :ワークショップテーマ %>
-                </div>  
-                <div class="text_box">
-                  <%= f.text_field :w_theme, :placeholder => "例)コーヒーアート",:size=>"27" %>
-                </div>
-                <div class="body_box">    
-                  <%= f.label :住所 %>
-                </div>  
-                <div class="text_box">
-                  <p><input type="text" id="postal" onKeyUp="$('#postal').zip2addr('#workshop_prefecture','#workshop_address1');" ></p>
-                  <p><input type="text" id="workshop_prefecture" name="workshop[prefecture]"></p>
-                  <p><input type="text" id="workshop_address1" name="workshop[address1]"></p>
-                  <p><input type="text" id="workshop_address2" name="workshop[address2]"></p>
-                </div>      
-                <div class="body_box"> 
-                  <p><%= f.label :workshopのイメージ %></p>
-                </div>
-                <p><%= f.file_field  :image%></p>
-                  <div class="text_box">
-                      <p><%= f.label :ワークショップの詳細内容 %></p>
-                      <p><%= f.text_field :w_detail, :placeholder => "ワークショップの詳細内容"%></p>
-                  </div>
-                  <div class="text_box">
-                      <p><%= f.label :開催時間 %></p>
-                      <p><%= f.text_field :time, :placeholder => "例)１時間〜２時間"%></p>
-                  </div>
-                  <div class="text_box">
-                      <p><%= f.label :定員 %></p>
-                      <p><%= f.text_field :personnel, :placeholder => "例）５名まで、"%></p>
-                  </div>
-                  <div class="text_box">
-                      <p><%= f.label :新型コロナ感染対策%></p>
-                      <p><%= f.text_field :precautions, :placeholder => "●マスクをされてない方,37.5度以上の場合は参加をお断り致します。"%></p>
-                  </div>
-                <div class="sign_btn">
-                    <p><%= f.button "投稿", class: "button" ,data: {"turbolinks" => false}%></p>
-                </div>
-          </div>   
-        <%end%> 
+  <div class="signup_text">
+      <span>ワークショップ詳細登録</span>
+  </div>
+    <%= form_for @workshop, url: planners_workshops_create_path do |f| %>
+      <div class="body">
+        <div class="body_box">    
+          <%= f.label :ワークショップタイトル %>
+        </div>  
+        <div class="text_box">
+          <%= f.text_field :w_title, :placeholder => "例)コービーアートやってみよう！" , :size=>"27"%>
+        </div>
+        <div class="body_box"> 
+          <%= f.label :ワークショップテーマ %>
+        </div>  
+        <div class="text_box">
+          <%= f.text_field :w_theme, :placeholder => "例)コーヒーアート",:size=>"27" %>
+        </div>
+        <div class="body_box">    
+          <%= f.label :住所 %>
+        </div>  
+        <div class="text_box">
+          <p><input type="text" id="postal" onKeyUp="$('#postal').zip2addr('#workshop_prefecture','#workshop_address1');" ></p>
+          <p><input type="text" id="workshop_prefecture" name="workshop[prefecture]"></p>
+          <p><input type="text" id="workshop_address1" name="workshop[address1]"></p>
+          <p><input type="text" id="workshop_address2" name="workshop[address2]"></p>
+        </div>      
+        <div class="body_box"> 
+          <p><%= f.label :workshopのイメージ %></p>
+        </div>
+        <p><%= f.file_field  :image%></p>
+        <div class="text_box">
+          <p><%= f.label :ワークショップの詳細内容 %></p>
+          <p><%= f.text_field :w_detail, :placeholder => "ワークショップの詳細内容"%></p>
+        </div>
+        <div class="text_box">
+          <p><%= f.label :開催時間 %></p>
+          <p><%= f.text_field :time, :placeholder => "例)１時間〜２時間"%></p>
+        </div>
+        <div class="text_box">
+          <p><%= f.label :定員 %></p>
+          <p><%= f.text_field :personnel, :placeholder => "例）５名まで、"%></p>
+        </div>
+        <div class="text_box">
+          <p><%= f.label :新型コロナ感染対策%></p>
+          <p><%= f.text_field :precautions, :placeholder => "●マスクをされてない方,37.5度以上の場合は参加をお断り致します。"%></p>
+        </div>
+        <div class="sign_btn">
+          <p><%= f.button "投稿", class: "button" ,data: {"turbolinks" => false}%></p>
+        </div>
+      </div>   
+    <%end%> 
 </div>
 <script>
 /*
