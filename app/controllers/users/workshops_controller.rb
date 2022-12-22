@@ -15,6 +15,8 @@ class Users::WorkshopsController < ApplicationController
     def show
      @workshop =Workshop.find(params[:id])
      @post=Post.new
+     @star =Star.new
+
     end
     def edit
       @post=Post.find_by(params[:id])

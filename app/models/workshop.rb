@@ -5,16 +5,17 @@ class Workshop < ApplicationRecord
     belongs_to :planner,class_name: "Planner",optional: true 
     belongs_to :user,class_name:"User",optional: true
     has_many :posts#, dependent::destroy
+    has_many :star, class_name:"Star",optional: true
     def avg_score
-        unless self.posts.empty?#workshopsが空では無かったら下記を返す。
-            posts.average(:score).round(1).to_f
+        unless self.workshops.empty?#workshopsが空では無かったら下記を返す。
+          workshops.average(:score).round(1).to_f
         else
           0.0
         end
     end
     def review_score_percentage 
-        unless self.posts.empty?#パーセンテージ
-            posts.average(:score).round(1).to_f*100/5
+        unless self.workshops.empty?#パーセンテージ
+          workshops.average(:score).round(1).to_f*100/5
         else
           0.0
         end

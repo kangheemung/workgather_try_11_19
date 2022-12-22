@@ -37,7 +37,6 @@ class Planners::WorkshopsController < ApplicationController
   def update
     @workshop=Workshop.find(params[:id]) #値を取得する
     if @workshop.update(workshop_params)  #workshop_paramsの内容を上書きする。
-      
         flash[:notice]="プランナー情報を更新しました。"
         redirect_to planners_workshops_show_path(@workshop.id),data: {"turbolinks" => false}
     else

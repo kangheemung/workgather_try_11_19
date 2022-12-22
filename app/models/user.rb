@@ -12,5 +12,6 @@ class User < ApplicationRecord
     #resource :user, only: %i[show edit update]
     has_many :posts#, dependent::destroy
     has_many :workshops
+    has_many :star
     has_many :images, class_name: "Image"
 end
