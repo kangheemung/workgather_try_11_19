@@ -4,6 +4,7 @@ class WorkshopsController < ApplicationController
     @workshops = Workshop.all
     @workshop=Workshop.new
     @posts=Post.all
+    @stra=Star.new
   end
   def new
     @workshop = Workshop.new
@@ -29,6 +30,7 @@ class WorkshopsController < ApplicationController
     #p"==========="
     @post = Post.new
     @posts=Post.all
+    @star=Star.new
    
   end
   def edit #詳細

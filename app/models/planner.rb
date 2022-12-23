@@ -11,5 +11,4 @@ class Planner < ApplicationRecord
   has_many :workshops
   has_many :profiles
   mount_uploader :planner_profile,PlannerProfileUploader
-  
 end
