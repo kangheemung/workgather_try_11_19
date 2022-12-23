@@ -71,6 +71,11 @@ Rails.application.routes.draw do
   #get 'workshops/:id/edit' => 'workshops#edit',as:'workshops_edit'
   #patch 'workshops/:id/edit' => 'workshops#update',as:'workshops_update'
   #get 'workshops/:id'=> 'workshops#show',as:'workshops_show'
+  # reservations予約ページ
+  get 'reservations/index'=>'reservations#index',as:'reservations_index'
+  get 'reservations/new' =>'reservations#new',as:'reservations_new'
+  post'reservations/create' =>'reservations#create',as:'reservations_create'
+  get 'reservations/show'=>'reservations#show',as:'reservations_show'
   #album
   get 'images/index'=>'images#index'
   get 'images/new'=>'images#new'

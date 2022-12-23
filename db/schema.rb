@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_22_152718) do
+ActiveRecord::Schema.define(version: 2022_12_23_153044) do
 
   create_table "images", force: :cascade do |t|
     t.string "name"
@@ -50,6 +50,16 @@ ActiveRecord::Schema.define(version: 2022_12_22_152718) do
     t.string "planner_profile"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.date "day"
+    t.string "time", null: false
+    t.integer "user_id"
+    t.datetime "start_time", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "stars", force: :cascade do |t|
