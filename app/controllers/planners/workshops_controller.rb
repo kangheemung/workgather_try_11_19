@@ -4,9 +4,9 @@ class Planners::WorkshopsController < ApplicationController
     @workshops = Workshop.all
     @workshop=Workshop.new
     @posts=Post.all
-    @stra=@workshop.stars
   end
   def new
+    
     @workshop = Workshop.new
   end
   def create

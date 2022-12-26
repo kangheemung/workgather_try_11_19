@@ -50,11 +50,13 @@ Rails.application.routes.draw do
   get 'planners/:id' => 'planners#show',as:'planners_show'
     #user_workshop
     namespace :users do
+      get'/workshops/index'=>'workshops#index',as:'workshops_index'
       get '/workshops/new'=>'workshops#new',as:'workshops_new'
       get '/workshops/:id/edit'=>'workshops#edit',as:'workshops_edit'
       patch '/workshops/:id/edit' => 'workshops#update',as:'workshops_update'
       get '/workshops/:id'=>'workshops#show',as:'workshops_show'
     end
+    post '/user_workshops/:workshop_id'=>'user_workshops#create',as:'create_user_workshop'
       #planner_workshops投稿
     namespace :planners do
       get '/workshops/index'=>'workshops#index',as:'workshops_index'

@@ -13,5 +13,7 @@ class User < ApplicationRecord
     has_many :posts#, dependent::destroy
     has_many :workshops
     has_many :stars
+    has_many :user_workshops
+    has_many :reservations,class_name:"Reservaion"
     has_many :images, class_name: "Image"
 end

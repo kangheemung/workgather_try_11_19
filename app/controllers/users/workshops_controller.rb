@@ -1,5 +1,10 @@
 class Users::WorkshopsController < ApplicationController
   include  UserSessionsHelper
+    def index
+      @workshops = Workshop.all
+      @workshop=Workshop.new
+      @posts=Post.all
+    end  
     def new
       @post=Post.new
       @workshop =Workshop.new
@@ -13,7 +18,7 @@ class Users::WorkshopsController < ApplicationController
        end
     end
     def show
-     @workshop =Workshop.find(params[:id])
+     @workshop =Workshop.find_by(params[:id])
      @post=Post.new
      @star =Star.new
 

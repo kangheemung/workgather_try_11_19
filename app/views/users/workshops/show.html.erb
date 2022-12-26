@@ -1,0 +1,11 @@
+<%if @workshop != nil %>
+<p> <%= @workshop.w_title %></p>
+  <p>name</p>
+  <% if UserWorkshop.where(user_id:current_user.id,workshop_id:params[:workshop_id])%>
+  すでに参加してるよ！
+  <%else%>
+   <%= link_to "Join!!", create_user_workshop_path(@workshop), method: :post %>
+  <% end %> 
+<% else %>
+ No workshop
+<% end %>

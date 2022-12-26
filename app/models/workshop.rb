@@ -6,6 +6,7 @@ class Workshop < ApplicationRecord
     belongs_to :user,class_name:"User",optional: true
     has_many :posts#, dependent::destroy
     has_many :stars,class_name:"Star"
+    has_many :user_workshops
     def avg_score
       unless self.posts.empty?#workshopsが空では無かったら下記を返す。
         workshops.average(:score).round(1).to_f
