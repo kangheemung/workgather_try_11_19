@@ -1,6 +1,6 @@
 <div class="p_body">
   <div class="rating-box">
-    <%= form_for @post, url: posts_create_path(workshop) do |f| %>
+    <%= form_for @post, url: posts_create_path(@workshop) do |f| %>
 	  <div class="body_box">
 	    <div class="b_b_t">
 		  <p> <%= f.label :ワークショップの写真をアップロード！%></p>
@@ -22,7 +22,7 @@
 	  </div> 
 	  <div class= "body_box">   
 		<p> <%= f.hidden_field :score, id:"rating-value" %></p>   
-		<p> <%= f.hidden_field :workshop_id, value: workshop.id %></p>
+		<p> <%= f.hidden_field :workshop_id, value: @workshop.id %></p>
 		<p> <%= f.text_field :title, :placeholder => "タイトル",class: "review_title_box"%></p>
 		<p> <%= f.text_field :content, :placeholder => "あなたの感想を書いて下さい。",class: "review_textarea_box"%></p>
 		<p> <%= f.submit "投稿", class: "button" %></p>

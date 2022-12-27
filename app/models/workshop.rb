@@ -4,19 +4,22 @@ class Workshop < ApplicationRecord
   #workshopと別にプロフィールイメージ作成してみる 
     belongs_to :planner,class_name: "Planner",optional: true 
     belongs_to :user,class_name:"User",optional: true
-    has_many :posts#, dependent::destroy
+    has_many :posts#,through: :user_workshops#, dependent::destroy
     has_many :stars,class_name:"Star"
     has_many :user_workshops
+    def joined?(user)
+      UserWorkshop.where(user_id: user.id,workshop_id: self.id).exists?
+    end
     def avg_score
       unless self.posts.empty?#workshopsが空では無かったら下記を返す。
-        workshops.average(:score).round(1).to_f
+        posts.average(:score).round(1).to_f
       else
         0.0
       end
     end
     def review_score_percentage 
       unless self.posts.empty?#パーセンテージ
-        workshops.average(:score).round(1).to_f*100/5
+        posts.average(:score).round(1).to_f*100/5
       else
         0.0
       end

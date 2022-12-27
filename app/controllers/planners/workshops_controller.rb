@@ -4,6 +4,7 @@ class Planners::WorkshopsController < ApplicationController
     @workshops = Workshop.all
     @workshop=Workshop.new
     @posts=Post.all
+    @stra=Star.new
   end
   def new
     
@@ -11,9 +12,9 @@ class Planners::WorkshopsController < ApplicationController
   end
   def create
       #p "params: #{params}"#
-      @workshop = current_planner.workshops.build(workshop_params)
-      @workshop.planner_id=current_planner.id
-      if @workshop.save
+      workshop = current_planner.workshops.build(workshop_params)
+      workshop.planner_id=current_planner.id
+      if workshop.save
         redirect_to planners_workshops_index_path
       else
         #p"========"

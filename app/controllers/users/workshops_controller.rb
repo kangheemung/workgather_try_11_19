@@ -2,32 +2,27 @@ class Users::WorkshopsController < ApplicationController
   include  UserSessionsHelper
     def index
       @workshops = Workshop.all
-      @workshop=Workshop.new
       @posts=Post.all
+      
     end  
     def new
+      @posts=Post.all
+      @post=Post.new
       @post=Post.new
       @workshop =Workshop.new
-    end
-    def create
-       post = current_user.posts.build(post_params)
-       if post.save 
-        redirect_to planners_workshops_show_path(post.workshop_id)
-       else
-        redirect_to planners_workshops_show_path(post.workshop_id)
-       end
+      
     end
     def show
-     @workshop =Workshop.find_by(params[:id])
+     @workshop =Workshop.find_by(id:params[:id])
      @post=Post.new
+     @posts=Post.all
      @star =Star.new
-
     end
     def edit
-      @post=Post.find_by(params[:id])
+      @post=Post.find(params[:id])
     end
     def update
-      @post=Post.find_by(params[:id])
+      @post=Post.find(params[:id])
       if @post.update(post_params)
           #  session[:planner_id]=planner.id
           flash[:notice]="参加者レビュー情報を更新しました。"

@@ -3,7 +3,8 @@
 </div><!三本のイメージを押したら　カテゴリーが開きます。-->
 <div class="p_body">
   <div class="p_title">
-    <%= link_to "レビューを書く！",posts_create_path,class: "link_text"%></span>
+   <%= render 'form.html',post:@post %>    
+
   </div>       
   <div class="star-rating mb-2">
     <div class="star-rating-front" style="width: %">★★★★★</div>

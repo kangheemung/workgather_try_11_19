@@ -71,7 +71,7 @@
         </li>  
         <li><%= link_to "top",root_path%>|</li>
         <li><%= link_to "mypage",users_show_path(current_user.id), data: {"turbolinks" => false}%>|</li>
-        <li><%= link_to "workshopを見に行く",planners_workshops_index_path, data: {"turbolinks" => false} %>|</li>
+        <li><%= link_to "workshopを見に行く",users_workshops_index_path, data: {"turbolinks" => false} %>|</li>
         <li><%= link_to "ログアウト",users_logout_path, method: :delete %></li>
       </ul> 
     </div> 

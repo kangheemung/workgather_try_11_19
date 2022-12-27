@@ -50,7 +50,6 @@
         <p>like</p>
         <p><%= link_to "予約する",reservations_index_path  ,class: "w_btn_b" %></p>
         <p><%= link_to "レビュー",planners_workshops_show_path(workshop),class: "w_btn_r" %></p>
-        <p><%= link_to "参加",users_workshops_show_path(workshop),class: "w_btn_r" %></p>
       <% else %>
         <p>空き状況</p>
         <p><%= workshop.time %></p>

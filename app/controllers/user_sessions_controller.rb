@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
       if user && user.authenticate(params[:user][:password])
         log_in(user)
         flash[:notice]="ログインしました。"
-        redirect_to planners_workshops_index_path
+        redirect_to users_workshops_index_path
     else
         flash[:danger] = 'Invalid email/password combination'
         redirect_to login_path

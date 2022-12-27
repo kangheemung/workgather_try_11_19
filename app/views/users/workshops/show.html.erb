@@ -1,11 +1,36 @@
-<%if @workshop != nil %>
-<p> <%= @workshop.w_title %></p>
-  <p>name</p>
-  <% if UserWorkshop.where(user_id:current_user.id,workshop_id:params[:workshop_id])%>
-  すでに参加してるよ！
-  <%else%>
-   <%= link_to "Join!!", create_user_workshop_path(@workshop), method: :post %>
-  <% end %> 
-<% else %>
- No workshop
-<% end %>
+<div class="p_side_header_p">
+  <p>Home> workshopsのレビュー</p>
+</div><!三本のイメージを押したら　カテゴリーが開きます。-->
+<div class="p_body">
+  <%if @workshop != nil %>
+    <p> <%= @workshop.w_title %></p>
+    <p>name</p>
+    <% if @workshop.joined?(current_user) %>
+     すでに参加してるよ！   
+    <% else %>
+    <%= link_to "Join!!", create_user_workshop_path(@workshop), method: :post %>
+    <% end %> 
+    <% @workshop.posts.each do |post| %>
+      <%= post.content %>
+  <% end %>
+    誰でもゾーン
+  <% else %>
+    No workshop
+  <% end %>   
+  <div class="star-rating mb-2">
+    <% @posts.each do|post| %>
+      <div class="p_s_body">
+       <%= render 'form.html',post:@post %>
+        <p><%=image_tag post.image.url, size: '200x200' %></p>
+        <p><%= post.title %></p>
+        <p><%= post.content %></p>
+      </div>  
+      <div class= "p_t_h"> 
+        <%if current_user%>
+          <p><%=link_to "編集","/posts/#{@post.id}/edit",class: "link_text"%></p>
+        <%end%>
+      </div>
+        <hr>
+    <% end %>
+  </div>
+</div>
