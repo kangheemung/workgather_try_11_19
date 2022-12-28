@@ -37,8 +37,19 @@
         <p>like</p>
         <p><%= link_to "予約する",reservations_index_path ,class: "w_btn_b" %></p>
         <p><%= link_to "レビュー",users_workshops_show_path(workshop.id),class: "w_btn_r" %></p>
-        <p><%= link_to "参加",users_workshops_show_path(workshop.id),class: "w_btn_r" %></p>
-      <% end %>
+        
+      <% else %>
+        <p>空き状況</p>
+        <p><%= workshop.time %></p>
+        <p>定員<%= workshop.personnel %></p>
+        <p>場所詳細</p>
+        <p><%= workshop.prefecture %></p>
+        <p><%= workshop.address1 %></p>
+        <p><%= workshop.address2 %></p>
+        <p>駐車場ありなし</p>
+        <p>like</p>
+        <p><%= link_to "レビュー",planners_workshops_show_path(workshop),class: "w_btn_r" %></p>
+      <% end %>    
     </div>
   <% end %> 
 </div>

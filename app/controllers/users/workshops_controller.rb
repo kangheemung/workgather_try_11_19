@@ -33,6 +33,6 @@ class Users::WorkshopsController < ApplicationController
     end
     private
     def post_params
-      params.require(:post).permit(:title,:content,:image,:workshop_id,:score )
+      params.require(:post).permit(:title,:content,:image,:workshop_id,:score, :user_workshop_id)
     end 
   end

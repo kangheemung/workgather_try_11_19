@@ -1,6 +1,6 @@
 <div class="p_body">
   <div class="rating-box">
-    <%= form_for @post, url: posts_create_path(@workshop) do |f| %>
+    <%= form_for :post, url: workshop_post_path(@workshop) do |f| %>
 	  <div class="body_box">
 	    <div class="b_b_t">
 		  <p> <%= f.label :ワークショップの写真をアップロード！%></p>

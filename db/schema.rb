@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2022_12_26_100032) do
     t.integer "user_id"
     t.integer "score"
     t.integer "workshop_id"
+    t.integer "user_workshop_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -53,7 +54,7 @@ ActiveRecord::Schema.define(version: 2022_12_26_100032) do
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.date "day"
+    t.date "day", null: false
     t.string "time", null: false
     t.integer "user_id"
     t.datetime "start_time", null: false

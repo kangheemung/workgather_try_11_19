@@ -1,6 +1,11 @@
 <div class="p_side_header_p">
   <p>Home> workshopsのレビュー</p>
 </div><!三本のイメージを押したら　カテゴリーが開きます。-->
+<%= render 'workshop_detail',workshop:@workshop%>
+<div class="post_text">
+ <%= render 'form.html',post:@post %>
+</div>
+<%= render 'user_show',workshop:@workshop %>
 <div class="p_body">
   <%if @workshop != nil %>
     <p> <%= @workshop.w_title %></p>
@@ -17,20 +22,9 @@
   <% else %>
     No workshop
   <% end %>   
-  <div class="star-rating mb-2">
-    <% @posts.each do|post| %>
-      <div class="p_s_body">
-       <%= render 'form.html',post:@post %>
-        <p><%=image_tag post.image.url, size: '200x200' %></p>
-        <p><%= post.title %></p>
-        <p><%= post.content %></p>
-      </div>  
-      <div class= "p_t_h"> 
-        <%if current_user%>
-          <p><%=link_to "編集","/posts/#{@post.id}/edit",class: "link_text"%></p>
-        <%end%>
-      </div>
-        <hr>
-    <% end %>
-  </div>
+  <div class= "p_t_h"> 
+    <%if current_user%>
+      <p><%=link_to "編集",posts_edit_path(@posts),class: "link_text"%></p>
+    <%end%>
+  </div>  
 </div>

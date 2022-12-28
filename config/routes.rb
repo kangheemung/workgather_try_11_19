@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   #投稿
   get 'posts/index'=>'posts#index',as:'posts_index'
   get 'posts/new'=>'posts#new',as:'posts_new'
-  post'posts/create'=>'posts#create',as:'posts_create'
+  post 'workshops/:id/post' => 'posts#create', as: 'workshop_post'
   get 'posts/:id/edit' => 'posts#edit',as:'posts_edit'
   patch 'posts/:id/edit'=> 'posts#update',as:'posts_update'
   get 'posts/:id'=>'posts#show',as:'posts_show'

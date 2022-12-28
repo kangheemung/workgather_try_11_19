@@ -1,0 +1,22 @@
+<% @workshop.posts.each do |post| %>
+  <div class="reviews">
+    <div class="reviews_box_image">
+      <%= image_tag post.image.url, size: '200x200' %>
+      <p><%= post.score %> 点</p>
+    </div>
+    <div class= "reviews_box_text">
+      <div class= "reviews_box_text1">
+        <span>タイトル：<%= post.title %></span>
+      </div> 
+      <div class= "reviews_box_content">
+        <p>コメント<%= post.content %></p>
+      </div>   
+    </div> 
+  </div>
+  <div class="user_edit">
+    <%if current_user%>
+      <p><%=link_to "編集",users_workshops_edit_path(post.id),class: "link_text"%></p>
+    <%end%>
+  </div> 
+<% end %> 
+ 
