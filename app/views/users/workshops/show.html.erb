@@ -2,29 +2,18 @@
   <p>Home> workshopsのレビュー</p>
 </div><!三本のイメージを押したら　カテゴリーが開きます。-->
 <%= render 'workshop_detail',workshop:@workshop%>
-<div class="post_text">
- <%= render 'form.html',post:@post %>
-</div>
-<%= render 'user_show',workshop:@workshop %>
-<div class="p_body">
   <%if @workshop != nil %>
-    <p> <%= @workshop.w_title %></p>
-    <p>name</p>
     <% if @workshop.joined?(current_user) %>
-     すでに参加してるよ！   
+      <div class="user_enter_butten">
+        <p class="enter_butten">すでに参加してるよ！</p>
+      </div>   
+      <div class="post_text">
+        <%= render 'form.html',post:@post %>
+      </div> 
     <% else %>
-    <%= link_to "Join!!", create_user_workshop_path(@workshop), method: :post %>
+      <%= link_to "Join!!", create_user_workshop_path(@workshop), method: :post %>
     <% end %> 
-    <% @workshop.posts.each do |post| %>
-      <%= post.content %>
-  <% end %>
-    誰でもゾーン
+      <%= render 'user_show',workshop:@workshop %>
   <% else %>
     No workshop
-  <% end %>   
-  <div class= "p_t_h"> 
-    <%if current_user%>
-      <p><%=link_to "編集",posts_edit_path(@posts),class: "link_text"%></p>
-    <%end%>
-  </div>  
-</div>
+  <% end %>
