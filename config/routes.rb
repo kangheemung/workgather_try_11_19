@@ -53,9 +53,12 @@ Rails.application.routes.draw do
       get'/workshops/index'=>'workshops#index',as:'workshops_index'
       get '/workshops/new'=>'workshops#new',as:'workshops_new'
       get '/workshops/:id/edit'=>'workshops#edit',as:'workshops_edit'
+      post'/workshops/:workshop_id/reservations' =>'reservations#create',as:'reservations_create'
       patch '/workshops/:id/edit' => 'workshops#update',as:'workshops_update'
       get '/workshops/:id'=>'workshops#show',as:'workshops_show'
     end
+    
+
     post '/user_workshops/:workshop_id'=>'user_workshops#create',as:'create_user_workshop'
       #planner_workshops投稿
     namespace :planners do
@@ -76,7 +79,6 @@ Rails.application.routes.draw do
   # reservations予約ページ
   get 'reservations/index'=>'reservations#index',as:'reservations_index'
   get 'reservations/new' =>'reservations#new',as:'reservations_new'
-  post'reservations/create' =>'reservations#create',as:'reservations_create'
   get 'reservations/show'=>'reservations#show',as:'reservations_show'
   #album
   get 'images/index'=>'images#index'

@@ -7,7 +7,7 @@ class Workshop < ApplicationRecord
 
     has_many :stars,class_name:"Star"
     has_many :user_workshops
-    has_many :posts,#through: :user_workshops,dependent::destroy
+    has_many :posts, through: :user_workshops
     has_many :reservations
     def joined?(user)
       UserWorkshop.where(user_id: user.id,workshop_id: self.id).exists?
