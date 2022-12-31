@@ -1,8 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="col-12 text-center">
-      <h1>予約画面</h1>
+      <h1>予約一覧画面</h1>
       <p>3ヶ月先まで予約することができます。</p>
+         <% @reservations.each do |reservation| %>
+          <tr>
+            <td><%= reservation.start_time %></td>
+            <td><%= link_to 'Show', reservations_show_path(reservation) %></td>
+            <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
+            <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+      <% end %>
     </div>
     <div class="col-12 mt-3">
       <%= week_calendar events: @reservations do |date, reservations| %>

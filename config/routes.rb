@@ -79,7 +79,10 @@ Rails.application.routes.draw do
   # reservations予約ページ
   get 'reservations/index'=>'reservations#index',as:'reservations_index'
   get 'reservations/new' =>'reservations#new',as:'reservations_new'
-  get 'reservations/show'=>'reservations#show',as:'reservations_show'
+  post'reservations/create'=>'reservations#create',as:'reservations_create'
+  get 'reservations/:id/edit'=>'reservations#edit',as:'reservations_edit'
+  patch 'reservations/:id/edit' => 'reservations#update',as:'reservatrions_update'
+  get 'reservations/:id'=>'reservations#show',as:'reservations_show'
   #album
   get 'images/index'=>'images#index'
   get 'images/new'=>'images#new'
