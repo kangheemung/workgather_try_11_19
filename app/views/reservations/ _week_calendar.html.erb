@@ -15,8 +15,8 @@
       <tr>
         <!-- 追加 -->
         <th>時間</th>
-        <% date_range.slice(0, 7).each do |day| %>
-          <th><%= t('date.abbr_day_names')[day.wday] %></th>
+         <% date_range.slice(0, 7).each do |day| %>
+        <th><%= t('date.abbr_day_names')[day.wday] %></th>
         <% end %>
       </tr>
     </thead>
@@ -49,4 +49,3 @@
       <% end %>
     </tbody>
   </table>
-</div>

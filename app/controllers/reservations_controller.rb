@@ -1,22 +1,14 @@
 class ReservationsController < ApplicationController
-  include  UserSessionsHelper
   def index
-    @reservations = Reservation.all.where("day >= ?", Date.current).where("day < ?", Date.current >> 3).order(day: :desc)
+    @reservations = Reservation.all
   end
   def create
-    @reservation = Reservation.new(reservation_params)
-    if @reservation.save
-      redirect_to reservation_path @reservation.id
-    else
-      render :new
+    @reservation = current_user.reservations.create(reservation_params)
+    redirect_to reservation_index_path notice:"予約が完了しました"
     end
-
-  end
   def new
     @reservation=Reservation.new
-    @day = params[:day]
-    @time = params[:time]
-    @start_time = DateTime.parse(@day + " " + @time + " " + "JST")
+
   end
 
   def show

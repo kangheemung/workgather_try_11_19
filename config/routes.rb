@@ -83,6 +83,10 @@ Rails.application.routes.draw do
   get 'reservations/:id/edit'=>'reservations#edit',as:'reservations_edit'
   patch 'reservations/:id/edit' => 'reservations#update',as:'reservatrions_update'
   get 'reservations/:id'=>'reservations#show',as:'reservations_show'
+  resources :books do
+    resources :reservations
+    post   '/books/:book_id/reservations' => 'reservations#create',as:'book_reservations_create'
+  end 
   #album
   get 'images/index'=>'images#index'
   get 'images/new'=>'images#new'
