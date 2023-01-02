@@ -10,5 +10,6 @@ class Planner < ApplicationRecord
   has_secure_password
   has_many :workshops
   has_many :profiles
+  has_many :schedule
   mount_uploader :planner_profile,PlannerProfileUploader
 end

@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-
   #top
   root 'homes#top'
 
@@ -53,7 +51,6 @@ Rails.application.routes.draw do
       get'/workshops/index'=>'workshops#index',as:'workshops_index'
       get '/workshops/new'=>'workshops#new',as:'workshops_new'
       get '/workshops/:id/edit'=>'workshops#edit',as:'workshops_edit'
-      post'/workshops/:workshop_id/reservations' =>'reservations#create',as:'reservations_create'
       patch '/workshops/:id/edit' => 'workshops#update',as:'workshops_update'
       get '/workshops/:id'=>'workshops#show',as:'workshops_show'
     end
@@ -69,6 +66,19 @@ Rails.application.routes.draw do
       patch '/workshops/:id/edit' => 'workshops#update',as:'workshops_update'
       get '/workshops/:id'=> 'workshops#show',as:'workshops_show'
     end
+    namespace :planners do
+      get 'schecules/index'
+      get 'schecules/new'
+      get 'schecules/show'
+      get 'schecules/edit'
+    end
+    namespace :users do
+      get '/reservations/index'=>'reservations#index',as:'reservations_index'
+      get '/reservations/new'=>'reservations#new',as:'reservations_new'
+      post'/reservations/create' =>'reservations#create',as:'reservations_create'
+      get '/reservations/edit'=>'reservations#edit'
+      get '/reservations/:id'=>'reservations#show',as:'reservations_show'
+    end
   #workshops投稿
   #get 'workshops/index'=>'workshops#index',as:'workshops_index'
   #get 'workshops/new'=>'workshops#new',as:'workshops_new'
@@ -77,15 +87,15 @@ Rails.application.routes.draw do
   #patch 'workshops/:id/edit' => 'workshops#update',as:'workshops_update'
   #get 'workshops/:id'=> 'workshops#show',as:'workshops_show'
   # reservations予約ページ
-  get 'reservations/index'=>'reservations#index',as:'reservations_index'
-  get 'reservations/new' =>'reservations#new',as:'reservations_new'
-  post'reservations/create'=>'reservations#create',as:'reservations_create'
-  get 'reservations/:id/edit'=>'reservations#edit',as:'reservations_edit'
-  patch 'reservations/:id/edit' => 'reservations#update',as:'reservatrions_update'
-  get 'reservations/:id'=>'reservations#show',as:'reservations_show'
+  #get 'reservations/index'=>'reservations#index'
+  #get 'reservations/new' =>'reservations#new'
+  #post'reservations/create'=>'reservations#create'
+  #get 'reservations/:id/edit'=>'reservations#edit'
+  #patch 'reservations/:id/edit' => 'reservations#update'
+  #get 'reservations/:id'=>'reservations#show'
   resources :books do
     resources :reservations
-    post   '/books/:book_id/reservations' => 'reservations#create',as:'book_reservations_create'
+    #post   '/books/:book_id/reservations' => 'reservations#create',as:'book_reservations_create'
   end 
   #album
   get 'images/index'=>'images#index'

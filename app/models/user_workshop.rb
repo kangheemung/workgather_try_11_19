@@ -3,4 +3,5 @@ class UserWorkshop < ApplicationRecord
     belongs_to :workshop
     has_many :posts
     belongs_to :reservation
+    has_many :reservations
 end

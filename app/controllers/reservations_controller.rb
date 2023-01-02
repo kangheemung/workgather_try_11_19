@@ -4,13 +4,11 @@ class ReservationsController < ApplicationController
   end
   def create
     @reservation = current_user.reservations.create(reservation_params)
-    redirect_to reservation_index_path notice:"予約が完了しました"
+    redirect_to reservation_show_path notice:"予約が完了しました"
     end
   def new
-    @reservation=Reservation.new
-
+    @reservation = Reservation.new
   end
-
   def show
     @reservation=Reservation.find(params[:id])
   end
