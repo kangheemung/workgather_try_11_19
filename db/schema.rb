@@ -56,12 +56,11 @@ ActiveRecord::Schema.define(version: 2023_01_02_113635) do
   create_table "reservations", force: :cascade do |t|
     t.date "day", null: false
     t.string "time", null: false
-    t.integer "user_id"
+    t.bigint "user_id", null: false
     t.integer "workshop_id"
-    t.integer "user_workshop_id"
+    t.datetime "start_time", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "start_time", null: false
   end
 
   create_table "schedules", force: :cascade do |t|

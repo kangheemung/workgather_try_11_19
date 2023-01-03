@@ -52,7 +52,12 @@ Rails.application.routes.draw do
       get '/workshops/new'=>'workshops#new',as:'workshops_new'
       get '/workshops/:id/edit'=>'workshops#edit',as:'workshops_edit'
       patch '/workshops/:id/edit' => 'workshops#update',as:'workshops_update'
+      get'/reservations/new'=>'reservations#new',as:'reservations_new'
+      get '/reservations/index'=>'reservations#index',as:'reservations_index'
+      post'/reservations/create' =>'reservations#create',as:'reservations_create'
+      get '/reservations/edit'=>'reservations#edit'
       get '/workshops/:id'=>'workshops#show',as:'workshops_show'
+      get '/reservations/:id'=>'reservations#show',as:'reservations_show'
     end
     
 
@@ -72,13 +77,7 @@ Rails.application.routes.draw do
       get 'schecules/show'
       get 'schecules/edit'
     end
-    namespace :users do
-      get '/reservations/index'=>'reservations#index',as:'reservations_index'
-      get '/reservations/new'=>'reservations#new',as:'reservations_new'
-      post'/reservations/create' =>'reservations#create',as:'reservations_create'
-      get '/reservations/edit'=>'reservations#edit'
-      get '/reservations/:id'=>'reservations#show',as:'reservations_show'
-    end
+ 
   #workshops投稿
   #get 'workshops/index'=>'workshops#index',as:'workshops_index'
   #get 'workshops/new'=>'workshops#new',as:'workshops_new'
