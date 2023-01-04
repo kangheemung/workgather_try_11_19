@@ -1,15 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  day: 2023-01-02
-  time: MyString
-  user_id: 1
-  workhshop_id: 1
-  datetime: 
+  planner_id: 1
+  workshop_id: 1
+  reservation_id: 1
+  title: MyString
+  content: MyString
+  : MyString
+  start_date: 2023-01-04 06:52:15
+  end_date: 2023-01-04 06:52:15
 
 two:
-  day: 2023-01-02
-  time: MyString
-  user_id: 1
-  workhshop_id: 1
-  datetime: 
+  planner_id: 1
+  workshop_id: 1
+  reservation_id: 1
+  title: MyString
+  content: MyString
+  : MyString
+  start_date: 2023-01-04 06:52:15
+  end_date: 2023-01-04 06:52:15

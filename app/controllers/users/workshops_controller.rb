@@ -8,7 +8,6 @@ class Users::WorkshopsController < ApplicationController
     def new
       @posts=Post.all
       @post=Post.new
-      @post=Post.new
       @workshop =Workshop.new
       
     end

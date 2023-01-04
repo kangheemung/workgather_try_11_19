@@ -1,7 +1,7 @@
 class Users::ReservationsController < ApplicationController
   include  UserSessionsHelper
   def index
-    @reservations = Reservation.all
+    @reservations = current_user.reservations.all
   end
   def new
     @reservation = Reservation.new
@@ -18,7 +18,7 @@ class Users::ReservationsController < ApplicationController
     end
   end    
   def show
-    @workshop=Workshop.find_by(params[:workhshop_id])
+    @workshop=Workshop.find_by(id:params[:workhshop_id])
     @reservation=Reservation.find_by(params[:reservation_id])
   end
     def edit
