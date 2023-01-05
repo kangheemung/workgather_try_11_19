@@ -1,9 +1,11 @@
 class Planners::SchedulesController < ApplicationController
   def index
     @schedules=Schedule.all
+    @workshop =Workshop.find_by(id: params[:workshop_id])
+   
+
   end
   def new
-    @schedules=Schedule.all
     @workshop =Workshop.find_by(id: params[:workshop_id])
     @schedule= Schedule.new
   end
@@ -14,15 +16,17 @@ class Planners::SchedulesController < ApplicationController
       p schedule.errors.full_messages
       p"==========="
     if schedule.save
-      redirect_to planners_schedules_new_path
+      redirect_to planners_schedules_show_path
     else  
       render "new"
     end
   end
 
   def show
+    @schedules =Schedule.new
+    @planner = Planner.find_by(id:params[:planner_id])
     @workshop =Workshop.find_by(id: params[:workshop_id])
-    @schedule= Schedule.new
+    
   end
 
   def edit

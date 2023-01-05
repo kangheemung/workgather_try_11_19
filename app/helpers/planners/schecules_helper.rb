@@ -1,5 +1,6 @@
 module Planners::ScheculesHelper
-    def current_workshop
-        @current_workshop||= Workshop.find_by(id: session[:workshop_id])
+   
+      def current_planner
+        @current_planner||= Planner.find_by(id: session[:planner_id])
       end
 end

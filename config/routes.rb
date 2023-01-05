@@ -72,8 +72,8 @@ Rails.application.routes.draw do
       get '/workshops/:id'=> 'workshops#show',as:'workshops_show'
     end
     namespace :planners do
-      get '/schedules/index'
-      get '/schedules/new'=>'schedules#new',as:'schedules_new'
+      get '/schedules/:workshop_id/index'=>'schedules#index',as:'schedules_index'
+      get '/schedules/:workshop_id/new'=>'schedules#new',as:'schedules_new'
       post'/schedules/:workshop_id/create'=>'schedules#create',as:'schedules_create'
       get '/schedules/:workshop_id'=>'schedules#show',as:'schedules_show'
       get '/schedules/edit'

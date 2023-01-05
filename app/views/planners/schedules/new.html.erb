@@ -1,4 +1,42 @@
 new
-<%=@schedule.time%>
-<%=@schedule.day%>
-
+<h1>Planners::Schecules#new</h1>
+<p>Find me in app/views/planners/schecules/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center title">
+      <h1>新規予約画面</h1>
+      
+      <%=@workshop.w_title%>のスケジュールページ
+    </div>
+    <div class="col-12 mt-3 content">
+      <%= form_for :schedule, url: planners_schedules_create_path do |f| %>
+      <div class="day form-group">
+        <%= f.label  'タイトル' %>
+        <%= f.text_field :title %>
+      </div>
+      <div class="day form-group">
+        <%= f.label  '日付' %>
+        <%= f.date_field :day %>
+      </div>
+      <div class="time form-group">
+        <%= f.label  '時間' %>
+        <%= f.time_field :time%>
+      </div>
+      <div class="time form-group">
+        <%= f.label  'memo' %>
+        <%= f.text_field :content%>
+      </div>
+      
+      <%= f.hidden_field :planner_id, value: current_planner.id %>
+      <div class="submit">
+        <%= f.submit value: '予約する', class: 'btn btn-primary mx-auto d-block' %>
+      </div>
+    <% end %>
+    
+    <%=@schedule.day%>
+    <div class="col-12 text-right">
+      <%= link_to '戻る', planners_schedules_index_path(@workshop) %>
+    </div>
+    </div>
+  </div>
+</div>
