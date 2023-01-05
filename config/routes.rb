@@ -75,7 +75,7 @@ Rails.application.routes.draw do
       get '/schedules/index'
       get '/schedules/new'=>'schedules#new',as:'schedules_new'
       post'/schedules/:workshop_id/create'=>'schedules#create',as:'schedules_create'
-      get '/schedules/:workshop_id/'=>'schedules#show',as:'schedules_show'
+      get '/schedules/:workshop_id'=>'schedules#show',as:'schedules_show'
       get '/schedules/edit'
     end
  
@@ -87,7 +87,7 @@ Rails.application.routes.draw do
   #patch 'workshops/:id/edit' => 'workshops#update',as:'workshops_update'
   #get 'workshops/:id'=> 'workshops#show',as:'workshops_show'
   # reservations予約ページ
-  get '/reservations/index'=>'reservations#index'
+  #get '/reservations/index'=>'reservations#index'
   #get 'reservations/new' =>'reservations#new'
   #post'reservations/create'=>'reservations#create'
   #get 'reservations/:id/edit'=>'reservations#edit'
@@ -98,7 +98,7 @@ Rails.application.routes.draw do
     resources :reservations
    
   end 
-  get  '/reservations' => 'reservations#index',as:'book_reservations_index'
+  #get  '/reservations' => 'reservations#index',as:'book_reservations_index'
   #album
   get 'images/index'=>'images#index'
   get 'images/new'=>'images#new'

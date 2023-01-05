@@ -3,21 +3,25 @@ class Planners::SchedulesController < ApplicationController
     @schedules=Schedule.all
   end
   def new
-  
+    @schedules=Schedule.all
+    @workshop =Workshop.find_by(id: params[:workshop_id])
+    @schedule= Schedule.new
   end
   def create
-    if @schedule= Schedule.create(schedule_params)
+    schedule= Schedule.new(schedule_params)
       p"========"
-      p @schedule.errors.full_messages
+      p params
+      p schedule.errors.full_messages
       p"==========="
-      redirect_to planners_schedules_show_path(:workshop_id)
-    else
-      render :new
+    if schedule.save
+      redirect_to planners_schedules_new_path
+    else  
+      render "new"
     end
   end
 
   def show
-   @workshop =Workshop.find_by(id: params[:workshop_id])
+    @workshop =Workshop.find_by(id: params[:workshop_id])
     @schedule= Schedule.new
   end
 

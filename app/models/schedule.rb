@@ -1,6 +1,5 @@
 class Schedule < ApplicationRecord
-  belongs_to :planner
-  belongs_to :workshop
-  validates_uniqueness_of :workshop_id, scope: :planner_id
+  belongs_to :planner,optional: true
+  belongs_to :workshop,optional: true
   has_many :reservations, class_name: "Reservation"
 end

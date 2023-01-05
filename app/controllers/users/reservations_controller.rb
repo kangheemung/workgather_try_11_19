@@ -7,11 +7,11 @@ class Users::ReservationsController < ApplicationController
     @reservation = Reservation.new
   end
   def create
-    @reservation= current_user.reservations.build(reservation_params) 
+    reservation= current_user.reservations.build(reservation_params) 
     p"============"
     p @reservation.errors.full_messages
     p"============"
-    if @reservation.save!
+    if reservation.save!
       redirect_to users_reservation_index_path 
     else
       render :new
