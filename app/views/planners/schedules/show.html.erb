@@ -1,12 +1,24 @@
-<p><%=current_planner.user_name%>様のマイページ</p>
+
 <p>ワークショップ一覧<%=@workshop.w_title%></p>
 <%=current_planner.user_name%>様のスケジュールページ
-
 <div>
-<% @workshop.schedule.each do |schedule| %>
-    <p>タイトル：<%=schedule.title%>
-    日程:<%= schedule.day%>
-    時間:<%=schedule.time%>
-    </p>
-<% end %>
+
+
+  <p>
+    タイトル：<%=@schedule.title%></p>
+    日程:
+  <td><%=@schedule.start_date%>
+  <p><%=@schedule.end_date%></p>
+  <p><%=@schedule.start_time%></p>
+   <p><%=@schedule.end_date%></p>
+   
+  </td>
+  <td>  
+   
+  </td>
+    時間:
+  </p>
+
+  <%= link_to "戻る",planners_schedules_new_path(@workshop)%>
+  <%= link_to "編集",planners_schedules_edit_path(@workshop)%>
 </div>

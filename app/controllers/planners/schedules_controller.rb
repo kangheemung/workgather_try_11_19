@@ -23,9 +23,10 @@ class Planners::SchedulesController < ApplicationController
   end
 
   def show
-    @schedules =Schedule.new
+    @schedule =Schedule.find_by(params[:id])
     @planner = Planner.find_by(id:params[:planner_id])
     @workshop =Workshop.find_by(id: params[:workshop_id])
+  
     
   end
 
@@ -33,6 +34,6 @@ class Planners::SchedulesController < ApplicationController
   end
   private
   def schedule_params
-    params.require(:schedule).permit(:planner_id,:workshop_id,:title,:content,:day,:time,:start_time)
+    params.require(:schedule).permit(:planner_id,:workshop_id,:title,:content,:day,:time,:start_date,:end_date)
   end 
 end

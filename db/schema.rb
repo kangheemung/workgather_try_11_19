@@ -56,11 +56,10 @@ ActiveRecord::Schema.define(version: 2023_01_04_065215) do
   create_table "schedules", force: :cascade do |t|
     t.integer "planner_id"
     t.integer "workshop_id"
-    t.integer "reservation_id"
     t.string "title"
     t.string "content"
-    t.time "time"
-    t.date "day"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.datetime "start_date"
     t.datetime "end_date"
     t.datetime "created_at", null: false
