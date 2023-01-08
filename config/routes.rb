@@ -52,12 +52,12 @@ Rails.application.routes.draw do
       get '/workshops/new'=>'workshops#new',as:'workshops_new'
       get '/workshops/:id/edit'=>'workshops#edit',as:'workshops_edit'
       patch '/workshops/:id/edit' => 'workshops#update',as:'workshops_update'
-      get'/reservations/new'=>'reservations#new',as:'reservations_new'
+      get'/reservations/:workshop_id/new'=>'reservations#new',as:'reservations_new'
       get '/reservations/index'=>'reservations#index',as:'reservations_index'
-      post'/reservations/create' =>'reservations#create',as:'reservations_create'
+      post'/reservations/:workshop_id/create' =>'reservations#create',as:'reservations_create'
       get '/reservations/edit'=>'reservations#edit'
       get '/workshops/:id'=>'workshops#show',as:'workshops_show'
-      get '/reservations/:id'=>'reservations#show',as:'reservations_show'
+      get '/reservations/:workshop_id'=>'reservations#show',as:'reservations_show'
     end
     
 

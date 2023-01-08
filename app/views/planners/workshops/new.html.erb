@@ -38,7 +38,13 @@
         </div>
         <div class="text_box">
           <p><%= f.label :開催時間 %></p>
-          <p><%= f.text_field :time, :placeholder => "例)１時間〜２時間"%></p>
+          <p>スタート時間: <%= f.time_select :start_time%></p>
+          <p>終了時間: <%= f.time_select :end_time%></p>
+        </div>
+         <div class="text_box">
+          <p><%= f.label :開催期間 %></p>
+          <p>スタート日: <%= f.date_select :start_date%>
+          <p>終了日: <%= f.date_select :end_date%></p>
         </div>
         <div class="text_box">
           <p><%= f.label :定員 %></p>
@@ -46,7 +52,7 @@
         </div>
         <div class="text_box">
           <p><%= f.label :新型コロナ感染対策%></p>
-          <p><%= f.text_field :precautions, :placeholder => "●マスクをされてない方,37.5度以上の場合は参加をお断り致します。"%></p>
+          <p><%= f.text_field :precautions, :placeholder => "● マスクをされてない方,37.5度以上の場合は参加をお断り致します。"%></p>
         </div>
         <div class="sign_btn">
           <p><%= f.button "投稿", class: "button" ,data: {"turbolinks" => false}%></p>

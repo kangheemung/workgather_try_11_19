@@ -48,7 +48,7 @@ class Planners::WorkshopsController < ApplicationController
 
   private
   def workshop_params
-    params.require(:workshop).permit(:w_title,:w_theme,:image,:prefecture,:address1,:address2,:planner_id,:post_id,:w_detail,:time,:personnel,:precautions)
+    params.require(:workshop).permit(:w_title,:w_theme,:image,:prefecture,:address1,:address2,:planner_id,:post_id,:w_detail,:start_time,:end_time,:start_date,:end_date,:personnel,:precautions)
   end 
 end
 

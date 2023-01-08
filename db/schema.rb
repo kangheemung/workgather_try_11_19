@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_04_065215) do
+ActiveRecord::Schema.define(version: 2023_01_08_120816) do
 
   create_table "images", force: :cascade do |t|
     t.string "name"
@@ -53,15 +53,15 @@ ActiveRecord::Schema.define(version: 2023_01_04_065215) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "schedules", force: :cascade do |t|
-    t.integer "planner_id"
+  create_table "reservations", force: :cascade do |t|
+    t.integer "user_id"
     t.integer "workshop_id"
-    t.string "title"
-    t.string "content"
-    t.datetime "start_time"
-    t.datetime "end_time"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.string "name"
+    t.integer "participant"
+    t.datetime "date_time_1"
+    t.datetime "date_time_2"
+    t.datetime "date_time_3"
+    t.boolean "check_box"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -104,9 +104,11 @@ ActiveRecord::Schema.define(version: 2023_01_04_065215) do
     t.string "address1"
     t.string "address2"
     t.integer "planner_id"
-    t.integer "user_id"
     t.text "w_detail"
-    t.string "time"
+    t.time "start_time", null: false
+    t.time "end_time", null: false
+    t.date "start_date", null: false
+    t.date "end_date", null: false
     t.string "personnel"
     t.text "precautions"
     t.datetime "created_at", null: false

@@ -26,16 +26,30 @@
     </div>
     <div class="w_table_right">
       <% if current_user.present? %>
-        <p>空き状況</p>
-        <p><%= workshop.time %></p>
-        <p>定員<%= workshop.personnel %></p>
-        <p>場所詳細</p>
-        <p><%= workshop.prefecture %></p>
-        <p><%= workshop.address1 %></p>
-        <p><%= workshop.address2 %></p>
-        <p>駐車場ありなし</p> 
-        <p>like</p>
-        <p><%= link_to "予約する",users_reservations_new_path,class: "w_btn_b" %></p>
+        <p>
+          開催期間
+          </p>
+          <p>
+            <%= workshop.start_date%>~
+            <%= workshop.end_date%>
+          </p>
+          <p>
+            開催時間
+          </p>  
+            <%= workshop.start_time.strftime("%H:%M")%>~
+            <%= workshop.end_time.strftime("%H:%M")%>
+          </p>
+          <p>定員</p>
+          <p>
+          <%= workshop.personnel %>
+          </p>
+          <p>開催場所</p>
+          <p><%= workshop.prefecture %></p>
+          <p><%= workshop.address1 %></p>
+          <p><%= workshop.address2 %></p>
+          <p>駐車場ありなし</p>
+          <p>like</p>
+        <p><%= link_to "予約する",users_reservations_new_path(workshop),class: "w_btn_b" %></p>
         <p><%= link_to "レビュー",users_workshops_show_path(workshop.id),class: "w_btn_r" %></p>  
       <% else %>
         <p>空き状況</p>

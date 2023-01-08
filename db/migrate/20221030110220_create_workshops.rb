@@ -9,10 +9,10 @@ class CreateWorkshops < ActiveRecord::Migration[5.2]
       t.string :address2
       t.integer :planner_id
       t.text :w_detail
-      t.datetime :start_time
-      t.datetime :end_time
-      t.datetime :start_date
-      t.datetime :end_date
+      t.time :start_time,null: false
+      t.time :end_time,null: false
+      t.date :start_date,null: false
+      t.date :end_date,null: false
       t.string :personnel
       t.text :precautions
       t.timestamps

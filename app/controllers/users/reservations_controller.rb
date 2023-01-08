@@ -1,18 +1,20 @@
 class Users::ReservationsController < ApplicationController
   include  UserSessionsHelper
   def index
-    @reservations = current_user.reservations.all
+    @reservations = Reservations.all
   end
   def new
+    @workshop=Workshop.find_by(id:params[:workshop_id])
     @reservation = Reservation.new
+  
   end
   def create
-    reservation=reservation.new(reservation_params) 
+    reservation=current_user.reservations.build(reservation_params) 
     p"============"
-    p @reservation.errors.full_messages
+    p reservation.errors.full_messages
     p"============"
     if reservation.save
-      redirect_to users_reservation_show_path 
+      redirect_to users_reservations_show_path(id:params[:workhshop_id])
     else
       render :new
     end
@@ -37,6 +39,6 @@ class Users::ReservationsController < ApplicationController
     end
     private
     def reservation_params
-      params.require(:reservation).permit(:title,:content,:start_time,:end_time,:workshop_id,:start_date,:user_id)
+      params.require(:reservation).permit(:name,:participant,:date_time_1,:workshop_id,:date_time_2,:date_time_3,:user_id,:check_box)
     end 
   end

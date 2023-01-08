@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  workshop_id: 
+  name: MyString
+  date_time_1: 2023-01-08 12:08:16
+  date_time_2: 2023-01-08 12:08:16
+  date_time_3: 2023-01-08 12:08:16
+  check_box: false
+
+two:
+  user_id: 
+  workshop_id: 
+  name: MyString
+  date_time_1: 2023-01-08 12:08:16
+  date_time_2: 2023-01-08 12:08:16
+  date_time_3: 2023-01-08 12:08:16
+  check_box: false
