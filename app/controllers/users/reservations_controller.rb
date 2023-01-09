@@ -5,27 +5,25 @@ class Users::ReservationsController < ApplicationController
   end
   def new
     @workshop=Workshop.find_by(id:params[:workshop_id])
-    @reservation = Reservation.new
-  
   end
   def create
-    reservation=current_user.reservations.build(reservation_params) 
+    @reservation=Reservation.create(reservation_params)
+
     p"============"
-    p reservation.errors.full_messages
+    p @reservation.errors.full_messages
     p"============"
-    if reservation.save
-      redirect_to users_reservations_show_path(id:params[:workhshop_id])
+    if @reservation.save!
+      redirect_to users_reservations_show_path(params[:workshop_id])
     else
       render :new
     end
   end    
   def show
-    @user=User.find_by(params[:id])
-    @workshop=Workshop.find_by(id:params[:workhshop_id])
-    @reservation=Reservation.find_by(params[:id])
+    @reservation=Reservation.find_by(id:params[:id])
+    @workshop=Workshop.find_by(id:params[:workshop_id])
   end
     def edit
-      @reservation=Reservation.find_by(params[:id])
+      @reservation=Reservation.find_by(id:params[:id])
     end
     def  update
       @reservation=Reservation.find(params[:id]) #値を取得する

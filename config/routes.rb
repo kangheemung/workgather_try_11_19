@@ -52,16 +52,19 @@ Rails.application.routes.draw do
       get '/workshops/new'=>'workshops#new',as:'workshops_new'
       get '/workshops/:id/edit'=>'workshops#edit',as:'workshops_edit'
       patch '/workshops/:id/edit' => 'workshops#update',as:'workshops_update'
+      get '/workshops/:id'=>'workshops#show',as:'workshops_show'
+      
+    end
+    namespace :users do
       get'/reservations/:workshop_id/new'=>'reservations#new',as:'reservations_new'
       get '/reservations/index'=>'reservations#index',as:'reservations_index'
-      post'/reservations/:workshop_id/create' =>'reservations#create',as:'reservations_create'
-      get '/reservations/edit'=>'reservations#edit'
-      get '/workshops/:id'=>'workshops#show',as:'workshops_show'
-      get '/reservations/:workshop_id'=>'reservations#show',as:'reservations_show'
+      post'/reservations/:workshop_id' =>'reservations#create',as:'reservations_create'
+      get '/reservations/:workshop_id/edit'=>'reservations#edit',as:'reservation_edit'
+      patch '/reservations/:workshop_id/edit' => 'reservations#update',as:'reservations_update'
+      get '/reservations/:workshop_id/show'=>'reservations#show',as:'reservations_show'
     end
-    
 
-    post '/user_workshops/:workshop_id'=>'user_workshops#create',as:'create_user_workshop'
+    #post '/user_workshops/:workshop_id'=>'user_workshops#create',as:'create_user_workshop'
       #planner_workshops投稿
     namespace :planners do
       get '/workshops/index'=>'workshops#index',as:'workshops_index'
@@ -71,13 +74,7 @@ Rails.application.routes.draw do
       patch '/workshops/:id/edit' => 'workshops#update',as:'workshops_update'
       get '/workshops/:id'=> 'workshops#show',as:'workshops_show'
     end
-    namespace :planners do
-      get '/schedules/:workshop_id/index'=>'schedules#index',as:'schedules_index'
-      get '/schedules/:workshop_id/new'=>'schedules#new',as:'schedules_new'
-      post'/schedules/:workshop_id/create'=>'schedules#create',as:'schedules_create'
-      get '/schedules/:workshop_id'=>'schedules#show',as:'schedules_show'
-      get '/schedules/edit'
-    end
+
  
   #workshops投稿
   #get 'workshops/index'=>'workshops#index',as:'workshops_index'
@@ -93,11 +90,6 @@ Rails.application.routes.draw do
   #get 'reservations/:id/edit'=>'reservations#edit'
   #patch 'reservations/:id/edit' => 'reservations#update'
   #get 'reservations/:id'=>'reservations#show'
-  #予約するuser用ページ
-  resources :books do
-    resources :reservations
-   
-  end 
   #get  '/reservations' => 'reservations#index',as:'book_reservations_index'
   #album
   get 'images/index'=>'images#index'
