@@ -95,7 +95,7 @@ Rails.application.routes.draw do
       get '/reservations/index'=>'reservations#index',as:'reservations_index'
       post'/reservations/:workshop_id' =>'reservations#create',as:'reservations_create'
       get '/reservations/:workshop_id/edit'=>'reservations#edit',as:'reservation_edit'
-      patch '/reservations/:workshop_id/edit' => 'reservations#update',as:'reservations_update'
+      post '/reservations/:workshop_id/edit' => 'reservations#update',as:'reservations_update'
       get '/reservations/:workshop_id/show'=>'reservations#show',as:'reservations_show'
     end
 

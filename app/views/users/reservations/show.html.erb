@@ -2,14 +2,18 @@
 <p>Find me in app/views/users/reservations/show.html.erb</p>
 <p>予約状況</p>
    予約したワークショップ：<p><%=@workshop.w_title%></p>
-   <%current_user.reservations.each do|reservation|%>
+   <%@workshop.reservations.each do|reservation|%>
       <p> <%=reservation.name%></p>
       <p><%=reservation.date_time_1%></p>
       <p><%=reservation.date_time_2%></p>
       <p><%=reservation.date_time_3%></p>
       <p><%=reservation.participant%>名参加希望</p>
       <p><%=reservation.check_box%></p>
+       <%=link_to "編集",users_reservation_edit_path(reservation)%>
+       <%=link_to "削除",'#'%>
    <% end %>
+   <p>
    <%=link_to "他のworkshopを見る",users_workshops_index_path%>
    <%=link_to "予約内容編集",users_reservation_edit_path(@workshop)%>
+   </p>
 

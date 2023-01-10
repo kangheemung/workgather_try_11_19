@@ -1,2 +1,35 @@
 <h1>Users::Reservations#edit</h1>
 <p>Find me in app/views/users/reservations/edit.html.erb</p>
+
+      <div class="body">   
+<%= form_for :reservation, url: users_reservations_update_path(params[:workshop_id]) do |f| %>
+        
+          <div class="day form-group">
+            <%= f.label :name, '名前' %>
+            <%= f.text_field :name%>
+          </div>
+          <div class="time form-group">
+            <%= f.label :date_time_1, '参加希望日1' %>
+            <%= f.datetime_select :date_time_1%>
+          </div>
+          <div class="time form-group">
+            <%= f.label :date_time_2, '参加希望日2' %>
+            <%= f.datetime_select :date_time_1%>
+          </div>
+          <div class="time form-group">
+            <%= f.label :date_time_3, '参加希望日3' %>
+            <%= f.datetime_select :date_time_3%>
+          </div>
+          <div class="time form-group">
+            <%= f.label :participant, '参加する人数' %>
+            <%= f.text_field :participant%>
+          </div>
+          <div class="time form-group">
+            <%= f.label :check_box, 'コロナ対策に同意します。' %>
+            <%= f.check_box :check_box%>
+          </div>
+          <div class="submit">
+            <%= f.submit value: '予約する', class: 'btn btn-primary mx-auto d-block' %>
+          </div>
+   
+<% end %>

@@ -4,7 +4,7 @@ class Users::ReservationsController < ApplicationController
     @reservations = Reservations.all
   end
   def new
-    @workshop=Workshop.find_by(id:params[:workshop_id])
+    @reservation=Reservation.new
   end
   def create
     @reservation=Reservation.create(reservation_params)
@@ -18,15 +18,16 @@ class Users::ReservationsController < ApplicationController
       render :new
     end
   end    
-  def show
-    @reservation=Reservation.find_by(id:params[:id])
-    @workshop=Workshop.find_by(id:params[:workshop_id])
-  end
+    def show
+      @reservation=Reservation.find_by(id:params[:workshop_id])
+      @workshop=Workshop.find_by(id:params[:workshop_id])
+    end
     def edit
-      @reservation=Reservation.find_by(id:params[:id])
+      @reservation=Reservation.find_by(id:params[:workshop_id])
+      @workshop=Workshop.find_by(id:params[:workshop_id])
     end
     def  update
-      @reservation=Reservation.find(params[:id]) #値を取得する
+      @reservation=Reservation.find_by(id:params[:workshop_id]) #値を取得する
       if @reservation.update(reservation_params)  #workshop_paramsの内容を上書きする。
         
           flash[:notice]="プランナー情報を更新しました。"
