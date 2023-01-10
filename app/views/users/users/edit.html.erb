@@ -1,0 +1,53 @@
+<h1>Users::Users#edit</h1>
+<p>Find me in app/views/users/users/edit.html.erb</p>
+<div class= "asobinagara">
+  <h1>ASOBINAGARA</h1>
+</div>
+<div class="signup">
+  <div class="signup_text">
+    <span>会員登録(参加者専用)</span>
+  </div>
+    <%= form_for @user, url: users_update_path(@user.id) do |f| %>
+      <div class="body">   
+        <div class="body_box">    
+        <%= f.label :user_name %>
+        </div>  
+        <%= f.text_field :user_name, :placeholder => "User name" %>
+        <div class="body_box"> 
+        <%= f.label :email%>
+        </div>  
+        <%= f.text_field :email, :placeholder => "email"  %>
+        <div class="body_box"> 
+        <%= f.label :password %>
+        </div>  
+        <%= f.password_field :password, :placeholder => "password" %>
+        <div class="body_box"> 
+        <%= f.label :password_confirmation %>
+        </div> 
+        <%= f.password_field  :password_confirmation, :placeholder => "password_confirmation"%>
+        <div class="body_box">
+        <%= f.label :プロフィールの写真　%></p>
+        <%=  f.file_field :u_profile_id %></p>
+        </div> 
+        <div class="body_box">
+        <%= f.label :name %>
+        <%= f.text_field :first_name, :placeholder => "first_name",class:"name" %>
+        <%= f.text_field :last_name, :placeholder => "last_name",class:"name" %>
+        </div>
+        <div class="body_box">
+        <%= f.label :誕生日%>
+        </div> 
+        <%= f.date_field :birthday, :placeholder => "birthday" ,value: @user.birthday%>
+        <div class="gender_box">
+          <div class="body_box">
+            <%= f.label :gender,'性別' %>
+          </div>
+            <%= f.select :gender, {'男性': 1,'女性': 2,'その他': 3},{ include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+        </div>
+      </div>
+      <div class="sign_btn">
+        <%= f.button "登録", class: "button"%><br>
+      </div>
+    <%end%>   
+</div>
+

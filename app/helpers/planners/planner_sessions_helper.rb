@@ -1,0 +1,2 @@
+module Planners::PlannerSessionsHelper
+end

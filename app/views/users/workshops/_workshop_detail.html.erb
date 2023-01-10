@@ -13,7 +13,7 @@
     <p><%= @workshop.avg_score %>点（<%= @workshop.posts.count %>件のレビュー）</p>
   </div>
 </div> 
-<% if @workshop.user_id == current_user.id %>
+<% if @workshop.user == current_user.id %>
   <span><%= @workshop.w_title %></span>
     <div class="workshop_detail">
       <p><%= @workshop.prefecture %></p>

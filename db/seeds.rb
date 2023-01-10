@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#(1..30).each do |i|
+    #Planner.create(
+       #user_name:"planner#{i}"
+       #email
+       #password_digest
+       #first_name
+       #last_name
+       #birthday
+       #gender
+       #planner_profile
+       #p_detail
+    #)
+#end

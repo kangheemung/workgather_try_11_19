@@ -1,0 +1,59 @@
+<h1>Planners::Planners#new</h1>
+<p>Find me in app/views/planners/planners/new.html.erb</p>
+<div class= "asobinagara">
+<h1>ASOBINAGARA</h1>
+</div>
+<div class="signup">
+    <div class="signup_text"><span>会員登録(開催者専用)</span></div>
+ <div class="body">
+    <%= form_for @planner, url:planners_create_path do |f| %>
+        <div class="body_box">    
+        <p><%= f.label :user_name %></p>
+        </div>  
+        <p><%= f.text_field :user_name, :placeholder => "User name"%></p>
+        <div class="body_box">  
+        <p><%= f.label :email%></p>
+        </div>  
+        <p><%= f.text_field :email, :placeholder => "email"  %></p>
+        <div class="body_box">  
+        <p><%= f.label :password %></p>
+        </div>  
+        <%= f.password_field :password, :placeholder => "password" %><br>
+        <div class="body_box">  
+        <p><%= f.label :password_confirmation %></p>
+        </div>  
+        <p><%= f.password_field :password_confirmation, :placeholder => "password_confirmation"%></p>
+        <div class="body_box">
+        <%= f.label :主催者の写真　%></p>
+        <%=  f.file_field :planner_profile %></p>
+        </div> 
+        <div class="text_box">
+        <p><%= f.label :開催者の自己紹介%></p>
+        <p><%= f.text_field :p_detail, :placeholder => "開催者の自己紹介"%></p>
+        </div>
+        <div class="body_box"> 
+        <p><%= f.label :name %></p>
+        </div>     
+        <div class="body_box"> 
+        <p><%= f.text_field :first_name, :placeholder => "first_name", class:"name"%>
+        <%= f.text_field :last_name, :placeholder => "last_name" ,class:"name" %> </p>
+        </div>  
+        <div class="body_box">
+        <p><%= f.label :誕生日%></p>
+        </div>
+        <p><%= f.date_field :birthday, :placeholder => "birthday",value: @planner.birthday%></p>
+            <div class="gender_box">
+                <div class="body_box">
+                <p><%= f.label :gender,'性別' %></p>
+                </div>
+                <p><%= f.select :gender, {'男性': 1,'女性': 2,'その他': 3},{ include_blank: '選択してください'}, { class: 'form-control' , required: true } %></p></td>
+            </div>
+        <div class="sign_btn">
+            <p><%= f.submit "会員登録", class: "button" %></p>
+        </div>
+    <% end %>
+    <div class= "login">
+        <span onclick="location.href = '/planners/login_form'">ログイン</span>
+    </div>
+</div>
+

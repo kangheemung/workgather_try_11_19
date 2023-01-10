@@ -1,0 +1,129 @@
+// Place all the styles related to the users/posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.p_table_left{
+    width: 65%;
+    float:left;
+    margin-left: 1%;
+}
+.p_s_header{
+    color:whitesmoke;
+    float:left;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size:larger;
+    font-weight: bolder;
+}
+
+.p_side_header_p{
+    margin-left: 5%;
+    font-size: x-small;
+}
+.p_table_right{
+    width: 28%;
+    border: 1px solid #444444;
+    float:left;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+.p_title{
+   
+    font-weight: 150;
+    font-weight: bolder;
+    text-align:center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+.p_theme{
+     text-align:center;   
+     padding-top: 3%;
+    
+}
+.p_img{
+    margin-top:0%;
+    text-align:center;   
+} 
+
+.p_btn_b{
+    background-color: #004A54;
+    width: 95%;
+    height: 60%;
+    margin-top:10%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border: solid 1px;
+    font-size: large;
+    border-radius: 5%;
+    color:whitesmoke
+}
+.p_btn_r{ background-color:whitesmoke;
+    width:95%;
+    height: 60%;
+    margin-top:3% ;
+    margin-bottom: 10%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border: solid 1px;
+    font-size: large;
+    border-radius: 5%;
+    color: #004A54;
+}
+//new
+.p_body{
+    margin-top:2%;
+    text-align: center;
+}
+.body_box{
+    margin-top: 3%;
+    font-size: large;
+    font-weight: bolder;
+}
+.text_box{
+    margin-top: 3%;
+    margin-right: 5%;
+}
+.name_box{
+    display: flex;
+    margin-right: 10%;
+
+}
+.s_box{
+    width: 40%;
+    margin-right: 5%;
+}
+.input{
+    margin-right: 10%;
+    margin-left: 10%;
+}
+.w_img{
+    margin-right: 5%;
+}
+.w_img p{
+    margin-left: 10px;
+}
+//form
+.review_textarea_box{
+    width: 80%;
+    height: 150px;
+}
+.review_title_box{
+    width: 80%;
+}
+.review_check{
+    color: #004A54;
+    text-decoration:none;
+}
+.b_b_t{
+    font-size: large;
+    font-weight: bold;
+}
+.b_b_i{
+    margin-bottom: 5%;
+}
+//link
+.link_text{
+    color: #004A54;
+    text-decoration:none;
+}

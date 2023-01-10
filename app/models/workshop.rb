@@ -8,9 +8,9 @@ class Workshop < ApplicationRecord
     has_many :user_workshops
     has_many :posts, through: :user_workshops
     has_many :reservations 
-    has_many :planners
+    has_many :planner
     def joined?(user)
-      UserWorkshop.where(user_id: user.id,workshop_id: self.id).exists?
+      Reservation.where(user_id: user.id,workshop_id: self.id).exists?
     end
     def avg_score
       unless self.posts.empty?#workshopsが空では無かったら下記を返す。

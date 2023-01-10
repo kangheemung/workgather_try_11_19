@@ -3,16 +3,13 @@
 </div><!三本のイメージを押したら　カテゴリーが開きます。-->
 <%= render 'workshop_detail',workshop:@workshop%>
   <%if @workshop != nil %>
-    <% if @workshop.joined?(current_user) %>
+    
       <div class="user_enter_butten">
-        <p class="enter_butten">すでに参加してるよ！</p>
       </div>   
       <div class="post_text">
         <%= render 'form.html',post:@post %>
       </div> 
-    <% else %>
-      <%= link_to "Join!!", create_user_workshop_path(@workshop), method: :post %>
-    <% end %> 
+   
       <%= render 'user_show',workshop:@workshop %>
   <% else %>
     No workshop
