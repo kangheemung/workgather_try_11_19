@@ -1,4 +1,4 @@
-class Users::UserSessionesController < ApplicationController
+class Users::UserSessionsController < ApplicationController
   include UserSessionsHelper 
     def new
     end
@@ -10,13 +10,12 @@ class Users::UserSessionesController < ApplicationController
           redirect_to users_workshops_index_path
       else
           flash[:danger] = 'Invalid email/password combination'
-          redirect_to login_path
+          redirect_to users_login_path
       end
     end
     def destroy
       session[:user_id]= nil
       flash[:notice]="ログアウトしました"
       redirect_to root_path
-    end
-  end
+    end 
 end

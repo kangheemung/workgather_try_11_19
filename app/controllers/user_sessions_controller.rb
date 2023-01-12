@@ -10,7 +10,7 @@ class UserSessionsController < ApplicationController
         redirect_to users_workshops_index_path
     else
         flash[:danger] = 'Invalid email/password combination'
-        redirect_to login_path
+        redirect_to user_login_path
     end
   end
   def destroy

@@ -1,40 +1,49 @@
 class Users::ReservationsController < ApplicationController
   include  UserSessionsHelper
   def index
-    @reservations = Reservations.all
+    @reservation=Reservation.find_by(id:params[:id])
   end
   def new
+   
     @reservation=Reservation.new
   end
   def create
-    @reservation=Reservation.create(reservation_params)
+    @reservation=current_user.reservations.create(reservation_params)
+    
+
 
     p"============"
     p @reservation.errors.full_messages
     p"============"
     if @reservation.save!
+      flash[:notice] = "This reservation is succesfully created."
       redirect_to users_reservations_show_path(params[:workshop_id])
     else
+      flash[:alert] = "This reservation failed to be created."
       render :new
     end
   end    
-    def show
-      @reservation=Reservation.find_by(id:params[:workshop_id])
-      @workshop=Workshop.find_by(id:params[:workshop_id])
+  def show 
+    @reservation=Reservation.find_by(params[:id])
+      @workshop=Workshop.find_by(params[:workshop_id])
+     
     end
     def edit
       @reservation=Reservation.find_by(id:params[:workshop_id])
-      @workshop=Workshop.find_by(id:params[:workshop_id])
     end
     def  update
-      @reservation=Reservation.find_by(id:params[:workshop_id]) #値を取得する
+      @reservation=Reservation.find_by(id:params[:workshop_id])
       if @reservation.update(reservation_params)  #workshop_paramsの内容を上書きする。
-        
           flash[:notice]="プランナー情報を更新しました。"
-          redirect_to users_reservations_show_path(@reservation.workshop_id),data: {"turbolinks" => false}
+          redirect_to users_reservations_show_path(params[:workshop_id]),data: {"turbolinks" => false}
       else
         render :edit
       end
+    end
+    def destroy
+      @reservation=Reservation.find_by(id:params[:workshop_id])
+      @reservation.destroy
+      redirect_to users_reservations_show_path(params[:workshop_id])
     end
     private
     def reservation_params

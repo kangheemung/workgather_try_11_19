@@ -20,12 +20,13 @@
       <p><%= @workshop.address1 %> </p>
       <p><%= @workshop.address2 %> </p>
       <p><%= @workshop.w_detail %> </p>
-      <p><%= @workshop.time %> </p>
+      <p>開催時間:<%= @workshop.start_time.strftime("%H:%M")%>〜<%= @workshop.end_time.strftime("%H:%M")%></p>
+      <p>開催期間:<%= @workshop.start_date%>〜<%= @workshop.end_date%></p>
       <p><%= @workshop.personnel %> </p>
       <p><%= @workshop.precautions %> </p>
     </div>  
     <div class="s_b"><p><%= link_to "workshopの内容を編集する",planners_workshops_edit_path(@workshop), class: "review_check", data: {"turbolinks" => false} %></p></div>
-    <div class="s_b"><p><%= link_to "他のworkshopを見る",planners_workshops_index_path(@workshop), class: "review_check" %></p></div>
+   
   </div>      
 <% end %>  
 <% @workshop.posts.each do |post| %>

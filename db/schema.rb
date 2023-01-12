@@ -46,13 +46,6 @@ ActiveRecord::Schema.define(version: 2023_01_08_120816) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "profiles", force: :cascade do |t|
-    t.integer "planner_id"
-    t.string "planner_profile"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "reservations", force: :cascade do |t|
     t.integer "user_id"
     t.integer "workshop_id"

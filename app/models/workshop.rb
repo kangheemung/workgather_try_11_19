@@ -3,12 +3,12 @@ class Workshop < ApplicationRecord
     mount_uploader :image, WorkshopPhotoUploader 
   #workshopと別にプロフィールイメージ作成してみる 
     belongs_to :planner,class_name: "Planner",optional: true
-    belongs_to :user,class_name:"User",optional: true
     has_many :stars,class_name:"Star"
     has_many :user_workshops
     has_many :posts, through: :user_workshops
     has_many :reservations 
-    has_many :planner
+    has_many :user
+
     def joined?(user)
       Reservation.where(user_id: user.id,workshop_id: self.id).exists?
     end

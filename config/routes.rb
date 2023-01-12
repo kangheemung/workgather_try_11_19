@@ -9,14 +9,14 @@ Rails.application.routes.draw do
   end
   namespace :users do
       #参加者ログイン
-      get 'login' => 'user_sessions#new',as:'login'
-      post 'users/login' => 'user_sessions#create',as:'login_create'
-      delete 'users/logout' => 'user_sessions#destroy',as:'logout'
+      get '/login_form' => 'user_sessions#new',as:'login'
+      post '/login' => 'user_sessions#create',as:'login_create'
+      delete '/logout' => 'user_sessions#destroy',as:'logout'
   end
   namespace :users do
     #参加者会員登録
     get '/index' => 'users#index',as:'index'
-    get '/new'=>'users#new', as:'signup'
+    get '/new'=>'users#new',as:'signup'
     post '/create'=>'users#create',as:'create'
     get '/mypage'=>'users#mypage',as:'mypage'
     get '/:id/edit' => 'users#edit',as:'edit'
@@ -30,14 +30,14 @@ Rails.application.routes.draw do
     delete '/logout' => 'planner_sessions#destroy',as:'logout'
   end
   namespace :planners do
-   #開催者会員登録
-   get '/new'=> 'planners#new',as:'new'
-   get '/index'=>'planners#index',as:'index'
-   post'/create'=>'planners#create',as:'create'
-   get '/mypage'=>'planners#mypage',as:'mypage'
-   get '/:id/edit' => 'planners#edit',as:'edit'
-   patch '/:id/edit' => 'planners#update',as:'update'
-   get '/:id' => 'planners#show',as:'show'
+    #開催者会員登録
+    get '/new'=> 'planners#new',as:'new'
+    get '/index'=>'planners#index',as:'index'
+    post'/create'=>'planners#create',as:'create'
+    get '/mypage'=>'planners#mypage',as:'mypage'
+    get '/:id/edit' => 'planners#edit',as:'edit'
+    post '/:id/edit' => 'planners#update',as:'update'
+    get '/:id' => 'planners#show',as:'show'
   end
   #top
   root 'homes#top'
@@ -93,10 +93,11 @@ Rails.application.routes.draw do
     namespace :users do
       get'/reservations/:workshop_id/new'=>'reservations#new',as:'reservations_new'
       get '/reservations/index'=>'reservations#index',as:'reservations_index'
-      post'/reservations/:workshop_id' =>'reservations#create',as:'reservations_create'
+      post'/reservations/:workshop_id/create'=>'reservations#create',as:'reservations_create'
       get '/reservations/:workshop_id/edit'=>'reservations#edit',as:'reservation_edit'
-      post '/reservations/:workshop_id/edit' => 'reservations#update',as:'reservations_update'
-      get '/reservations/:workshop_id/show'=>'reservations#show',as:'reservations_show'
+      post'/reservations/:workshop_id/edit' => 'reservations#update',as:'reservations_update'
+      delete'/reservations/:workshop_id/edit' => 'reservations#destroy',as:'reservations_delete'
+      get '/reservations/:workshop_id'=>'reservations#show',as:'reservations_show'
     end
 
     #post '/user_workshops/:workshop_id'=>'user_workshops#create',as:'create_user_workshop'

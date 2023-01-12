@@ -37,9 +37,15 @@
           <p><%= f.label :ワークショップの詳細内容 %></p>
           <p><%= f.text_field :w_detail, :placeholder => "ワークショップの詳細内容"%></p>
         </div>
-        <div class="text_box">
+          <div class="text_box">
           <p><%= f.label :開催時間 %></p>
-          <p><%= f.text_field :time, :placeholder => "例)１時間〜２時間"%></p>
+          <p>スタート時間: <%= f.time_select :start_time%></p>
+          <p>終了時間: <%= f.time_select :end_time%></p>
+        </div>
+         <div class="text_box">
+          <p><%= f.label :開催期間 %></p>
+          <p>スタート日: <%= f.date_select :start_date%>
+          <p>終了日: <%= f.date_select :end_date%></p>
         </div>
         <div class="text_box">
           <p><%= f.label :定員 %></p>
