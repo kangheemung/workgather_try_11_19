@@ -1,6 +1,6 @@
 class Users::UsersController < ApplicationController
   include  UserSessionsHelper
-    before_action :set_user, only: %i[edit update]
+    #before_action :set_user, only:[edit update]
     def index
       @users=User.all
     end
