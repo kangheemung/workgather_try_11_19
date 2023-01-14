@@ -25,7 +25,7 @@ class Planners::WorkshopsController < ApplicationController
   end
   def show #詳細
     @workshops=Workshop.all
-    @workshop = Workshop.find(params[:id])
+    @workshop = Workshop.find_by(id:params[:id])
     #p"========"
     #p @workshop.errors.full_messages
     #p"==========="
@@ -34,10 +34,10 @@ class Planners::WorkshopsController < ApplicationController
     @stra=Star.new
   end
   def edit #詳細
-    @workshop = Workshop.find(params[:id])
+    @workshop = Workshop.find_by(id:params[:id])
   end
   def update
-       @workshop=Workshop.find(params[:id]) #値を取得する
+       @workshop=Workshop.find_by(id:params[:id]) #値を取得する
     if @workshop.update(workshop_params)  #workshop_paramsの内容を上書きする。
         flash[:notice]="プランナー情報を更新しました。"
         redirect_to planners_workshops_show_path(@workshop.id),data: {"turbolinks" => false}
@@ -45,6 +45,11 @@ class Planners::WorkshopsController < ApplicationController
       render :edit
     end
   end
+  def destroy
+    @workshop=Workshop.find_by(id:params[:id])
+    @workshop.destroy
+    redirect_to  planners_workshops_index_path
+end
 
   private
   def workshop_params

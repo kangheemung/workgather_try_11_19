@@ -108,7 +108,9 @@ Rails.application.routes.draw do
       get '/workshops/new'=>'workshops#new',as:'workshops_new'
       get '/workshops/:id/edit' => 'workshops#edit',as:'workshops_edit'
       patch '/workshops/:id/edit' => 'workshops#update',as:'workshops_update'
+      delete '/workshops/:id/edit' => 'workshops#destroy',as:'workshops_delete'
       get '/workshops/:id'=> 'workshops#show',as:'workshops_show'
+      
     end
 
  

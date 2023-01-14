@@ -6,7 +6,7 @@ class Users::ReservationsController < ApplicationController
   def new
     @reservation=Reservation.new
     @reservation=Reservation.find_by(id:params[:id])
-    @workshop = Workshop.find_by(params[:workshop_id])
+    @workshop = Workshop.find_by(id:params[:workshop_id])
     
   end
   def create
@@ -26,8 +26,10 @@ class Users::ReservationsController < ApplicationController
     end
   end    
   def show 
+    
     @reservation=Reservation.find_by(id:params[:id])
     @workshop=Workshop.find_by(id:params[:workshop_id])
+   
   end
   def edit
       @reservation=Reservation.find_by(id:params[:workshop_id])

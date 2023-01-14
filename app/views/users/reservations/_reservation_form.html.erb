@@ -3,7 +3,7 @@
             <%= f.label :name, '名前' %>
             <%= f.text_field :name%>
           </div>
-          <%= f.hidden_field :workshop_id, :value => @workshop %>
+          <%= f.hidden_field :workshop_id, :value => params[:workshop_id]%>
           <div class="time form-group">
             <%= f.label :date_time_1, '参加希望日1' %>
             <%= f.datetime_select :date_time_1%>
