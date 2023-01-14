@@ -1,8 +1,6 @@
 class Users::ReservationsController < ApplicationController
   include  UserSessionsHelper
-  def index
-    @reservation=Reservation.find_by(id:params[:id])
-  end
+  
   def new
     @reservation=Reservation.new
     @reservation=Reservation.find_by(id:params[:id])
@@ -26,10 +24,9 @@ class Users::ReservationsController < ApplicationController
     end
   end    
   def show 
-    
-    @reservation=Reservation.find_by(id:params[:id])
-    @workshop=Workshop.find_by(id:params[:workshop_id])
-   
+    @workshops = current_user.workshops
+    @reservation=Reservation.find_by(id:params[:workshop_id])
+ 
   end
   def edit
       @reservation=Reservation.find_by(id:params[:workshop_id])

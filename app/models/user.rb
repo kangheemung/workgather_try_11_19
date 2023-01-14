@@ -11,9 +11,9 @@ class User < ApplicationRecord
     mount_uploader :u_profile_id,UProfileIdUploader 
     #resource :user, only: %i[show edit update]
     has_many :posts#, dependent::destroy
+    has_many :reservations , dependent: :destroy
     has_many :workshops, through: :reservations
     has_many :stars
     has_many :user_workshops
-    has_many :reservations , dependent: :destroy
     has_many :images, class_name: "Image"
 end
