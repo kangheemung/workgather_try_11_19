@@ -1,0 +1,13 @@
+<h1>Planners::Reservations#index</h1>
+<p>Find me in app/views/planners/reservations/index.html.erb</p>
+
+
+  <% @workshop.reservations.each do |reservation| %>
+
+           <%=reservation.name%></p>
+            <p><%=reservation.date_time_1%></p>
+            <p><%=reservation.date_time_2%></p>
+            <p><%=reservation.date_time_3%></p>
+            <p><%=reservation.participant%>名参加希望</p>
+            <p><%=reservation.check_box%></p>
+   <%end%>
