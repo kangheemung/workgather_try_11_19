@@ -24,8 +24,12 @@ class Users::ReservationsController < ApplicationController
     end
   end    
   def show 
-    
+   
+    @reservations = current_user.reservations
+    @workshop = Workshop.find_by(id:params[:workshop_id])
     @reservation=Reservation.find_by(id:params[:workshop_id])
+   
+  
  
   end
   def edit

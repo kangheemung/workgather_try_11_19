@@ -7,7 +7,7 @@
       <p>3ヶ月先まで予約することができます。</p>
     </div>
     <div class="col-12 mt-3">
-     @.each do |workshop|
+     
     <%current_user.reservations.each do|reservation|%>
     <p> <%=reservation.name%></p>
     <p><%=reservation.date_time_1%></p>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :planners do
-    get 'reservations/index'=>'reservations#index',as:'reservations_index'
+    get 'reservations/:workshop_id/index'=>'reservations#index',as:'reservations_index'
   end
   namespace :users do
     get 'posts/index'=>'posts#index',as:'posts_index'
