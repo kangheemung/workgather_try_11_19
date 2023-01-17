@@ -2,19 +2,17 @@
 <div class="r_s_top">
   <%=current_user.user_name%>様の予約詳細情報
 </div>
+
   <table>
-       <tr>
-        <p> <th colspan="2",class="r_s_title">予約したワークショップ：<%@workshop.w_title%></th></p>
         <%@reservations.each do |reservation| %>
-           <thead>  
-           
+        <p> <th colspan="2",class="r_s_title">予約したワークショップ：<%=reservation.workshop.w_title%></th></p>
+         <thead>  
           <tr>
-            <p> <th colspan="2",class="r_s_title">予約したワークショップ：<%@workshop.w_title%></th></p>
           </tr> 
          </thead>
           <tbody>  
           <td>
-            <p> <%=reservation.name%></p>
+            <p><%=reservation.name%></p>
             <p><%=reservation.date_time_1%></p>
             <p><%=reservation.date_time_2%></p>
             <p><%=reservation.date_time_3%></p>
@@ -22,13 +20,13 @@
             <p><%=reservation.check_box%></p>
           </td>       
           <td>
-            <p class='r_s_buttons'><%=link_to "編集",users_reservation_edit_path(@reservation,params[:workshop_id]),:class=> 'r_s_button'%></p>
-            <p class='r_s_buttons_1'><%=link_to "削除",users_reservations_delete_path(@reservation),method: :delete, :class=>'r_s_button'%></p>
+            <p class='r_s_buttons'><%=link_to "編集",users_reservation_edit_path(reservation,params[:workhshop_id]),:class=> 'r_s_button'%></p>
+            <p class='r_s_buttons_1'><%=link_to "削除",users_reservations_delete_path(reservation,params[:workhshop_id]),method: :delete, :class=>'r_s_button'%></p>
           </td>
       </tr> 
      </tbody> 
       <%end%>
-
+   
 </table>
 <div class="r_s_bottom">
    <p>
