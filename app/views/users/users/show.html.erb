@@ -16,13 +16,13 @@
       <p>last_name: <%= current_user.last_name %></p>
       <p>birthday: <%= current_user.birthday %></p>
       <p>gender: <%= current_user.gender %></p>
-      <span>予約0件</span>
+      <span>予約<%=current_user.reservations.count%>件</span>
       <span>投稿 <%= current_user.posts.count %>件</span>
     </div>
   </div>
   <div class="booking_detail">
     <p><span>Workshop予約履歴</span></p>
-    <p><span>予約履歴</span></p>
+    <p><span><div class="reservation_button"><%=link_to "予約履歴",users_reservations_show_path(current_user,@reservation,params[:workshop_id])%></span></p>
     <p><span> 詳細内容</span></p>
     <p><span> 表示</span></p>
   </div>

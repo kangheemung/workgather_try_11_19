@@ -1,25 +1,29 @@
-<h1>Planners::Reservations#index</h1>
-<p>Find me in app/views/planners/reservations/index.html.erb</p>
-<div class="p_r_reservation">
 <div class="p_r_top">
 予約状況
 </div>
-<%@workshops.each do |workshop|%>
+<div class="p_r_reservation">
 <table>
+<%@workshops.each do |workshop|%>
   <thead>
-    <tr><p><%=workshop.w_title%></p></tr>
+   <tr>
+    <div class="p_t">
+    <p><%=workshop.w_title%>の予約状況</p>
+    </div>
+    </tr>
   </thead>
   <% workshop.reservations.each do |reservation| %>
     <tbody>
       <tr>
-        <p>ID:<%=reservation.user.user_name%>様の予約</p>
-        <p><%=reservation.user.email%></p>
-        <p><%=reservation.name%></p>
-        <p><%=reservation.date_time_1%></p>
-        <p><%=reservation.date_time_2%></p>
-        <p><%=reservation.date_time_3%></p>
-        <p><%=reservation.participant%>名参加希望</p>
-        <p><%=reservation.check_box%></p>
+        <div class="t_body">
+          <p>ID:<%=reservation.user.user_name%>様の予約</p>
+          <p><%=reservation.user.email%></p>
+          <p><%=reservation.name%></p>
+          <p><%=reservation.date_time_1%></p>
+          <p><%=reservation.date_time_2%></p>
+          <p><%=reservation.date_time_3%></p>
+          <p><%=reservation.participant%>名参加希望</p>
+          <p><%=reservation.check_box%></p>
+        </div> 
       </tr> 
     </tbody>      
   <%end%>

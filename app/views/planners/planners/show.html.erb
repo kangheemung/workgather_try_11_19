@@ -19,13 +19,13 @@
       <p>birthday: <%= current_planner.birthday%></p>
       <p>gender: <%= current_planner.gender%></p>
       <p>profile_detail: <%= current_planner.p_detail%></p>
-      <span>予約0件</span>
+      <span>予約<%=@reservation.count%>件</span>
       <span>投稿 <%=current_planner.workshops.count%>件</span>
     </div>
   </div>
   <div class="booking_detail">
     <p><span>Workshop予約履歴</span></p>
-    <p><span>予約履歴</span></p>
+    <p><span><%=link_to"予約履歴",planners_reservations_index_path(current_planner,@reservation,params[:workshop_id])%></span></p>
     <p><span> 詳細内容</span></p>
     <p><span> 表示</span></p>
   </div>

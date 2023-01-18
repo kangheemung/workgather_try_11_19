@@ -20,6 +20,7 @@ include  UserSessionsHelper
   end
   def show
     @user=User.find_by(id: params[:id])
+    @reservation=Reservation.find_by[id: paramss[:workshop_id]]
   end
   def edit
     @user=User.find_by(id: params[:id])

@@ -14,7 +14,7 @@ include  PlannerSessionsHelper
       #p"==========="
         log_in(planner)
         #  session[:planner_id]=planner.id
-        flash[:notice]="ユーザー登録が完了しました。"
+        flash[:notice]="ユーザー登録が完了(しました。"
         redirect_to planners_show_path(planner.id)
       else
       render :new
@@ -23,7 +23,9 @@ include  PlannerSessionsHelper
   def show  
     @planner = Planner.find(params[:id])
     @workshop =Workshop.find_by(params[:id])
-    @profile=Profile.new
+    @reservation=Reservation.find_by(params[:workshop_id])
+   
+    
       #p"========"
       #p @planner.errors.full_messages
       #p"==========="
