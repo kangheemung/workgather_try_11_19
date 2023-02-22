@@ -1,6 +1,7 @@
 class Planners::PlannerSessionsController < ApplicationController
     include  PlannerSessionsHelper
     def new
+     
     end
     def create
         planner = Planner.find_by(email: params[:planner][:email].downcase)

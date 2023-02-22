@@ -2,22 +2,29 @@ class Users::WorkshopsController < ApplicationController
   include  UserSessionsHelper
     def index
       @workshops = Workshop.all
-      @posts=Post.all
-      
+     "=======check================"
+     p params
+     "========================="
     end  
     def new
-      @posts=Post.all
+      
       @post=Post.new
-      @workshop =Workshop.new
+      @workshop =Workshop.find_by(id: params[:workshop_id])
+      "=======check================"
+      p params
+      "========================="
       
     end
     def show
-     @workshop =Workshop.find_by(id:params[:id])
+     @reservation=Reservation.find_by(id: params[:r_id])
+     @workshop =Workshop.find_by(id: params[:workshop_id])
+     @user =User.find_by(id:params[:user_id])
      @post=Post.new
      @posts=Post.all
      @star =Star.new
     end
     def edit
+      @workshop =Workshop.find_by(id: params[:workshop_id])
       @post=Post.find(params[:id])
     end
     def update

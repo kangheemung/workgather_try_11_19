@@ -1,5 +1,5 @@
 <div class="w_side_header_p">
-  <p>Home> workshopsの一覧ページ</p>
+  <p>Home> workshopsの一覧ページ test</p>
 </div><!三本のイメージを押したら　カテゴリーが開きます。-->
 <div class="w_body">
   <% @workshops.each do |workshop| %>
@@ -53,10 +53,11 @@
           <p>駐車場ありなし</p>
           <p>like</p>
         </div>
-        <div class="w_btn_r_1"><p><%= link_to "レビュー",planners_workshops_show_path(workshop),class: "w_btn_r"%></p></div>
+        <div class="w_btn_r_1"><p><%= link_to "レビュー",planners_posts_index_path(current_planner,workshop.id,@posts),class: "w_btn_r"%></p></div>
         <% if current_planner.id == workshop.planner_id %>
-        <div class="w_btn_r_1"><p><%= link_to "予約状況",planners_reservations_index_path(workshop.id),class: "w_btn_r"%></p></div>
-        <div class="w_btn_r_1"><p><%= link_to "削除",planners_workshops_delete_path(workshop.id),method: :delete,class: "w_btn_r" %></p></div>
+        <div class="w_btn_r_1"><p><%= link_to "予約状況",planners_reservations_index_path(current_planner,workshop.id),class: "w_btn_r"%></p></div>
+        <div class="w_btn_r_1"><p><%= link_to "編集",planners_workshops_show_path(current_planner,workshop.id),class: "w_btn_r"%></p></div>
+        <div class="w_btn_r_1"><p><%= link_to "削除",planners_workshops_delete_path(current_planner,workshop.id),method: :delete,class: "w_btn_r" %></p></div>
         <% end %>
       <% else %>
         <p>空き状況</p>
@@ -72,7 +73,7 @@
         <p><%= workshop.address2 %></p>
         <p>駐車場ありなし</p>
         <p>like</p>
-        <p><%= link_to "レビュー",planners_workshops_show_path(workshop),class: "w_btn_r" %></p>
+        <p><%= link_to "レビュー",planners_posts_index_path(workshop.id),class: "w_btn_r" %></p>
         
       <% end %>
     </div>

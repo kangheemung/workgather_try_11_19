@@ -5,9 +5,9 @@ class Workshop < ApplicationRecord
     belongs_to :planner,class_name: "Planner",optional: true
     has_many :stars,class_name:"Star"
     has_many :user_workshops
-    has_many :posts, through: :user_workshops
+    has_many :posts, :through => :user_workshops
     has_many :reservations, dependent: :destroy
-    has_many :users,through: :reservations
+    has_many :users,:through => :reservations
   
     
 

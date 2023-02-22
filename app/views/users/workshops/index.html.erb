@@ -17,7 +17,7 @@
       </div>
       <div class="average-score">
         <div class="w_star-rating">
-          <%link_to "workshop詳細ページに行く",%>
+        
             <div class="star-rating-front" style="width:<%= workshop.review_score_percentage %>%"> ★★★★★</div>
             <div class="star-rating-back">★★★★★</div>
         </div>
@@ -49,8 +49,9 @@
           <p><%= workshop.address2 %></p>
           <p>駐車場ありなし</p>
           <p>like</p>
-        <p><%= link_to "予約する",users_reservations_new_path(workshop.id),class: "w_btn_b" %></p>
-        <p><%= link_to "レビュー",users_workshops_show_path(workshop.id),class: "w_btn_r" %></p>  
+        
+        <p><%= link_to "予約する",users_reservations_new_path(current_user,workshop.id),class: "w_btn_b" %></p>
+        <p><%= link_to "レビュー",users_workshops_show_path(current_user,workshop.id),class: "w_btn_r" %></p>  
       <% else %>
         <p>空き状況</p>
         <p><%= workshop.time %></p>

@@ -2,18 +2,19 @@ class Planners::WorkshopsController < ApplicationController
   include  PlannerSessionsHelper
   def index
     @workshops = Workshop.all
-    @workshop=Workshop.new
     @posts=Post.all
-    @stra=Star.new
+    @stras=Star.all
+    
   end
   def new
-    
     @workshop = Workshop.new
   end
   def create
       #p "params: #{params}"#
-      workshop = current_planner.workshops.build(workshop_params)
-      workshop.planner_id=current_planner.id
+      @planner=Planner.find_by(id: params[:planner_id])
+      workshop = @planner.workshops.build(workshop_params)
+      
+
       if workshop.save
         redirect_to planners_workshops_index_path
       else
@@ -24,32 +25,48 @@ class Planners::WorkshopsController < ApplicationController
       end
   end
   def show #詳細
-    @workshops=Workshop.all
-    @workshop = Workshop.find_by(id:params[:id])
+    @workshop = Workshop.find_by(id:params[:workshop_id])
     #p"========"
     #p @workshop.errors.full_messages
     #p"==========="
-    @post = Post.new
+   
     @posts=Post.all
     @stra=Star.new
   end
   def edit #詳細
-    @workshop = Workshop.find_by(id:params[:id])
+    p "==========edit start========="
+    p params
+    p @workshop
+    p"==================="
+    @workshop = Workshop.find_by(id:params[:workshop_id])
+    p "==================="
+    p params
+    p @workshop
+    p"==================="
   end
   def update
-       @workshop=Workshop.find_by(id:params[:id]) #値を取得する
+    p "==================="
+    p params
+    p @workshop
+    p"==================="
+       @workshop=Workshop.find_by(id:params[:workshop_id]) #値を取得する
     if @workshop.update(workshop_params)  #workshop_paramsの内容を上書きする。
         flash[:notice]="プランナー情報を更新しました。"
         redirect_to planners_workshops_show_path(@workshop.id),data: {"turbolinks" => false}
     else
       render :edit
     end
+    p "==================="
+    p params
+    p @workshop
+    p"==================="
   end
   def destroy
-    @workshop=Workshop.find_by(id:params[:id])
+    @workshop=Workshop.find_by(id:params[:workshop_id])
     @workshop.destroy
     redirect_to  planners_workshops_index_path
 end
+
 
   private
   def workshop_params

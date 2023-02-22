@@ -3,6 +3,7 @@ class Users::UsersController < ApplicationController
     #before_action :set_user, only:[edit update]
     def index
       @users=User.all
+      
     end
     def new
       @user=User.new
@@ -19,10 +20,12 @@ class Users::UsersController < ApplicationController
       end
     end
     def show
-      @user=User.find_by(id: params[:id])
+      @user=User.find_by(id: params[:user_id])
+      @workshop=Workshop.find_by(id: params[:workshop_id])
+      @reservation=Reservation.find_by(id: params[:reservation_id])
     end
     def edit
-      @user=User.find_by(id: params[:id])
+      @user=User.find_by(id: params[:user_id])
       #p"============"
       #p @user.errors.full_messages
       #p"============"
@@ -31,7 +34,7 @@ class Users::UsersController < ApplicationController
       #p"============"
         #   p @user.errors.full_messages
       #p"============"
-      @user=User.find_by(id: params[:id])
+      @user=User.find_by(id: params[:user_id])
       if @user.update(user_params)
           #  session[:user_id]=user.id
           flash[:notice]="プランナー情報を更新しました。"
@@ -41,9 +44,6 @@ class Users::UsersController < ApplicationController
       end
     end
     private
-    def set_user
-      @user=User.find(current_user.id)
-    end
     def user_params
         params.require(:user).permit(:user_name,:email,:password,:password_confirmation,:first_name,:last_name,:birthday,:gender,:u_profile_id)
     end

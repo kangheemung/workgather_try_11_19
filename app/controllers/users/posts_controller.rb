@@ -1,13 +1,12 @@
 class Users::PostsController < ApplicationController
   include  UserSessionsHelper
     def create
-      @post=Post.new(post_params)
-        @post.user_workshop_id = params[:id]
-        if @post.save!
-        redirect_to users_workshops_show_path(params[:id])
-        else
-        redirect_to users_workshops_show_path(params[:id])
-        end
+      @post=current_user.posts.build(post_params)
+         @post.save!
+          redirect_to user_workshops_index_path
+      
+        
+       
     end
     def edit
       @post=Post.find_by(params[:id])

@@ -21,8 +21,8 @@
               </svg>
           </div>
           <ul>  
-            <li><%= link_to "mypage",planners_show_path(current_planner.id),data: {"turbolinks" => false}  %></li>
-            <li> <%= link_to "workshop作成",planners_workshops_new_path, data: {"turbolinks" => false}%>|</li>
+            <li><%= link_to "mypage",planners_show_path(current_planner),data: {"turbolinks" => false}  %></li>
+            <li> <%= link_to "workshop作成",planners_workshops_new_path(current_planner), data: {"turbolinks" => false}%>|</li>
             <li><%= link_to "workshop予約状況",planners_reservations_index_path(current_planner,@reservation,params[:workhshop_id])%></li>
             <li><%= link_to "workshop見に行く",planners_workshops_index_path, data: {"turbolinks" => false} %>|</li>
             <li><%= link_to "ログアウト",planners_logout_path, method: :delete %></li>
@@ -71,8 +71,8 @@
           </select>
         </li>  
         <li><%= link_to "top",root_path%>|</li>
-        <li><%= link_to "mypage",users_show_path(current_user.id), data: {"turbolinks" => false}%>|</li>
-        <li><%= link_to "予約状況",users_reservations_show_path(current_user,@reservation,params[:workshop_id])%>
+        <li><%= link_to "mypage",users_show_path(current_user), data: {"turbolinks" => false}%>|</li>
+        
         <li><%= link_to "workshopを見に行く",users_workshops_index_path, data: {"turbolinks" => false} %>|</li>
         <li><%= link_to "ログアウト",users_logout_path, method: :delete %></li>
       </ul> 

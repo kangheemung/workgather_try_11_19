@@ -11,4 +11,11 @@ module SessionsHelper
   def logged_in?(user)
     !current_user.nil?
   end
+  #def current_workshop
+   # @workshop||=Workshop.find_by(id: session[:workshop_id])
+
+  #end
+  #def current_reservation
+   # @reservation||=Reservation.find_by(id: session[:reservation_id])
+  #end
 end

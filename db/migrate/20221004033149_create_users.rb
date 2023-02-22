@@ -9,6 +9,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :birthday
       t.integer :gender
       t.string :u_profile_id
+      
       t.timestamps
     end
   end
