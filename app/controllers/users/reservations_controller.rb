@@ -1,8 +1,9 @@
 class Users::ReservationsController < ApplicationController
   include  UserSessionsHelper
   def index
+   
     @reservations=current_user.reservations.all
-    
+   
     
   end
   
@@ -53,12 +54,14 @@ class Users::ReservationsController < ApplicationController
   def edit
     p "==================="
     p params
+    
     p"==================="
    
     @reservation=Reservation.find_by(id: params[:reservation_id])
     
     p "==================="
     p params
+    p @reservation
     p"==================="
      
   end

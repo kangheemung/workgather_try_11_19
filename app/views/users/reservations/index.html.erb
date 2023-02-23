@@ -8,10 +8,16 @@
     </div>
     <div class="col-12 mt-3">
 
-   
+   <!--予約ぺーじ注意 関連付けのため、各モデルにuser modelに下記を記入
+
+    has_many :users,through: :reservations
+
+    workshopモデルに
+
+    has_many :users,through: :reservations書いてあるか、確認しましょう
+    これを書くことによりuser.workshopsにデータ習得可能-->
         <%@reservations.each do|reservation|%>
-        
-      
+        <p><%= reservation.workshop.w_title%></p>
           <p> <%=reservation.name %></p>
           <p><%=reservation.date_time_1 %></p>
           <p><%=reservation.date_time_2 %></p>

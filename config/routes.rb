@@ -76,7 +76,7 @@ Rails.application.routes.draw do
     end
     namespace :users do
       get'/:user_id/workshop/:workshop_id/reservations/new'=>'reservations#new',as:'reservations_new'
-      get '/reservations/:user_id/index'=>'reservations#index',as:'reservations_index'
+      get '/reservations/index'=>'reservations#index',as:'reservations_index'
       post'/:user_id/workshops/:workshop_id/create'=>'reservations#create',as:'reservations_create'
       get '/reservations/:user_id/:reservation_id/edit'=>'reservations#edit',as:'reservations_edit'
       patch'/reservations/:user_id/:reservation_id/edit' => 'reservations#update',as:'reservations_update'
