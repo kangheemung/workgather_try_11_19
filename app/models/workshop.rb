@@ -14,6 +14,7 @@ class Workshop < ApplicationRecord
     def joined?(user)
       Reservation.where(user_id: user.id,workshop_id: self.id).exists?
     end
+   
     def avg_score
       unless self.posts.empty?#workshopsが空では無かったら下記を返す。
         posts.average(:score).round(1).to_f

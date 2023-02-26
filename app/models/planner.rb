@@ -12,4 +12,7 @@ class Planner < ApplicationRecord
   has_many :profiles
   has_many :schedule
   mount_uploader :planner_profile,PlannerProfileUploader
+  def workshops
+    return Workshop.where(planner_id: self.id)
+end
 end

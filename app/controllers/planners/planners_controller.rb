@@ -23,9 +23,6 @@ include  PlannerSessionsHelper
     end
     def show  
       @planner = Planner.find(params[:planner_id])
-      @workshop =Workshop.find_by(id:params[:workshp_id])
-     
-      
         #p"========"
         #p @planner.errors.full_messages
         #p"==========="

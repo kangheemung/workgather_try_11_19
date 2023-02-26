@@ -1,39 +1,39 @@
 class Users::ReservationsController < ApplicationController
   include  UserSessionsHelper
   def index
-   
-    @reservations=current_user.reservations.all
-   
+    user=User.find_by(id: params[:user_id])
+    @reservations=user.reservations.all
+    
     
   end
   
   def new
     @reservation=Reservation.new
-    @workshop = Workshop.find_by(id: params[:workshop_id])
-    @user=User.find_by(id: params[:user_id])
+
     
   end
   def create
 
-    @reservation=current_user.reservations.create(reservation_params)
+    user=User.find(session[:user_id])
+    reservation=user.reservations.create(reservation_params)
    p"============"
-    p @reservation
+    p reservation
     p @workshop
     p "urlのIDは#{params[:workshop_id]}"
     p "入力された値は#{params[:reservation_id]}"
     p"============"
 
-    if @reservation.save!
+    if reservation.save!
       
       p"============"
-      p @reservation
+      p reservation
       p @workshop
       p "urlのIDは#{params[:workshop_id]}"
       p "入力された値は#{params[:reservation_id]}"
       p"============"
 
       flash[:notice] = "This reservation is succesfully created."
-      redirect_to users_reservations_show_path(current_user,@reservation.id)
+      redirect_to users_reservations_show_path(user.id, user.reservations.ids)
     else
       flash[:alert] = "This reservation failed to be created."
       render :new
@@ -43,11 +43,12 @@ class Users::ReservationsController < ApplicationController
     p "=======show_starts============"
     p params
     p"==============end====="
-   
-    @reservation=current_user.reservations.find_by(id: params[:reservation_id])
-    @workshop=Workshop.find_by(id: params[:workshop_id])
+    user=User.find_by(id: params[:user_id])
+    @reservation=user.reservations.find_by(id: params[:reservation_id])
+    
     p "=======show_starts============"
     p params
+    p @workshop
     p"==============end====="
     
   end
@@ -58,15 +59,15 @@ class Users::ReservationsController < ApplicationController
     p"==================="
    
     @reservation=Reservation.find_by(id: params[:reservation_id])
-    
-    p "==================="
+    p "=========edit=========="
     p params
     p @reservation
-    p"==================="
+    p"============edit end======="
      
   end
   def  update 
-      if @reservation =current_user.reservations.update(reservation_params)
+    @reservation=Reservation.find_by(id: params[:reservation_id])
+      if @reservation.update(reservation_params)
          #workshop_paramsの内容を上書きする。
           flash[:notice]="プランナー情報を更新しました。"
           redirect_to users_reservations_index_path(current_user),data: {"turbolinks" => false}
@@ -75,7 +76,7 @@ class Users::ReservationsController < ApplicationController
       end
   end
   def destroy
-      @reservation=Reservation.find_by(id: params[:r_id])
+      @reservation=Reservation.find_by(id: params[:reservation_id])
       @reservation.destroy
       redirect_to users_reservations_show_path(current_user)
     

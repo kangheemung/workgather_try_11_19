@@ -3,7 +3,7 @@
 
       <div class="body">   
     
-<%= form_for @reservation, url: users_reservations_update_path(current_user,@reservation.id) do |f| %>
+<%= form_for @reservation, url: users_reservations_update_path(@reservation.id) do |f| %>
           <div class="day form-group">
             <%= f.label :name, '名前' %>
             <%= f.text_field :name%>

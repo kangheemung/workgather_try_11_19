@@ -22,7 +22,7 @@ class Users::UsersController < ApplicationController
     def show
       @user=User.find_by(id: params[:user_id])
       @workshop=Workshop.find_by(id: params[:workshop_id])
-      @reservation=Reservation.find_by(id: params[:reservation_id])
+      @reservation=@user.reservations.find_by(id: params[:reservation_id])
     end
     def edit
       @user=User.find_by(id: params[:user_id])
@@ -45,6 +45,6 @@ class Users::UsersController < ApplicationController
     end
     private
     def user_params
-        params.require(:user).permit(:user_name,:email,:password,:password_confirmation,:first_name,:last_name,:birthday,:gender,:u_profile_id)
+        params.require(:user).permit(:user_name,:email,:password,:password_confirmation,:first_name,:last_name,:birthday,:gender,:u_profile_id,)
     end
 end

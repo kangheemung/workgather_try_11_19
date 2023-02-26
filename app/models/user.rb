@@ -16,4 +16,11 @@ class User < ApplicationRecord
     has_many :stars
     has_many :user_workshops
     has_many :images, class_name: "Image"
+
+    def reservations
+        return Reservation.where(user_id: self.id)
+    end
+    def posts
+        return Post.where(user_id: self.id)
+    end
 end

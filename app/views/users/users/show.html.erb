@@ -21,7 +21,7 @@
     </div>
   </div>
   <div class="booking_detail">
-    <p><span><%= link_to "Workshop予約履歴",users_reservations_index_path(current_user.reservations.ids)%></span></p>
+    <p><span><%= link_to "Workshop予約履歴",users_reservations_index_path(current_user.reservations.ids,current_user.workshops.ids)%></span></p>
     <p><span> 詳細内容</span></p> </span></p>
     <p><span><div class="reservation_button"></span></p>
     <p><span> 詳細内容</span></p>
