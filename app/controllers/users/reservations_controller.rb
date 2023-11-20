@@ -2,9 +2,7 @@ class Users::ReservationsController < ApplicationController
   include  UserSessionsHelper
   def index
     user=User.find_by(id: params[:user_id])
-    @reservations=user.reservations.all
-    
-    
+    @reservations=user.reservations.includes(:workshop).all
   end
   
   def new
@@ -76,10 +74,14 @@ class Users::ReservationsController < ApplicationController
       end
   end
   def destroy
-      @reservation=Reservation.find_by(id: params[:reservation_id])
-      @reservation.destroy
-      redirect_to users_reservations_show_path(current_user)
+    @reservation = Reservation.find_by(id: params[:id])
     
+    if @reservation.nil?
+      redirect_to users_reservations_show_path(current_user, params[:id]), alert: "Reservation not found"
+    else
+      @reservation.destroy
+      redirect_to users_reservations_show_path(current_user, params[:id]), notice: "Reservation successfully deleted"
+    end
   end
     private
     def reservation_params

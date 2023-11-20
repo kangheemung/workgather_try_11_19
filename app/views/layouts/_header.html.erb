@@ -1,7 +1,7 @@
     <!ユーザーによってheader変わる>
 <% if current_planner.present? %>
  <div class="header1">
-  <div class="s_header">ASOBINAGARA</div><!三本のイメージを押したら　カテゴリーが開きます。-->
+  <div class="s_header">ASOBINAGARA</div><!三本のイメージを押したら カテゴリーが開きます。-->
     <div class="s_h_1">
       <ul>
         <li>
@@ -23,7 +23,7 @@
           <ul>  
             <li><%= link_to "mypage",planners_show_path(current_planner),data: {"turbolinks" => false}  %></li>
             <li> <%= link_to "workshop作成",planners_workshops_new_path(current_planner), data: {"turbolinks" => false}%>|</li>
-            <li><%= link_to "workshop予約状況",planners_reservations_index_path(current_planner,@reservation,params[:workhshop_id])%></li>
+            <li><%= link_to "workshop予約状況",planners_booking_index_path(current_planner,@reservation,params[:workhshop_id])%></li>
             <li><%= link_to "workshop見に行く",planners_workshops_index_path, data: {"turbolinks" => false} %>|</li>
             <li><%= link_to "ログアウト",planners_logout_path, method: :delete %></li>
             <li>

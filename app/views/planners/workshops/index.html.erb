@@ -55,7 +55,7 @@
         </div>
         <div class="w_btn_r_1"><p><%= link_to "レビュー",planners_posts_index_path(current_planner,workshop.id,@posts),class: "w_btn_r"%></p></div>
         <% if current_planner.id == workshop.planner_id %>
-        <div class="w_btn_r_1"><p><%= link_to "予約状況",planners_reservations_index_path(current_planner,workshop.id),class: "w_btn_r"%></p></div>
+        <div class="w_btn_r_1"><p><%= link_to "予約状況",planners_booking_index_path(current_planner,workshop.id),class: "w_btn_r"%></p></div>
         <div class="w_btn_r_1"><p><%= link_to "編集",planners_workshops_show_path(current_planner,workshop.id),class: "w_btn_r"%></p></div>
         <div class="w_btn_r_1"><p><%= link_to "削除",planners_workshops_delete_path(current_planner,workshop.id),method: :delete,class: "w_btn_r" %></p></div>
         <% end %>

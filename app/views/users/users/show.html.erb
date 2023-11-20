@@ -7,7 +7,6 @@
       <% if @user.u_profile_id? %>
         <%= image_tag @user.u_profile_id.url ,class: "u_profile_img" %>
       <% end %>
-        <p><span>フロフィル写真</span></p>
     </div> 
     <div class="user_info_right">
       <p>name: <%= current_user.user_name %></p>
@@ -21,11 +20,8 @@
     </div>
   </div>
   <div class="booking_detail">
-    <p><span><%= link_to "Workshop予約履歴",users_reservations_index_path(current_user.reservations.ids,current_user.workshops.ids)%></span></p>
-    <p><span> 詳細内容</span></p> </span></p>
+    <%= link_to "Workshop予約履歴", users_reservations_show_path(current_user, reservation_id: current_user.reservations.first.id) %>
     <p><span><div class="reservation_button"></span></p>
-    <p><span> 詳細内容</span></p>
-    <p><span> 表示</span></p>
   </div>
     <hr>
   <div class="booking_detail1">

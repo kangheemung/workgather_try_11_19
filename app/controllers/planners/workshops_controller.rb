@@ -30,7 +30,7 @@ class Planners::WorkshopsController < ApplicationController
     #p @workshop.errors.full_messages
     #p"==========="
    
-    @posts=Post.all
+    @post=@workshop.posts
     @stra=Star.new
   end
   def edit #詳細

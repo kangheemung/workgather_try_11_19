@@ -13,8 +13,6 @@
   </div>
 </div> 
 <% if @workshop.planner_id == current_planner.id %>
-  <span><%= @workshop.w_title %></span>
-  <div class="w_p_u"><p><%= current_planner.user_name %>様が投稿したworkshopの詳細ページ</p></div>
     <div class="workshop_detail">
       <p><%= @workshop.prefecture %></p>
       <p><%= @workshop.address1 %> </p>
@@ -26,23 +24,9 @@
       <p><%= @workshop.precautions %> </p>
     </div>  
     <div class="s_b"><p><%= link_to "workshopの内容を編集する",planners_workshops_edit_path(@workshop), class: "review_check", data: {"turbolinks" => false} %></p></div>
-   
   </div>      
 <% end %>  
-<% @workshop.posts.each do |post| %>
-  <div class="reviews">
-    <div class="reviews_box_image">
-      <%= image_tag post.image.url, size: '200x200' %>
-      <p><%= post.score %> 点</p>
-    </div>
-    <div class= "reviews_box_text">
-      <div class= "reviews_box_text1">
-        <span>タイトル：<%= post.title %></span>
-      </div> 
-      <div class= "reviews_box_content">
-        <p>コメント<%= post.content %></p>
-      </div>   
-    </div> 
-  </div>
-<% end %> 
+
+ 
+ 
  

@@ -1,0 +1,2 @@
+module Planners::BookingHelper
+end

@@ -4,22 +4,23 @@
       <%= render 'planner_show',workshop:@workshop %>    
       <% link_to"ワークショップ詳細内容編集",planners_workshops_edit_path(@workshop.id) %>
     <% end %>
-    <% @workshop.posts.each do |post| %>
+  
       <div class="reviews">
         <div class="reviews_box_image">
-          <%=image_tag post.image.url, size: '200x200' %>
-          <p><%= post.score %> 点</p>
+          <%=image_tag @workshop.image.url, size: '200x200' %>
+          <p>0 点</p>
         </div>
         <div class= "reviews_box_text">
-          <div class= "reviews_box_text1">
-            <span>タイトル：<%= post.title %></span>
+          <div class= "reviews_box_text1"></div>
+          <% if @post.present? %>
+            <span>タイトル：<%= @post.title %></span>
           </div> 
           <div class= "reviews_box_content">
-            <p>コメント<%= post.content %></p>
-          </div>   
+            <p>コメント<%= @post.content %></p>
+          </div>
+          <% end %>   
         </div> 
       </div>
-    <% end%> 
   </div>  
   <div class="s_b">
     <p><%= link_to "他のworkshopを見る",planners_workshops_index_path(@workshop), class: "review_check" %></p>

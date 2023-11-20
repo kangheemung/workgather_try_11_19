@@ -9,6 +9,7 @@ class Planner < ApplicationRecord
   validates :gender,{presence: true}
   has_secure_password
   has_many :workshops
+  has_many :users
   has_many :profiles
   has_many :schedule
   mount_uploader :planner_profile,PlannerProfileUploader

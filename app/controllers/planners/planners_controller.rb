@@ -26,6 +26,8 @@ include  PlannerSessionsHelper
         #p"========"
         #p @planner.errors.full_messages
         #p"==========="
+      @workshops=@planner.workshops
+      
     end
     def edit 
       @planner = Planner.find(params[:planner_id])
