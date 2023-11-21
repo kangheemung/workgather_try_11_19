@@ -1,32 +1,46 @@
 <div class="p_r_top">
-予約状況
+  予約状況
 </div>
 <div class="p_r_reservation">
-<table>
-<%@workshops.each do |workshop|%>
-  <thead>
-   <tr>
-    <div class="p_t">
-    <p><%=workshop.w_title%>の予約状況</p>
-    </div>
-    </tr>
-  </thead>
-  <% workshop.reservations.each do |reservation| %>
-    <tbody>
+  <table>
+    <% if @workshops.empty? %>
       <tr>
-        <div class="t_body">
-          <p>ID:<%=reservation.user.user_name%>様の予約</p>
-          <p><%=reservation.user.email%></p>
-          <p><%=reservation.name%></p>
-          <p><%=reservation.date_time_1%></p>
-          <p><%=reservation.date_time_2%></p>
-          <p><%=reservation.date_time_3%></p>
-          <p><%=reservation.participant%>名参加希望</p>
-          <p><%=reservation.check_box%></p>
-        </div> 
-      </tr> 
-    </tbody>      
-  <%end%>
-<%end%>
-</table> 
+        <td colspan="8">投稿したワークショップはありません。</td>
+      </tr>
+    <% else %>
+      <% @workshops.each do |workshop| %>
+        <% total_reservations = workshop.reservations.count %>
+        <thead>
+          <tr>
+            <div class="p_t">
+              <p><%= workshop.w_title %>の予約状況</p>
+            </div>
+          </tr>
+        </thead>
+        <tbody>
+          <% workshop.reservations.each do |reservation| %>
+            <tr>
+              <div class="t_body">
+                <p>ID: <%= reservation.user.user_name %>様の予約</p>
+                <p><%= reservation.user.email %></p>
+                <p><%= reservation.name %></p>
+                <p><%= reservation.date_time_1 %></p>
+                <p><%= reservation.date_time_2 %></p>
+                <p><%= reservation.date_time_3 %></p>
+                <p><%= reservation.participant %>名参加希望</p>
+                <p><%= reservation.check_box %></p>
+              </div>
+            </tr> 
+          <% end %>
+          <div>
+            <tr>
+              <p>予約件数は: <%= total_reservations %>です。</p>
+            </tr>
+          </div>
+        </tbody>
+      <% end %>
+    <% end %>
+  </table>
+  <%= link_to "マイパージに戻る", planners_show_path(planner_id: @workshop.id), class: "link", data: { "turbolinks" => false } %>
 </div>
+<%= link_to "マイページに戻る", planners_show_path(planner_id: @workshop.id), class: "link", data: { "turbolinks" => false } %>

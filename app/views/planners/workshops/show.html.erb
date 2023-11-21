@@ -4,6 +4,8 @@
       <%= render 'planner_show',workshop:@workshop %>    
       <% link_to"ワークショップ詳細内容編集",planners_workshops_edit_path(@workshop.id) %>
     <% end %>
+  
+     
   </div>  
   <div class="s_b">
     <p><%= link_to "他のworkshopを見る",planners_workshops_index_path(@workshop), class: "review_check" %></p>

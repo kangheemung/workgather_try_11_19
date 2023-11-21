@@ -18,7 +18,7 @@
             <p>Date 3: <%= reservation.date_time_3 %></p>
             <p>Participants: <%= reservation.participant %>名参加希望</p>
             <p><%= reservation.check_box %></p>
-            <%= link_to "編集", users_reservations_edit_path(current_user, reservation.id) %>
+            <%= link_to "編集", users_reservations_edit_path(current_user, reservation.id), data: {"turbolinks" => false}%>
             <%= link_to "削除", users_reservations_destroy_path(current_user, reservation), method: :delete, data: { confirm: "この投稿を削除しますか？" } %>
           </div>
         <% end %>

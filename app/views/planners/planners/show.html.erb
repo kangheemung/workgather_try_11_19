@@ -18,11 +18,14 @@
       <p>last_name: <%= current_planner.last_name%></p>
       <p>birthday: <%= current_planner.birthday%></p>
       <p>gender: <%= current_planner.gender%></p>
-      <p>profile_detail: <%= current_planner.p_detail%></p>
+      <p>profile_detail: <%= current_planner.p_detail%></p> 
+      <% total_reservations = 0 %>
+
       <% @workshops.each do |workshop| %>
-        <span>予約<%= workshop.reservations.count %>件</span>
+    <% total_reservations += workshop.reservations.count %>
       <% end %>
-      <span>投稿 <%=current_planner.workshops.count%>件</span>
+      <p><span>予約件数合計: <%= total_reservations %>件</span></p>
+      <p><span>開催投稿 <%=current_planner.workshops.count%>件</span></p>
     </div>
   </div>
   <hr>
@@ -71,6 +74,7 @@
     <hr>
     <div class="link_box">
         <%= link_to "編集", "/planners/#{@planner.id}/edit/" , class:"link", data: {"turbolinks" => false}%> |
-        <%= link_to "ワークショップを見に行く！", planners_workshops_index_path , class:"link" %>
+        <%= link_to "ワークショップを見に行く！", planners_workshops_index_path(workshop_id: @planner.id), class: "link" %>
+
     </div>
 </div>
