@@ -1,40 +1,44 @@
 <p>予約ありがとうございます！</p>
 <div class="r_s_top">
-  <%=current_user.user_name%>様の予約詳細情報
+  <%= current_user.user_name %>様の予約詳細情報
 </div>
-<table>
-
-
-  <thead>  
-    <tr>
-    <% if @reservation.workshop %>
-      <th colspan="2" class="r_s_title">予約したワークショップ：<%= @reservation.workshop.w_title %></th>
+<% current_user.reservations.each do |reservation| %>
+  <table>
+    <% if reservation.workshop %>
+      <thead>  
+        <tr>
+          <th colspan="2" class="r_s_title">予約したワークショップ：<%= reservation.workshop.w_title %></th>
+        </tr> 
+      </thead>
+      <tbody>  
+        <td> 
+          <p><%= reservation.workshop.w_title %></p>
+          <p><%= reservation.name %></p>
+          <p><%= reservation.date_time_1 %></p>
+          <p><%= reservation.date_time_2 %></p>
+          <p><%= reservation.date_time_3 %></p>
+          <p><%= reservation.participant %>名参加希望</p>
+          <p><%= reservation.check_box %></p>
+        </td>       
+        <td>
+          <p class='r_s_buttons'><%= link_to "編集", users_reservations_edit_path(current_user, reservation.id) %></p>
+          <p class='r_s_buttons_1'>
+            <%= link_to "削除", users_reservations_destroy_path(reservation), method: :delete, data: { confirm: "この投稿を削除しますか？" } %>
+          </p>
+        </td>
+      </tbody>
     <% else %>
-      <th colspan="2" class="r_s_title">予約したワークショップ：なし</th>
+      <tbody>
+        <tr>
+          <th colspan="2" class="r_s_title">予約したワークショップ：なし</th>
+        </tr>
+      </tbody>
     <% end %>
-    </tr> 
-  </thead>
-  <tbody>  
-    <td> 
-      <p><%=@reservation.name%></p>
-      <p><%=@reservation.date_time_1%></p>
-      <p><%=@reservation.date_time_2%></p>
-      <p><%=@reservation.date_time_3%></p>
-      <p><%=@reservation.participant%>名参加希望</p>
-      <p><%=@reservation.check_box%></p>
-    </td>       
-    <td>
-      <p class='r_s_buttons'><%=link_to "編集",users_reservations_edit_path(current_user,@reservation.id)%></p>
-      <p class='r_s_buttons_1'><%= link_to "削除", users_reservations_destroy_path(current_user, @reservation.id), method: :delete, data: { confirm: "この投稿を削除しますか？" } %></p>
+  </table>
+<% end %>
 
-    </td>
-  </tbody> 
-
-</table>
-</div>
 <div class="r_s_bottom">
    <p>
-   <%=link_to "他のworkshopを見る",users_workshops_index_path%>
+   <%= link_to "他のworkshopを見る", users_workshops_index_path %>
    </p>
 </div>  
-

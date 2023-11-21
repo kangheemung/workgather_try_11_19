@@ -77,11 +77,11 @@ Rails.application.routes.draw do
     end
     namespace :users do
       get'/:user_id/workshop/:workshop_id/reservations/new'=>'reservations#new',as:'reservations_new'
-      get '/:user_id/reservations/index'=>'reservations#index',as:'reservations_index'
-      post'/:user_id/workshops/:workshop_id/create'=>'reservations#create',as:'reservations_create'
+      get '/:user_id/reservations'=>'reservations#index',as:'reservations_index'
+      post '/users/:user_id/workshops/:workshop_id/reservations' => 'reservations#create', as: 'reservations_create'
       get '/reservations/:user_id/:reservation_id/edit'=>'reservations#edit',as:'reservations_edit'
       patch'/reservations/:user_id/:reservation_id/edit' => 'reservations#update',as:'reservations_update'
-      delete '/reservations/:id' => 'reservations#destroy', as: 'reservations_destroy'
+      delete '/reservations/:reservation_id' => 'reservations#destroy', as: 'reservations_destroy'
       get '/:user_id/reservations/:reservation_id'=>'reservations#show',as:'reservations_show'
     end
 

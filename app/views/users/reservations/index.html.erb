@@ -4,34 +4,26 @@
   <div class="row">
     <div class="col-12 text-center">
       <h1>予約画面</h1>
-      <p>3ヶ月先まで予約することができます。</p>
+      <p>3ヶ月先まで予約することができます。/index</p>
     </div>
     <div class="col-12 mt-3">
 
-   <!--予約ぺーじ注意 関連付けのため、各モデルにuser modelに下記を記入
-
-    has_many :users,through: :reservations
-
-    workshopモデルに
-
-    has_many :users,through: :reservations書いてあるか、確認しましょう
-    これを書くことによりuser.workshopsにデータ習得可能-->
-        <% @reservations.each do|reservation| %>
+      <% @reservations.each do |reservation| %>
         <% if reservation.workshop %>
-        <p><%= reservation.workshop.w_title %></p>
-        <% else %>
-        <p>No associated workshop</p>
+          <div class="reservation">
+            <h2><%= reservation.workshop.w_title %></h2>
+            <p>Name: <%= reservation.name %></p>
+            <p>Date 1: <%= reservation.date_time_1 %></p>
+            <p>Date 2: <%= reservation.date_time_2 %></p>
+            <p>Date 3: <%= reservation.date_time_3 %></p>
+            <p>Participants: <%= reservation.participant %>名参加希望</p>
+            <p><%= reservation.check_box %></p>
+            <%= link_to "編集", users_reservations_edit_path(current_user, reservation.id) %>
+            <%= link_to "削除", users_reservations_destroy_path(current_user, reservation), method: :delete, data: { confirm: "この投稿を削除しますか？" } %>
+          </div>
         <% end %>
-          <p> <%= reservation.name %></p>
-          <p><%= reservation.date_time_1 %></p>
-          <p><%= reservation.date_time_2 %></p>
-          <p><%= reservation.date_time_3 %></p>
-          <p><%= reservation.participant %>名参加希望</p>
-          <p><%= reservation.check_box %></p>
-            <%= link_to "編集",users_reservations_edit_path(current_user,reservation.id) %>
-            <%= link_to "削除",method: :delete, data: { confirm: "この投稿を削除しますか？"} %></p>
-        <% end %>  
-      
+      <% end %>
+        
     </div>
   </div>
 </div>

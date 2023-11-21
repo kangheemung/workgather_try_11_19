@@ -15,6 +15,7 @@ class CreateWorkshops < ActiveRecord::Migration[5.2]
       t.date :end_date,null: false
       t.string :personnel
       t.text :precautions
+      t.references :planner, null: false, foreign_key: true
       t.timestamps
     end
   end
