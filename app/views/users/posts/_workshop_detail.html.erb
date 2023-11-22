@@ -1,19 +1,18 @@
 <div class="user_worksshops_title">
-  <span><%= workshop.w_title %></span>
+  <span><%= @workshop.w_title %></span>
 </div>
 <div class="user_workshop_box_image">
   <p> <%= image_tag @workshop.image.url, size: '300x300' %>
 </div>  
 <div class="user_average-score">
   <div class="user_star-rating">
-    <div class="star-rating-front" style="width:<%= @workshop.review_score_percentage %>%"> ★★★★★</div>
-    <div class="star-rating-back">★★★★★</div>
-  </div>
+
+    
   <div class="user_scroe_detail">
-    <p><%= @workshop.avg_score %>点（<%= @workshop.posts.count %>件のレビュー）</p>
+    <p><%= @workshop.posts.count %>件のレビュー</p>
   </div>
 </div> 
-<% if @workshop.user == current_user.id %>
+<% if @workshop.users == current_user.id %>
   <span><%= @workshop.w_title %></span>
     <div class="workshop_detail">
       <p><%= @workshop.prefecture %></p>

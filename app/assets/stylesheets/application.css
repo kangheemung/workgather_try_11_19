@@ -14,8 +14,8 @@
  *= require_self
  *= require simple_calendar
  */
- body{
-    background-color:#DBE5E6;
+body {
+    background-color: #DBE5E6;
     object-fit: cover;
     color: #004A54;
     font-family: 'Mali', cursive;
@@ -23,55 +23,92 @@
     font-size: large;
 }
 
-.notification:not(:last-child){
-    margin-bottom:0;
+.notification:not(:last-child) {
+    margin-bottom: 0;
 }
-header{
+
+header {
     color: #DBE5E6;
-    background-color:  #004A54; 
+    background-color: #004A54;
     text-align: left;
-    font-family: 'Mali', cursive; 
-    padding-top: 5%; 
+    font-family: 'Mali', cursive;
+
     padding-bottom: 5%;
 }
-.header1 a { 
+
+.header1 a {
     color: #DBE5E6;
     text-decoration: none;
     margin-right: 2%;
 }
-.header1{
+
+.header1 {
     color: #DBE5E6;
-    background-color:  #004A54; 
+    background-color: #004A54;
     text-align: left;
-    font-family: 'Mali', cursive; 
+    font-family: 'Mali', cursive;
     padding-top: 5%;
-    padding-bottom: 5%; 
+    padding-bottom: 5%;
     display: flex;
-    width: 1000px;
- }
- .s_header{
-    font-size: x-large;    
-    color: whitesmoke;
+    width: 100%;
 }
-.s_h_1{ 
+
+.s_header {
+    margin-left: 3%;
+    font-size: large;
     color: whitesmoke;
-    font-weight: bolder;  
-    font-size:larger;
+
+}
+
+.s_h_1 {
+    font-size: medium;
+    display: flex;
+    color: #DBE5E6;
+    float: left;
+    margin-left: 7%;
+}
+
+.home_ul {
+    margin-left: 15%;
+}
+
+.p_s_h_1 {
     margin-left: 5%;
-    text-decoration:none;
-    display: flex; 
+    font-size: small;
+}
+
+.u_s_h_1 {
+    margin-left: 15%;
+    font-size: small;
+}
+
+.s_h_1 p {
+    padding-top: -10%;
+}
+
+.horizontal-link {
+    display: inline;
+
+}
+
+.link {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 11px;
+    /* reset font size for link text */
 }
 
 li {
     list-style: none;
-    display: flex;
-  }
-.menu{
-    margin-right :5%;
-    margin-left :5%;
-    margin-top: 5%
-}
-.menu_icon1{
-    fill:#DBE5E6;
+
 }
 
+.menu {
+    margin-right: 10%;
+    margin-left: 5%;
+    margin-top: 5%
+}
+
+.menu_icon1 {
+    fill: #DBE5E6;
+}

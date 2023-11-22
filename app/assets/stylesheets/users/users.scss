@@ -4,83 +4,99 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.asobinagara{
+.asobinagara {
     margin-top: 5%;
 }
-.asobinagara h1{
+
+.asobinagara h1 {
     font-size: xx-large;
     font-weight: bolder;
 }
-.signup{
+
+.signup {
     text-align: left;
     border: solid 3px;
     border-radius: 10px;
     margin-top: 5%;
 }
-.sign_up_main{
-    padding-left:10%;
+
+.sign_up_main {
+    padding-left: 10%;
 }
-.signup_body{
-    background-color:whitesmoke;
+
+.signup_body {
+    background-color: whitesmoke;
     padding-bottom: 1%;
     border-radius: 10px;
     text-decoration: none;
 }
-.signup_body p{
+
+.signup_body p {
     padding-top: 4%;
     text-align: center;
-    text-decoration: none;  
+    text-decoration: none;
 }
-.signup_body a{
+
+.signup_body a {
     color: #004A54;
     text-decoration: none;
 }
-.signup_text{ 
+
+.signup_text {
     font-size: x-large;
     font-weight: bolder;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
     text-align: center;
 }
-.body{
-    margin-left:5%;
+
+.body {
+    margin-left: 5%;
     text-align: center;
 }
-.button{
+
+.button {
     background-color: #004A54;
     width: 50%;
     height: 40%;
-    margin-top:10% ;
+    margin-top: 10%;
     margin-bottom: 10%;
     padding-top: 3%;
     padding-bottom: 3%;
     border: solid 1px;
     font-size: large;
     border-radius: 5%;
-    color:whitesmoke;
+    color: whitesmoke;
 }
-.login{
+
+.login {
     margin-bottom: 5%;
     text-align: center;
 }
-.name_box{
+
+.name_box {
     width: 100%;
-    margin-top: 3%;   
-}
-.name{
-    width:20%;
-    margin-top: 3%; 
-}
-.bottom-text2 p{
-    font-size: x-small;
-}
-.sign_btn{
-    text-align: center;
-    
-   }
-.gender_box{
     margin-top: 3%;
 }
-.u_mypage_body{
+
+.name {
+    width: 20%;
+    margin-top: 3%;
+}
+
+.bottom-text2 p {
+    font-size: x-small;
+}
+
+.sign_btn {
+    text-align: center;
+
+}
+
+.gender_box {
+    margin-top: 3%;
+}
+
+.u_mypage_body {
     padding-top: 10%;
     background-color: #626A67;
     color: whitesmoke;
@@ -89,82 +105,104 @@
     text-decoration: none;
     text-align: center;
 }
-.user_info{
+
+.user_info {
     text-align: center;
 }
-.user_info_left{
-    width: 70%;
-    margin:  0 auto; 
-    
+
+.user_info_left {
+    width: 100%;
+    margin: 0 auto;
+
 }
-.round-img{
+
+.round-img {
     width: 100%;
 }
-.user_info_right{
-    border:solid 3px; 
+
+.user_info_right {
+    border: solid 3px;
     width: 50%;
     border-radius: 2;
     padding-right: 5%;
-    padding-left:5%;
-    padding-top:5%;
+    padding-left: 5%;
+    padding-top: 5%;
     padding-bottom: 5%;
-    margin:  0 auto; 
-}
-.user_info_right p{
-    padding-right:5%;
-    margin-left:5%;
-    margin-top:5%;
-    margin-bottom:5%;
+    margin: 0 auto;
 }
 
-.u_booking_detail{
+.user_info_right p {
+    padding-right: 5%;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.u_booking_detail {
     text-align: center;
 }
-.u_booking_detail1{
-    border:solid 3px #dedede;
+
+.u_booking_detail1 {
+    border: solid 3px #dedede;
     border-radius: 30px;
-    background-color:#dedede;
-    width:90%;
+    background-color: #dedede;
+    width: 90%;
     height: 20%;
     margin-left: 5%;
-    margin-right: 5%;  
+    margin-right: 5%;
 }
-.u_link{
+
+.u_link {
     color: #DBE5E6;
     font-size: x-large;
     font-weight: bolder;
     text-decoration: none;
 }
-.u_link_box{
+
+.u_link_box {
     margin-top: 7%;
 }
-.user_schedule{
+
+.user_schedule {
     display: flex;
 }
-.u_schedule{
+
+.u_schedule {
     text-decoration: none;
-    width: 23%;  
+    width: 23%;
     text-align: center;
     margin-top: 10%;
     margin-left: 8%;
 }
-.u_schedule_i{
-    width: 100%;  
+
+.u_schedule_i {
+    width: 100%;
     text-align: center;
 }
-.u_schedule a{
+
+.u_schedule a {
     text-decoration: none;
-    color:#004A54;
+    color: #004A54;
 }
-.user_profile{
+
+.user_profile {
     width: 50%;
 }
-.u_profile_img{
-     width: 350px;
-     height:350px;
-     border-radius:50%;
+
+.u_profile_img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    margin-bottom: 10%;
 }
-.reservation_button{
+
+.u_link {
+    font-size: medium;
     text-decoration: none;
-    color:#DBE5E6;
+    color: #DBE5E6;
+}
+
+.reservation_button {
+    text-decoration: none;
+    color: #DBE5E6;
 }

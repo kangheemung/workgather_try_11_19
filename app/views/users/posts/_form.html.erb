@@ -1,0 +1,23 @@
+<div class="p_body">
+  <div class="rating-box">
+    <%= form_for @post, url: users_workshop_post_path(current_user,@workshop.id) do |f| %>
+	  <div class="body_box">
+	    <div class="b_b_t">
+		  <p> <%= f.label :ワークショップの写真をアップロード！%></p>
+		</div>  
+	    <div class="b_b_i">
+		  <p><%=f.file_field :image%></p>
+		</div>
+	  </div>
+
+	  <div class="ratings">
+	    
+	  <div class= "body_box">   
+	
+		<p> <%= f.text_field :title, :placeholder => "タイトル",class: "review_title_box"%></p>
+		<p> <%= f.text_field :content, :placeholder => "あなたの感想を書いて下さい。",class: "review_textarea_box"%></p>
+		<p> <%= f.submit "投稿", class: "button" %></p>
+	  </div>  
+    <%end%>
+  </div>
+</div>

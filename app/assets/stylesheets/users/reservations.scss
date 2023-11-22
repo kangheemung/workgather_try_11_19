@@ -2,45 +2,90 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //reservation_show
-.r_s_top{
+.reservation {
+    text-align: center;
+    border: solid 5px #ffffff;
+    border-radius: 5%;
+    padding-bottom: 5%;
+    margin-bottom: 3%;
+    background-color: #DBE5E6;
+}
+
+.u_text {
+    color: #004A54;
+    font-weight: 300;
+    margin-bottom: 10%;
+    background-color: #ffffff;
+    border: solid 5px #ffffff;
+    text-decoration: none;
+}
+
+.day_form_group {
+    font-size: large;
+    font-weight: bold;
+    margin-top: 10%;
+    text-align: center;
+
+    margin-bottom: 5%;
+}
+
+.time_form_group {
+    font-size: large;
+    font-weight: bold;
+    margin-top: 5%;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.r_s_top {
     text-align: center;
     font-size: xx-large;
     font-weight: bolder;
-    margin-bottom: 5%;}
-.r_s_bottom{
+    margin-bottom: 5%;
+}
+
+.r_s_bottom {
     text-align: right;
     margin-right: 10%;
 }
 
 
-table{
+table {
     border-radius: 2%;
-      border:solid 3px #DBE5E6; 
-      text-align: center;
-      width:100%;
+    border: solid 3px #DBE5E6;
+    text-align: center;
+    width: 100%;
 }
-th{ color:#DBE5E6;
+
+th {
+    color: #DBE5E6;
     border-radius: 5%;
-    border:solid 3px; 
-    background-color:#004A54;
+    border: solid 3px;
+    background-color: #004A54;
     margin-left: 10%;
-    margin-right:10%;
+    margin-right: 10%;
     padding-top: 10%;
     padding-bottom: 10%;
     font-size: larger;
-    
-    
+
+
 }
 
-td { border: solid 3px rgb(255, 255, 255); /* 線の種類 太さ 色 */
+td {
+    border: solid 3px rgb(255, 255, 255);
+    /* 線の種類 太さ 色 */
     margin: auto;
-   
-    width:60%;
+
+    width: 60%;
 }
- .r_s_title{background-color: #DBE5E6;}    
- .r_s_button { 
+
+.r_s_title {
+    background-color: #DBE5E6;
+}
+
+.r_s_button {
     background-color: whitesmoke;
-   font-size: medium;
+    font-size: medium;
     margin-right: 10%;
     margin-left: 10%;
     padding-top: 5%;
@@ -48,12 +93,17 @@ td { border: solid 3px rgb(255, 255, 255); /* 線の種類 太さ 色 */
     padding-left: 20%;
     padding-bottom: 5%;
     border: solid 1px whitesmoke;
-    font-weight:bold;
+    font-weight: bold;
     font-size: large;
     border-radius: 5%;
-    color:#004A54;
+    color: #004A54;
     text-decoration: none;
- }
- .r_s_buttons{
+}
+
+.u_submit {
+    text-align: center;
+}
+
+.r_s_buttons {
     margin-bottom: 20%;
- }
+}

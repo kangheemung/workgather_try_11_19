@@ -1,6 +1,6 @@
 <div class="w_side_header_p">
   <p>Home> workshopsの一覧ページ</p>
-</div><!三本のイメージを押したら　カテゴリーが開きます。-->
+</div><!三本のイメージを押したら カテゴリーが開きます。-->
 <div class="w_body">
   <% @workshops.each do |workshop| %>
     <div class="w_table_left">
@@ -13,15 +13,14 @@
         </div>
       </div>  
       <div class="w_img_d">
-        <p> <%= image_tag workshop.image.url,class:"w_img"%>  
+        <% if workshop.image.present? %>
+          <%= image_tag workshop.image.url, class: "w_img" %>
+        <% else %>
+          画像がありません
+        <% end %>
       </div>
       <div class="average-score">
-        <div class="w_star-rating">
-        
-            <div class="star-rating-front" style="width:<%= workshop.review_score_percentage %>%"> ★★★★★</div>
-            <div class="star-rating-back">★★★★★</div>
-        </div>
-          <p><%= workshop.avg_score %>点（<%= workshop.posts.count %>件のレビュー）</p>
+        <p>ワークショップのレビュー</p><p><%= workshop.posts.count %>件のレビュー</p>
       </div>
     </div>
     <div class="w_table_right">
@@ -51,7 +50,7 @@
           <p>like</p>
         
         <p><%= link_to "予約する",users_reservations_new_path(current_user,workshop.id),class: "w_btn_b" %></p>
-        <p><%= link_to "レビュー",users_workshops_show_path(current_user,workshop.id),class: "w_btn_r" %></p>  
+        <p><%= link_to "レビュー",users_posts_new_path(current_user,workshop.id),class: "w_btn_r" %></p>  
       <% else %>
         <p>空き状況</p>
         <p><%= workshop.time %></p>
@@ -62,7 +61,7 @@
         <p><%= workshop.address2 %></p>
         <p>駐車場ありなし</p>
         <p>like</p>
-        <p><%= link_to "レビュー",users_workshops_show_path(workshop.id),class: "w_btn_r" %></p>
+        <p><%= link_to "レビュー",users_posts_new_path(current_user,workshop.id),class: "w_btn_r" %></p>
       <% end %>    
     </div>
   <% end %> 

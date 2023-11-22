@@ -18,12 +18,15 @@
           <p><%= reservation.date_time_2 %></p>
           <p><%= reservation.date_time_3 %></p>
           <p><%= reservation.participant %>名参加希望</p>
-          <p><%= reservation.check_box %></p>
+          <% if reservation.check_box %>
+              <p>同意しました。</p>
+          <% end %>
+          <p><% reservation.check_box %></p>
         </td>       
         <td>
-          <p class='r_s_buttons'><%= link_to "編集", users_reservations_edit_path(current_user, reservation.id) %></p>
+          <p class='r_s_buttons'><%= link_to "編集", users_reservations_edit_path(current_user, reservation.id),class:"u_text"%></p>
           <p class='r_s_buttons_1'>
-            <%= link_to "削除", users_reservations_destroy_path(reservation), method: :delete, data: { confirm: "この投稿を削除しますか？" } %>
+            <%= link_to "削除", users_reservations_destroy_path(reservation), method: :delete, data: { confirm: "この投稿を削除しますか？" } ,class:"u_text"%>
           </p>
         </td>
       </tbody>
