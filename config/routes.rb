@@ -59,12 +59,12 @@ Rails.application.routes.draw do
 
       
     #レビュー
-    get 'posts/index'=>'posts#index',as:'posts_index'
+    get '/:user_id/posts/:workshop_id/posts'=>'posts#index',as:'posts_index'
     get '/:user_id/posts/:workshop_id/new' => 'posts#new', as: 'posts_new'
     post '/:user_id/workshops/:workshop_id/post' => 'posts#create', as: 'workshop_post'
     get 'posts/:post_id/edit' => 'posts#edit',as:'posts_edit'
     patch 'posts/:post_id/edit'=> 'posts#update',as:'posts_update'
-    get 'posts/:post_id'=>'posts#show',as:'posts_show'
+    get '/:user_id/:workshop_id/posts/:post_id'=>'posts#show',as:'posts_show'
 
     #user_workshop
     get'/workshops/index'=>'workshops#index',as:'workshops_index'

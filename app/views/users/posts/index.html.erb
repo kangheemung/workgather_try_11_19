@@ -1,0 +1,22 @@
+<%= render 'workshop_detail', workshop: @workshop %>
+ <p><%= link_to "レビューを書いてみる",users_posts_new_path(current_user,@workshop.id),class: "w_btn_r" %></p>
+
+<% @posts.each do |post| %>
+  <div class="reviews">
+    <div class="reviews_box_image">
+      <%= image_tag post.image.url, size: '200x200' if post.image? %>
+    </div>
+    <div class= "reviews_box_text">
+      <div class= "reviews_box_text1">
+        <span>タイトル：<%= post.title %></span>
+      </div> 
+      <div class= "reviews_box_content">
+        <p>コメント：<%= post.content %></p>
+      </div>   
+    </div> 
+  </div>  
+    <% if post.user_id == current_user.id %>
+    <div><p><%= link_to "編集", users_posts_edit_path(post.user, @workshop, post), class: "link_text" %><p></div>
+    <%end%>
+<% end %> 
+<%= render partial: 'user_show', locals: { workshop: @workshop } %>

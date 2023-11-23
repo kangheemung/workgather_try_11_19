@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_08_120816) do
+ActiveRecord::Schema.define(version: 2023_11_23_063209) do
 
   create_table "images", force: :cascade do |t|
     t.string "name"
@@ -69,13 +69,6 @@ ActiveRecord::Schema.define(version: 2023_01_08_120816) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_workshops", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "workshop_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "user_name"
     t.string "email"
@@ -87,6 +80,15 @@ ActiveRecord::Schema.define(version: 2023_01_08_120816) do
     t.string "u_profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "workshop_posts", force: :cascade do |t|
+    t.integer "workshop_id", null: false
+    t.integer "post_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_workshop_posts_on_post_id"
+    t.index ["workshop_id"], name: "index_workshop_posts_on_workshop_id"
   end
 
   create_table "workshops", force: :cascade do |t|

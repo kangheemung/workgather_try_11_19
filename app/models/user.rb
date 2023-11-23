@@ -10,17 +10,11 @@ class User < ApplicationRecord
     has_secure_password 
     mount_uploader :u_profile_id,UProfileIdUploader 
     #resource :user, only: %i[show edit update]
-    has_many :posts#, dependent::destroy
+    has_many :posts, dependent: :destroy
     has_many :reservations,dependent: :destroy
     has_many :workshops, through: :reservations
-    has_many :stars
-    has_many :user_workshops
+    has_many :workshop_related_posts, through: :posts, source: :workshop
     has_many :images, class_name: "Image"
 
-    def reservations
-        return Reservation.where(user_id: self.id)
-    end
-    def posts
-        return Post.where(user_id: self.id)
-    end
+
 end
