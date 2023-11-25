@@ -32,7 +32,7 @@
   <div class="booking_detail1">
       <div class="planner_schedule">
         <div class="p_schedule">
-          <a href="#">
+          <%=link_to planners_booking_index_path(current_planner,@reservation,params[:workshop_id]) do%>
             <svg class="p_schedule_i"version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 512 512"  xml:space="preserve">
               <style type="text/css">
                 .st0{fill:#4B4B4B;}
@@ -59,15 +59,10 @@
                 <rect x="174.928" y="185.417" class="st0" width="63.592" height="63.582" style="fill: rgb(75, 75, 75);"></rect>
               </g>
             </svg>
-              <p>予約</p>
+          <% end %>
+           <p><span><%=link_to"予約履歴",planners_booking_index_path(current_planner,@reservation,params[:workshop_id])%></span></p>
           </a>    
         </div>
-        <div class="p_schedule">
-          <p><span>Workshop予約履歴</span></p>
-          <p><span><%=link_to"予約履歴",planners_booking_index_path(current_planner,@reservation,params[:workshop_id])%></span></p>
-          <p><span> </span></p>
-          <p><span> </span></p>
-        </div>  
        
       </div>   
   </div>  

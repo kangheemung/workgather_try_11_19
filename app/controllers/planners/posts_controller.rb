@@ -9,9 +9,9 @@ class Planners::PostsController < ApplicationController
     #p"========"
     #p @workshop.errors.full_messages
     #p"==========="
-   
-    @posts=Post.all
-    @stra=Star.new
+    @posts = @workshop.posts.all
+    
+
   end
   def show
     

@@ -27,7 +27,7 @@
     </div>      
 <% end %> 
 <% if Reservation.exists?(workshop_id: @workshop.id, user_id: current_user.id) %>
- <p><%= link_to "レビューを書いてみる",users_workshops_show_path(current_user,@workshop.id),class: "w_btn_r" %></p>
+ <p><%= link_to "レビューを書いてみる",users_workshops_show_path(current_user,@workshop.id),class: "w_btn_r_1" %></p>
 <% end %>
 <% @posts.each do |post| %>
   <div class="reviews">
@@ -46,4 +46,6 @@
     <% if post.user_id == current_user.id %>
     <div><p><%= link_to "編集", users_posts_edit_path(post.user, @workshop, post), class: "link_text" %><p></div>
     <%end%>
+   
 <% end %> 
+<p><%=link_to "他のワークショップに移動",users_workshops_index_path,class: "link_text"%></p>

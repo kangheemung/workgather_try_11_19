@@ -16,9 +16,11 @@
             <p>Date 1: <%= reservation.date_time_1 %></p>
             <p>Date 2: <%= reservation.date_time_2 %></p>
             <p>Date 3: <%= reservation.date_time_3 %></p>
-            <p>Participants: <%= reservation.participant %>名参加希望</p>
+            <p>参加予定人数: <%= reservation.participant %>名参加希望</p>
             <% if reservation.check_box %>
               <p>同意しました。</p>
+            <% else %>
+            <p>同意してないです。</p>
             <% end %>
             <p><% reservation.check_box %></p>
             <%= link_to "編集", users_reservations_edit_path(current_user, reservation.id),class:"u_text", data: {"turbolinks" => false}%>

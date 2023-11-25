@@ -1,3 +1,44 @@
 // Place all the styles related to the planners/posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.post_box_text {
+    border: solid 1px whitesmoke;
+    padding-bottom: 20%;
+    width: 100%;
+    margin-bottom: 1%;
+    background-color: whitesmoke;
+}
+
+.posts {
+    display: flex;
+    text-align: center;
+}
+
+.posts_box_title {
+    background-color: antiquewhite;
+}
+
+.posts_box_text {
+    border: solid 1px whitesmoke;
+    padding-bottom: 20%;
+    width: 80%;
+    margin-bottom: 1%;
+    margin-left: 2%;
+}
+
+.posts_box_text1 {
+    border: solid 1px whitesmoke;
+    width: 100%;
+    height: 20%;
+    background-color: whitesmoke;
+}
+
+.posts_box_image {
+    text-align: center;
+    margin: auto;
+}
+
+.posts_box_content {
+    margin-top: 15%;
+    font-size: 11px;
+}

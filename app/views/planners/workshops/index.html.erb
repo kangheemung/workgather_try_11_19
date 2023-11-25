@@ -48,9 +48,9 @@
           <p>駐車場ありなし</p>
           <p>like</p>
         </div>
-        <div><p><%= link_to "レビュー",planners_posts_index_path(current_planner,workshop.id,@posts),class: "w_btn_r_1"%></p></div>
+        <div><p><%= link_to "レビュー",planners_posts_index_path(current_planner,workshop.id,@posts),class: "w_btn_r_2"%></p></div>
         <% if current_planner.id == workshop.planner_id %>
-        <div ><p><%= link_to "予約状況",planners_booking_index_path(current_planner,workshop.id),class: "w_btn_r_1"%></p></div>
+        <div ><p><%= link_to "予約",planners_booking_index_path(current_planner,workshop.id),class: "w_btn_r_2"%></p></div>
         <div ><p><%= link_to "編集",planners_workshops_show_path(current_planner,workshop.id),class: "w_btn_r_2"%></p></div>
         <div ><p><%= link_to "削除",planners_workshops_delete_path(current_planner,workshop.id),class: "w_btn_r_2",method: :delete%></p></div>
         <% end %>

@@ -9,25 +9,20 @@
         <p> <%= image_tag @workshop.image.url,class:"w_img"%>  
       </div>
       <div class="average-score">
-        <div class="p_star-rating">
-         
-            <div class="star-rating-front" style="width:<%= @workshop.review_score_percentage %>%"> ★★★★★</div>
-            <div class="star-rating-back">★★★★★</div>
-        </div>
-          <p><%= @workshop.avg_score %>点（<%= @workshop.posts.count %>件のレビュー）</p>
+       <%= @workshop.posts.count %>件のレビュー</p>
       </div>
     </div>
     <% @workshop.posts.each do |post| %>
-      <div class="reviews">
-        <div class="reviews_box_image">
+      <div class="posts ">
+        <div class="posts_box_image">
           <%=image_tag post.image.url, size: '200x200' %>
-          <p><%= post.score %> 点</p>
+          
         </div>
-        <div class= "reviews_box_text">
-          <div class= "reviews_box_text1">
+        <div class= "posts_box_text">
+          <div class= "post_box_text ">
             <span>タイトル：<%= post.title %></span>
           </div> 
-          <div class= "reviews_box_content">
+          <div class= "posts_box_content">
             <p>コメント<%= post.content %></p>
           </div>   
         </div> 

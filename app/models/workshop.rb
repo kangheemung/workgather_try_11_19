@@ -17,19 +17,5 @@ class Workshop < ApplicationRecord
       Reservation.where(user_id: user.id,workshop_id: self.id).exists?
     end
    
-    def avg_score
-      unless self.posts.empty?#workshopsが空では無かったら下記を返す。
-        posts.average(:score).round(1).to_f
-      else
-        0.0
-      end
-    end
-    def review_score_percentage 
-      unless self.posts.empty?#パーセンテージ
-        posts.average(:score).round(1).to_f*100/5
-      else
-        0.0
-      end
-    end
 end
 

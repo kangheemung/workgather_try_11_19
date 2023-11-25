@@ -165,9 +165,7 @@
     border: solid 1px;
     padding-top: 5%;
     padding-bottom: 5%;
-    margin-right: 2%;
-
-    padding-right: 5%;
+    margin-top: 10%;
     color: #004A54;
     background-color: whitesmoke;
 }
@@ -175,17 +173,22 @@
 .w_btn_r_2 {
     background-color: whitesmoke;
     width: 70%;
+    font-weight: bolder;
     text-decoration: none;
     font-size: small;
     border: solid 1px;
     padding-top: 5%;
     padding-bottom: 5%;
-    margin-right: 2%;
-    padding-left: 15%;
-    padding-right: 15%;
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 5%;
+    padding-right: 10%;
+    padding-left: 10%;
     color: #004A54;
     background-color: whitesmoke;
 }
+
+
 
 .average-score p {
     font-size: x-small;
@@ -339,6 +342,7 @@
 
 .reviews_box_text {
     border: solid 1px whitesmoke;
+    padding-bottom: 20%;
     width: 80%;
     margin-bottom: 1%;
     margin-left: 2%;

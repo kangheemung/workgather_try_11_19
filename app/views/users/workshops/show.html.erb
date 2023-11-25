@@ -11,6 +11,7 @@
       </div> 
    
       <%= render 'user_show',workshop:@workshop %>
+   <p><%=link_to "他のワークショップに移動",users_workshops_index_path,class: "link_text"%></p>
   <% else %>
     No workshop
   <% end %>
