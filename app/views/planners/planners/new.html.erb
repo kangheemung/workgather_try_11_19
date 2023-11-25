@@ -7,9 +7,9 @@
  <div class="body">
     <%= form_for @planner, url:planners_create_path do |f| %>
         <div class="body_box">    
-        <p><%= f.label :user_name %></p>
+        <p><%= f.label :planner_name %></p>
         </div>  
-        <p><%= f.text_field :user_name, :placeholder => "User name"%></p>
+        <p><%= f.text_field :user_name, :placeholder => "Planner name"%></p>
         <div class="body_box">  
         <p><%= f.label :email%></p>
         </div>  
