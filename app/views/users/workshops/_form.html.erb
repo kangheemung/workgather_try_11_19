@@ -1,6 +1,7 @@
 <div class="p_body">
   <div class="rating-box">
     <%= form_for @post, url: users_workshop_post_path(current_user,@workshop.id) do |f| %>
+	  <%= f.hidden_field :workshop_id, value: @workshop.id %>
 	  <div class="body_box">
 	    <div class="b_b_t">
 		  <p> <%= f.label :ワークショップの写真をアップロード！%></p>

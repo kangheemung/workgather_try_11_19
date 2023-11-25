@@ -1,6 +1,34 @@
-<%= render 'workshop_detail', workshop: @workshop %>
- <p><%= link_to "レビューを書いてみる",users_posts_new_path(current_user,@workshop.id),class: "w_btn_r" %></p>
+<div class="user_worksshops_title">
+  <span><%= @workshop.w_title %></span>
+</div>
+<div class="user_workshop_box_image">
+  <p> <%= image_tag @workshop.image.url, size: '300x300' %>
+</div>  
+<div class="user_average-score">
+  <div class="user_star-rating">
 
+    
+  <div class="user_scroe_detail">
+    <p><%= @workshop.posts.count %>件のレビュー</p>
+  </div>
+</div> 
+<% if @workshop.users == current_user.id %>
+  <span><%= @workshop.w_title %></span>
+    <div class="workshop_detail">
+      <p><%= @workshop.prefecture %></p>
+      <p><%= @workshop.address1 %> </p>
+      <p><%= @workshop.address2 %> </p>
+      <p><%= @workshop.w_detail %> </p>
+      <p><%= @workshop.time %> </p>
+      <p><%= @workshop.personnel %> </p>
+      <p><%= @workshop.precautions %> </p>
+    </div>
+    <div class="s_b"><p><%= link_to "他のworkshopを見る",users_workshops_index_path(workshop), class: "review_check" %></p></div>
+    </div>      
+<% end %> 
+<% if Reservation.exists?(workshop_id: @workshop.id, user_id: current_user.id) %>
+ <p><%= link_to "レビューを書いてみる",users_workshops_show_path(current_user,@workshop.id),class: "w_btn_r" %></p>
+<% end %>
 <% @posts.each do |post| %>
   <div class="reviews">
     <div class="reviews_box_image">
@@ -19,4 +47,3 @@
     <div><p><%= link_to "編集", users_posts_edit_path(post.user, @workshop, post), class: "link_text" %><p></div>
     <%end%>
 <% end %> 
-<%= render partial: 'user_show', locals: { workshop: @workshop } %>

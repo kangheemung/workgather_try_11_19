@@ -1,13 +1,13 @@
 <div class="p_side_header_p">
   <p>Home> workshopsのレビュー</p>
-</div><!三本のイメージを押したら　カテゴリーが開きます。-->
+</div><!三本のイメージを押したらカテゴリーが開きます。-->
 <%= render 'workshop_detail',workshop:@workshop%>
   <%if @workshop != nil %>
     
       <div class="user_enter_butten">
       </div>   
       <div class="post_text">
-        <%= render 'form.html',post:@post %>
+        <%= render 'form',post:@post %>
       </div> 
    
       <%= render 'user_show',workshop:@workshop %>

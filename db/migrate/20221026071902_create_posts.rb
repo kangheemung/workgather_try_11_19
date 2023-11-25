@@ -6,7 +6,6 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.string :content
       t.integer :user_id
       t.integer :workshop_id
-      t.integer :user_workshop_id
       t.timestamps
     end
   end

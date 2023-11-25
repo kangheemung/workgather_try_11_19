@@ -3,48 +3,25 @@ class Users::PostsController < ApplicationController
   def index
     @workshop = Workshop.find_by(id:params[:workshop_id])
     @posts = @workshop.posts.all
-    
-
-  end
-  def new
-    @user = current_user
-    
-    @reservation = Reservation.find_by(workshop_id: params[:workshop_id], user_id: @user.id)
-    
-    if @reservation.nil?
-      flash[:alert] = "You cannot review a workshop you didn't participate in."
-      redirect_to users_workshops_index_path
-      return
-    end
-    # Find the workshop using the workshop_id from the params
-    @workshop = Workshop.find(params[:workshop_id])
-    
-    # Initialize a new post with just the workshop_id and user_id set
-    @post = Post.new(workshop_id: @workshop.id, user_id: @user.id)
-
-    # Optional: Get all posts for the workshop if needed to display elsewhere
-    @posts = @workshop.posts
   end
   def create
-    user = current_user
     @workshop = Workshop.find(params[:workshop_id])
+    # Build a new Post associated with the current_user
+    @post = current_user.posts.build(post_params)
   
-    # Build a new post (review) associated with the current user
-    @post = user.posts.build(post_params)
-  
-    # For one-to-many relationship:
-    @post.workshop_id = @workshop.id
-    
-    # For many-to-many relationship:
-    # @post.workshops << @workshop
-  
-    if @post.save
-      redirect_to users_posts_show_path(user_id: current_user.id, workshop_id: @post.workshop_id, post_id: @post.id), notice: 'レビューが正常に作成されました。'
+    # Try saving the Post and WorkshopPost transactionally if valid
+    if @post.valid?
+      ActiveRecord::Base.transaction do
+        @post.save!
+        # Create the association with the workshop
+        WorkshopPost.create!(workshop_id: @workshop.id, post_id: @post.id)
+      end
+      redirect_to users_workshops_index_path
     else
-      puts @post.errors.full_messages 
       render :new
     end
   end
+  
   
   
   def show
@@ -73,6 +50,6 @@ class Users::PostsController < ApplicationController
 
     def post_params
       # Strong parameters – Allows title, content, image, score, and ensures user_id is not tampered with.
-      params.require(:post).permit(:title, :content, :image, :workshop_id,:user_workshop_id)
+      params.require(:post).permit(:title, :content, :image, :workshop_id)
     end
   end

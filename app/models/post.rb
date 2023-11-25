@@ -5,7 +5,7 @@ class Post < ApplicationRecord
     #belongs_to :workshop
     has_many :workshop_posts, dependent: :destroy
     has_many :workshops, through: :workshop_posts
-
+    belongs_to :workshop
 
 
 end

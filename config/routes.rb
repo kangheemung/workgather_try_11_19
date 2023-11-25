@@ -71,7 +71,7 @@ Rails.application.routes.draw do
     get '/:workshop_id/new'=>'workshops#new',as:'workshops_new'
     get '/workshops/:u_workshop_d/edit'=>'workshops#edit',as:'workshops_edit'
     patch '/workshops/:u_workshop_id/edit' => 'workshops#update',as:'workshops_update'
-    get '/user_id/workshops/:workshop_id'=>'workshops#show',as:'workshops_show' 
+    get '/:user_id/workshops/:workshop_id'=>'workshops#show',as:'workshops_show' 
 
     get'/:user_id/workshop/:workshop_id/reservations/new'=>'reservations#new',as:'reservations_new'
     get '/:user_id/reservations'=>'reservations#index',as:'reservations_index'
