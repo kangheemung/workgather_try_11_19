@@ -23,9 +23,9 @@
     <hr>
   <div class="booking_detail">  
   <div class="booking_detail1">
-    <div class="planner_schedule">
-      <div class="p_schedule">
-        <a href="#">
+    <div class="user_schedule">
+      <div class="u_schedule">
+      <%= link_to users_reservations_index_path(current_user, reservation_id: current_user.reservations.ids) do %>
           <svg class="p_schedule_i"version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 512 512"  xml:space="preserve">
             <style type="text/css">
               .st0{fill:#4B4B4B;}
@@ -52,7 +52,7 @@
               <rect x="174.928" y="185.417" class="st0" width="63.592" height="63.582" style="fill: rgb(75, 75, 75);"></rect>
             </g>
           </svg>
-          <p>予約</p>
+      <% end %>  
           <div class="booking_detail">
               <%= link_to "Workshop予約履歴", users_reservations_index_path(current_user, reservation_id: current_user.reservations.ids) %>
            <p><span><div class="reservation_button"></span></p>
