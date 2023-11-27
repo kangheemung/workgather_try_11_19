@@ -12,10 +12,10 @@ class Planners::WorkshopsController < ApplicationController
   def create
       #p "params: #{params}"#
       @planner=Planner.find_by(id: params[:planner_id])
-      workshop = @planner.workshops.build(workshop_params)
+      @workshop = @planner.workshops.build(workshop_params)
       
 
-      if workshop.save
+      if @workshop.save
         redirect_to planners_workshops_index_path
       else
         #p"========"
@@ -65,7 +65,7 @@ class Planners::WorkshopsController < ApplicationController
     @workshop=Workshop.find_by(id:params[:workshop_id])
     @workshop.destroy
     redirect_to  planners_workshops_index_path
-end
+  end
 
 
   private

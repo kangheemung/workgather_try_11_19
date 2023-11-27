@@ -26,7 +26,7 @@
 
     <!-- Here the edit path should also be corrected -->
     <% if @workshop %>
-      <p><%= link_to "編集", users_posts_edit_path(@workshop, @post), class: "link_text" %></p>
+      <p><%= link_to "編集", users_workshops_edit_path(@workshop, @post), class: "link_text" %></p>
     <% else %>
       <p>Edit not available.</p>
     <% end %>

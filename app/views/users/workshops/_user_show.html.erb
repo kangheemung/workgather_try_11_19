@@ -5,9 +5,9 @@
 
     </div>
     <div class= "reviews_box_text">
-      <div class= "reviews_box_text1">
+      
         <span>タイトル：<%= post.title %></span>
-      </div> 
+   
       <div class= "reviews_box_content">
         <p>コメント<%= post.content %></p>
       </div>   
@@ -15,8 +15,8 @@
   </div>
   <div class="user_edit">
     <% if post.user_id == current_user.id %>
-      <p><%=link_to "編集",users_workshops_edit_path(post),class: "link_text"%></p>
+      <p><%= link_to "編集", users_workshops_edit_path(user_id: post.user_id, workshop_id: post.workshop_id, post_id: post.id), class: "link_text" %></p>
     <%end%>
-  </div> 
+  </div>
 <% end %> 
  

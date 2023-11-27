@@ -6,9 +6,9 @@
  <div class="body">
     <%= form_for @planner, url:planners_create_path do |f| %>
         <div class="body_box">    
-        <p><%= f.label :user_name %></p>
+        <p><%= f.label :planner_name %></p>
         </div>  
-        <p><%= f.text_field :user_name, :placeholder => "User name"%></p>
+        <p><%= f.text_field :planner_name, :placeholder => "User name"%></p>
         <div class="body_box">  
         <p><%= f.label :email%></p>
         </div>  
@@ -22,7 +22,7 @@
         </div>  
         <p><%= f.password_field :password_confirmation, :placeholder => "password_confirmation"%></p>
         <div class="body_box">
-        <%= f.label :主催者の写真　%></p>
+        <%= f.label :主催者の写真%></p>
         <%=  f.file_field :planner_profile %></p>
         </div> 
         <div class="text_box">

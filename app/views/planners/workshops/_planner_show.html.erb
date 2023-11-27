@@ -1,15 +1,12 @@
 <span><%= workshop.w_title %></span>
-<div class="w_p_u"><p><%= current_planner.user_name %>様が投稿したworkshopの詳細ページ</p></div>
+<div class="w_p_u"><p><%= current_planner.planner_name %>様が投稿したworkshopの詳細ページ</p></div>
 <div class="eviews_box_image">
   <p> <%= image_tag @workshop.image.url, size: '300x300' %>
 </div>  
 <div class="average-score">
-  <div class="star-rating">
-    <div class="star-rating-front" style="width:<%= @workshop.review_score_percentage %>%"> ★★★★★</div>
-    <div class="star-rating-back">★★★★★</div>
-  </div>
+  
   <div class="average-score-display">
-    <p><%= @workshop.avg_score %>点（<%= @workshop.posts.count %>件のレビュー）</p>
+    <p><%= @workshop.posts.count %>件のレビュー）</p>
   </div>
 </div> 
 <% if @workshop.planner_id == current_planner.id %>

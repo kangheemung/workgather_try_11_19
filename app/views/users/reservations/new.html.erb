@@ -6,11 +6,11 @@
     </div>
   <%if current_user.reservations != nil %>
     
-    すでに予約しております。追加で予約する！
+    予約する！
    
    <%= render 'reservation_form.html',reservation:@reservation %>    
   <%else%>
-    予約する！
+    このworkshopにすでに予約してます。追加予約しますか？
      <div class="col-12 mt-3 content">
       <%= render 'reservation_form.html',reservation:@reservation %>    
   <% end %> 

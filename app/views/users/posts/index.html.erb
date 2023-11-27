@@ -44,8 +44,11 @@
     </div> 
   </div>  
     <% if post.user_id == current_user.id %>
-    <div><p><%= link_to "編集", users_posts_edit_path(post.user, @workshop, post), class: "link_text" %><p></div>
+    <div> <p> <%= link_to "編集", users_workshops_edit_path(user_id: current_user.id, workshop_id: @workshop.id, post_id: post.id), class: "link_text" %> </p>
+    </div>
     <%end%>
    
 <% end %> 
+<div class="link_last">
 <p><%=link_to "他のワークショップに移動",users_workshops_index_path,class: "link_text"%></p>
+<div>

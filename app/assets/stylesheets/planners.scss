@@ -1,153 +1,191 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.asobinagara{
+.asobinagara {
     margin-top: 5%;
 }
-.asobinagara h1{
+
+.asobinagara h1 {
     font-size: xx-large;
     font-weight: bolder;
 }
-.signup{
+
+.signup {
     text-align: left;
-    border-radius: 10px;  
-}
-.sign_up_main{
-    padding-left:10% ;
+    border-radius: 10px;
 }
 
-.signup_body p{
+.sign_up_main {
+    padding-left: 10%;
+}
+
+.signup_body p {
     padding-top: 4%;
     text-align: center;
     color: #004A54;
 }
-.signup_body a{
+
+.signup_body a {
     color: #004A54;
     text-decoration: none
 }
-.signup_text{ 
+
+.signup_text {
     margin-top: 5%;
     font-size: x-large;
     font-weight: bolder;
     margin-bottom: 10%;
 }
-.body{
+
+.body {
     margin-left: 5%;
+    font-weight: bold;
 }
-.body_box{
-   margin-top: 2%;
-   margin-bottom: 2%;
+
+.planner_profile_box {
+    text-align: center;
+    margin-left: 35%;
 }
-.button{
+
+.text_box {
+    font-weight: bold;
+}
+
+.body_box {
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.button {
     background-color: #004A54;
     width: 50%;
     height: 40%;
-    margin-top:10% ;
+    margin-top: 10%;
     margin-bottom: 10%;
     padding-top: 3%;
     padding-bottom: 3%;
     border: solid 1px;
     font-size: large;
     border-radius: 5%;
-    color:whitesmoke   
+    color: whitesmoke
 }
-.login{
+
+.login {
     margin-bottom: 5%;
     text-align: center;
 }
 
-.name{
-    width:20%;
-    margin-top: 3%; 
-}
-.sign_btn{
-    text-align:center;
-   
-}
-.gender_box{
+.name {
+    width: 20%;
     margin-top: 3%;
 }
-.bottom-text2 p{
+
+.sign_btn {
+    text-align: center;
+
+}
+
+.gender_box {
+    margin-top: 3%;
+}
+
+.bottom-text2 p {
     font-size: x-small;
 }
-.s-text{
+
+.s-text {
     font-size: x-small;
     color: whitesmoke;
 }
+
 //show
-.mypage_body{
+.mypage_body {
     background-color: #626A67;
     color: whitesmoke;
     padding-top: 5%;
     padding-bottom: 10%;
     text-decoration: none;
-    text-align: center; 
-}   
-.planner_info{
-    text-align: center; 
+    text-align: center;
 }
-.planner_info_left{
+
+.planner_info {
+    text-align: center;
+}
+
+.planner_info_left {
     width: 70%;
-    margin:  0 auto; 
+    margin: 0 auto;
 }
-.planner_info_right{
-    border:solid 3px; 
+
+.planner_info_right {
+    border: solid 3px;
     width: 50%;
     border-radius: 2;
     padding-right: 5%;
-    padding-left:5%;
-    padding-top:5%;
+    padding-left: 5%;
+    padding-top: 5%;
     padding-bottom: 5%;
-    margin:  0 auto; 
+    margin: 0 auto;
 }
-.planner_info_right p{
-    padding-right:5%;
-    margin-left:5%;
-    margin-top:5%;
-    padding-left:5%;
+
+.planner_info_right p {
+    padding-right: 5%;
+    margin-left: 5%;
+    margin-top: 5%;
+    padding-left: 5%;
 }
-.booking_detail{
+
+.booking_detail {
     text-align: center;
 }
-.booking_detail1{
-    border:solid 3px #dedede  ;
+
+.booking_detail1 {
+    border: solid 3px #dedede;
     border-radius: 30px;
-    background-color:#dedede ;
-    width:90%;
+    background-color: #dedede;
+    width: 90%;
     height: 20%;
     margin-left: 5%;
-    margin-right: 5%;  
+    margin-right: 5%;
 }
-.link{
+
+.link {
     color: #DBE5E6;
     font-size: x-large;
     font-weight: bolder;
     text-decoration: none;
 }
-.link_box{
+
+.link_box {
     margin-top: 7%;
 }
-.planner_schedule{
+
+.planner_schedule {
     display: flex;
 }
-.p_schedule{
+
+.p_schedule {
     text-decoration: none;
-    width: 23%;  
+    width: 23%;
     text-align: center;
     margin-top: 10%;
     margin-left: 8%;
 }
-.p_schedule_i{
-    width: 100%;  
+
+.p_schedule_i {
+    width: 100%;
     text-align: center;
 }
-.p_schedule a{
+
+.p_schedule a {
     text-decoration: none;
-    color:#004A54;
+    color: #004A54;
 }
-.planner_profile{
-     margin-top: 5%;
-     width: 350px;
-     height:350px;
-     border-radius:50%;
+
+.planner_profile {
+    margin-top: 5%;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
 }

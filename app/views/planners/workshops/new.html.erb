@@ -5,7 +5,10 @@
   <div class="signup_text">
       <span>ワークショップ詳細登録</span>
   </div>
+
+    
     <%= form_for @workshop, url: planners_workshops_create_path do |f| %>
+    <%= render 'layouts/errors', model: @workshop %>
       <div class="body">
         <div class="body_box">    
           <%= f.label :ワークショップタイトル %>
@@ -42,14 +45,14 @@
           <p><%= f.label :開催時間 %></p>
           <div class="day_box">
             <div class="start_box"><p>スタート時間</p> <p><%= f.time_select :start_time%></p></div>
-            <div class="end_box"><p>終了時間</p> <p><%= f.time_select :end_time%></p></div>
+            <div class="end_box_1"><p>終了時間</p> <p><%= f.time_select :end_time%></p></div>
           </div>
         </div>
         <div class="body_box">
           <p><%= f.label :開催期間 %></p>
           <div class="day_box">
-            <div><p>スタート日</p><p><%= f.date_select :start_date %></p></div>
-            <div><p>終了日</p><p><%= f.date_select :end_date%></p></div>
+            <div class="start_box_1"><p>スタート日</p><p><%= f.date_select :start_date %></p></div>
+            <div class="end_box"><p>終了日</p><p><%= f.date_select :end_date%></p></div>
           </div>
         </div>
         <div class="body_box">

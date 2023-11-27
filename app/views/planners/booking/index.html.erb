@@ -45,6 +45,16 @@
       <% end %>
     <% end %>
   </table>
+<% if @workshop.present? %>
   <%= link_to "マイパージに戻る", planners_show_path(planner_id: @workshop.id), class: "link", data: { "turbolinks" => false } %>
+<% else %>
+  <%# Handle case where @workshop is nil %>
+  <%= link_to "現在作成したワークショップがありません。", root_path, class: "link" %>
+<% end %>
 </div>
-<%= link_to "マイページに戻る", planners_show_path(planner_id: @workshop.id), class: "link", data: { "turbolinks" => false } %>
+<% if @workshop.present? %>
+  <%= link_to "マイパージに戻る", planners_show_path(planner_id: @workshop.id), class: "link", data: { "turbolinks" => false } %>
+<% else %>
+  <%# Handle case where @workshop is nil %>
+  <%= link_to "現在作成したワークショップがありません。", root_path, class: "link" %>
+<% end %>

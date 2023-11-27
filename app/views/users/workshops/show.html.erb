@@ -1,17 +1,52 @@
 <div class="p_side_header_p">
-  <p>Home> workshopsのレビュー</p>
-</div><!三本のイメージを押したらカテゴリーが開きます。-->
-<%= render 'workshop_detail',workshop:@workshop%>
-  <%if @workshop != nil %>
+  <p>Home > Workshopsのレビュー</p>
+</div>
+
+<!-- Image icon to expand categories will be displayed correctly here -->
+<%= render 'user_workshop_detail', workshop: @workshop %>
+<% if @workshop.present? %>
+
+  <div class="user_enter_button"></div> <!-- Corrected the spelling of "button" -->
+  <div class="post_text">
+    <div class="p_body">
+      <div class="rating-box">
+        <%= form_for @post, url: users_workshop_post_path(current_user, @workshop.id) do |f| %>
+          
+          <%= f.hidden_field :workshop_id, value: @workshop.id %>
+            <div class="body_box">
+              <div class="b_b_t">
+                <p><%= f.label :image, "写真をアップロード！" %></p>
+              </div>
+              <div class="b_b_i">
+                <p><%= f.file_field :image %></p>
+                <% if @post.errors[:image].any? %>
+                  <span class="error"><%= @post.errors[:image].first %></span>
+                <% end %>
+              </div>
+            </div>
     
-      <div class="user_enter_butten">
-      </div>   
-      <div class="post_text">
-        <%= render 'form',post:@post %>
-      </div> 
-   
-      <%= render 'user_show',workshop:@workshop %>
-   <p><%=link_to "他のワークショップに移動",users_workshops_index_path,class: "link_text"%></p>
-  <% else %>
-    No workshop
-  <% end %>
+          
+            <div class="ratings">
+              <div class="body_box">
+                <p><%= f.text_field :title, placeholder: "タイトル", class: "review_title_box" %></p>
+                <% if @post.errors[:title].any?  %>
+                  <span class="error"><%= @post.errors[:title].first %></span>
+                <% end %>
+                <p><%= f.text_area :content, placeholder: "あなたの感想を書いて下さい。", class: "review_textarea_box" %></p>
+                <% if @post.errors[:content].any? %>
+                  <span class="error"><%= @post.errors[:content].first %></span>
+                <% end %>
+                <p><%= f.submit "投稿", class: "button" %></p>
+              </div>
+            </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <%= render 'user_show', workshop: @workshop %>
+  <p><%= link_to "他のワークショップに移動", users_workshops_index_path, class: "link_text" %></p>
+<% else %>
+  <p>No workshop</p>
+<% end %>

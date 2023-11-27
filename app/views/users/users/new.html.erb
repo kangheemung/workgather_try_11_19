@@ -11,36 +11,76 @@
         <%= f.label :user_name %>
       </div>  
       <%= f.text_field :user_name, :placeholder => "User name" %>
+      <% if @user.errors[:user_name].any? %>
+                <span class="error"><%= @user.errors[:user_name].first %></span>
+      <% end %>
       <div class="body_box"> 
         <%= f.label :email%>
       </div>  
       <%= f.text_field :email, :placeholder => "email"  %>
+      <% if @user.errors[:email].any? %>
+                <span class="error"><%= @user.errors[:email].first %></span>
+      <% end %>
       <div class="body_box"> 
         <%= f.label :password %>
       </div>  
       <%= f.password_field :password, :placeholder => "password" %>
+      <% if @user.errors[:password].any? %>
+                <span class="error"><%= @user.errors[:password].first %></span>
+      <% end %>
       <div class="body_box"> 
         <%= f.label :password_confirmation %>
       </div> 
+   
       <%= f.password_field  :password_confirmation, :placeholder => "password_confirmation"%>
+      <% if @user.errors[:password_confirmation].any? %>
+                <span class="error"><%= @user.errors[:password_confirmation].first %></span>
+      <% end %>
       <div class="body_box">
         <%= f.label :プロフィールの写真 %></p>
-        <%=  f.file_field :u_profile_id ,class: 'custom-file-input'%></p>
+        <%=  f.file_field :u_profile_id ,class: 'u_profile_id'%></p>
+      <% if @user.errors[:u_profile_id ].any? %>
+                <span class="error"><%= @user.errors[:u_profile_id ].first %></span>
+      <% end %>
       </div> 
-      <div class="body_box">
-        <%= f.label :name %>
-      </div> 
-      <%= f.text_field :first_name, :placeholder => "first_name",class:"name" %>
-      <%= f.text_field :last_name, :placeholder => "last_name",class:"name" %>
+      <div class="body_box"> 
+        <p><%= f.label :name %></p>
+        </div>     
+        <div class="full_name_box"> 
+        <div class="body_box_1">
+        <%= f.text_field :first_name, :placeholder => "first_name",include_blank: 'first_name入れてください'%> 
+        </div>
+        <div class="body_box_2">
+        <%= f.text_field :last_name, :placeholder => "last_name" , include_blank: 'last_name入れてください'%> 
+        </div>
+        </div>  
+        <div class="full_name_box"> 
+          <p>
+            <% if @user.errors[:first_name].any? || @user.errors[:last_name].any? %>
+              <% if @user.errors[:first_name].any? %>
+                <span class="error"><%= @user.errors[:first_name].first %></span>
+              <% end %>
+              <% if @user.errors[:last_name].any? %>
+                <span class="error"><%= @user.errors[:last_name].first %></span>
+              <% end %>
+            <% end %>
+          </p>
+        </div>
       <div class="body_box">
         <%= f.label :誕生日%>
       </div> 
       <%= f.date_field :birthday, :placeholder => "birthday",value: @user.birthday %>
+      <% if @user.errors[:birthday].any? %>
+                <span class="error"><%= @user.errors[:birthday].first %></span>
+      <% end %>
       <div class="gender_box">
         <div class="body_box">
           <%= f.label :gender,'性別' %>
         </div>
           <%= f.select :gender, {'男性': 1,'女性': 2,'その他': 3},{ include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+       <% if @user.errors[:gender].any? %>
+                <span class="error"><%= @user.errors[:gender].first %></span>
+      <% end %>
       </div>
       <div class="sign_btn">
         <%= f.button "会員登録", class: "button" %><br>

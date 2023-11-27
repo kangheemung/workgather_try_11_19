@@ -7,16 +7,17 @@ include  PlannerSessionsHelper
       @planner=Planner.new
     end
     def create
-      planner = Planner.new(planner_params)
-      if planner.save
+      @planner = Planner.new(planner_params)
+      if @planner.save
           #p"========"
         #p @planner.errors.full_messages
         #p"==========="
-          log_in(planner)
+          log_in(@planner)
           #  session[:planner_id]=planner.id
           flash[:notice]="ユーザー登録が完了しました。"
-          redirect_to planners_show_path(planner.id)
+          redirect_to planners_show_path(@planner.id)
         else
+          flash.now[:alert] = "入力が足りないです。"
           @error_massage="入力内容もう一度確認してください"
         render :new
       end
@@ -45,7 +46,7 @@ include  PlannerSessionsHelper
     end
     private
     def planner_params
-      params.require(:planner).permit(:user_name,:email,:password,:password_confirmation,:first_name,:last_name,:birthday,:gender,:planner_profile,:p_detail)
+      params.require(:planner).permit(:planner_name,:email,:password,:password_confirmation,:first_name,:last_name,:birthday,:gender,:planner_profile,:p_detail)
     end
   end 
 

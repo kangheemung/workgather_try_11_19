@@ -1,4 +1,5 @@
   <%= form_for @reservation, url: users_reservations_create_path do |f| %>
+            <%= render 'layouts/errors', model: @reservation%>
           <div class="day_form_group">
             <p><%= f.label :name, '名前' %></p>
             <p><%= f.text_field :name%></p>

@@ -4,23 +4,29 @@ class Users::PostsController < ApplicationController
     @workshop = Workshop.find_by(id:params[:workshop_id])
     @posts = @workshop.posts.all
   end
+  
   def create
     @workshop = Workshop.find(params[:workshop_id])
-    # Build a new Post associated with the current_user
-    @post = current_user.posts.build(post_params)
+    @post = current_user.posts.build(post_params.merge(workshop_id: @workshop.id))
   
-    # Try saving the Post and WorkshopPost transactionally if valid
-    if @post.valid?
-      ActiveRecord::Base.transaction do
-        @post.save!
-        # Create the association with the workshop
-        WorkshopPost.create!(workshop_id: @workshop.id, post_id: @post.id)
-      end
-      redirect_to users_workshops_index_path
+    if @post.save
+      WorkshopPost.create!(workshop_id: @workshop.id, post_id: @post.id)
+      flash[:alert] = '投稿完了！' # 成功メッセージを設定
+      redirect_to users_workshops_show_path(user_id: current_user.id, workshop_id: @workshop.id)
     else
-      render :new
+      error_messages = [
+        "タイトルは最低5文字必要です。",
+        "内容は最低10文字必要です。",
+        "画像をアップロードしてください。",
+      ]
+      flash[:alert] = error_messages.join("\n")
+      redirect_to users_workshops_show_path(user_id: params[:user_id], workshop_id: params[:workshop_id])
+
     end
   end
+  
+ 
+
   
   
   
@@ -39,7 +45,7 @@ class Users::PostsController < ApplicationController
     
       if @post.update(post_params)
         flash[:notice] = "参加者レビュー情報を更新しました。"
-        redirect_to posts_show_path(current_user,@post.id)
+        redirect_to users_posts_show_path(current_user,@post.id)
           #  session[:planner_id]=planner.id
           flash[:notice]="参加者レビュー情報を更新しました。"
       else

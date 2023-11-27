@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2023_11_23_063209) do
   end
 
   create_table "planners", force: :cascade do |t|
-    t.string "user_name"
+    t.string "planner_name"
     t.string "email"
     t.string "password_digest"
     t.string "first_name"

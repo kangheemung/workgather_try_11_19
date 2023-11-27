@@ -20,8 +20,7 @@ class Users::WorkshopsController < ApplicationController
      @workshop =Workshop.find_by(id: params[:workshop_id])
      @user =User.find_by(id:params[:user_id])
      @post=Post.new
-     @posts=Post.all
-     @star =Star.new
+     @posts=@workshop.posts
     end
     def edit
       @workshop =Workshop.find_by(id: params[:workshop_id])

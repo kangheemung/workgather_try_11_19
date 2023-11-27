@@ -62,15 +62,15 @@ Rails.application.routes.draw do
     get '/:user_id/posts/:workshop_id/posts'=>'posts#index',as:'posts_index'
     get '/:user_id/posts/:workshop_id/new' => 'posts#new', as: 'posts_new'
     post '/:user_id/workshops/:workshop_id/post' => 'posts#create', as: 'workshop_post'
-    get 'posts/:post_id/edit' => 'posts#edit',as:'posts_edit'
+    get '/:user_id/workshops/:workshop_id/edit/:post_id' => 'posts#edit',as:'posts_edit'
     patch 'posts/:post_id/edit'=> 'posts#update',as:'posts_update'
     get '/:user_id/:workshop_id/posts/:post_id'=>'posts#show',as:'posts_show'
 
     #user_workshop
     get'/workshops/index'=>'workshops#index',as:'workshops_index'
-    get '/:workshop_id/new'=>'workshops#new',as:'workshops_new'
-    get '/workshops/:u_workshop_d/edit'=>'workshops#edit',as:'workshops_edit'
-    patch '/workshops/:u_workshop_id/edit' => 'workshops#update',as:'workshops_update'
+
+   get '/:user_id/workshops/:workshop_id/edit/:post_id'=>'workshops#edit',as:'workshops_edit'
+    patch '/:user_id/workshops/:workshop_id/edit/:post_id' => 'workshops#update',as:'workshops_update'
     get '/:user_id/workshops/:workshop_id'=>'workshops#show',as:'workshops_show' 
 
     get'/:user_id/workshop/:workshop_id/reservations/new'=>'reservations#new',as:'reservations_new'
