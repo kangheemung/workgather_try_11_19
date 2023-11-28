@@ -21,7 +21,7 @@ class Workshop < ApplicationRecord
   
 
 
-  has_one_attached :image
+
   
   # Add custom or additional methods as needed for your validations
   

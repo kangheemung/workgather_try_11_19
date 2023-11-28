@@ -62,10 +62,20 @@ class Planners::WorkshopsController < ApplicationController
     p"==================="
   end
   def destroy
-    @workshop=Workshop.find_by(id:params[:workshop_id])
-    @workshop.destroy
-    redirect_to  planners_workshops_index_path
+    @workshop = Workshop.find_by(id: params[:workshop_id])
+  
+    # Remove the image using CarrierWave's provided remove method
+    @workshop.image.remove! if @workshop.image.present?
+  
+    if @workshop.destroy
+      flash[:notice] = 'workshopを削除しました。'
+    else
+      flash[:alert] = 'workshopの削除に失敗しました。'
+    end
+  
+    redirect_to planners_workshops_index_path
   end
+  
 
 
   private
