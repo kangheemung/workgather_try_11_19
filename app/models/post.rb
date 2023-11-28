@@ -8,8 +8,8 @@ class Post < ApplicationRecord
         validates :title, :image, :content, { presence: true }
   # 画像もアップロードされていることを確認する場合、CarrierWaveやActiveStorageのようなファイル添付ライブラリが必要です。
   # 以下はActiveStorageを使用した例です:
-  has_one_attached :image
-  
+
+ 
 
     mount_uploader :image, PostImageUploader
     validates :title,:image,:content,{presence: true}
