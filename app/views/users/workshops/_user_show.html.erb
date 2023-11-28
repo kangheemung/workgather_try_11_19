@@ -5,7 +5,6 @@
 
     </div>
     <div class= "reviews_box_text">
-      
         <span>タイトル：<%= post.title %></span>
    
       <div class= "reviews_box_content">
@@ -15,8 +14,13 @@
   </div>
   <div class="user_edit">
     <% if post.user_id == current_user.id %>
-      <p><%= link_to "編集", users_workshops_edit_path(user_id: post.user_id, workshop_id: post.workshop_id, post_id: post.id), class: "link_text" %></p>
-    <%end%>
+      <p><%= link_to "編集", edit_users_workshop_post_path(workshop_id: post.workshop_id, id: post.id), class: "link_text" %></p>
+      <p><%= link_to "削除",
+                      users_workshop_post_path(workshop_id: post.workshop_id, id: post.id),
+                      method: :delete,
+                      data: { confirm: '本当に削除しますか？' },
+                      class: "link_text" %></p>
+    <% end %>
   </div>
 <% end %> 
  

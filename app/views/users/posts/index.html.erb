@@ -44,11 +44,18 @@
     </div> 
   </div>  
     <% if post.user_id == current_user.id %>
-    <div> <p> <%= link_to "編集", users_workshops_edit_path(user_id: current_user.id, workshop_id: @workshop.id, post_id: post.id), class: "link_text" %> </p>
+    <div class="post_link_box"> <p> <%= link_to "編集", users_workshops_edit_path(user_id: current_user.id, workshop_id: @workshop.id, post_id: post.id), class: "link_text" %> </p>
+      <p><%= link_to "削除",
+                      users_workshop_post_path(workshop_id: post.workshop_id, id: post.id),
+                      method: :delete,
+                      data: { confirm: '本当に削除しますか？' },
+                      class: "link_text" %></p>
+ 
     </div>
     <%end%>
    
 <% end %> 
 <div class="link_last">
+
 <p><%=link_to "他のワークショップに移動",users_workshops_index_path,class: "link_text"%></p>
 <div>

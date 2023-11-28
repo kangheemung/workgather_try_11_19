@@ -35,23 +35,41 @@ class Users::PostsController < ApplicationController
     user = current_user
     @post = user.posts.find_by(id: params[:post_id])
   
-  end
-
-    def edit
-      @post = Post.find(params[:post_id])
+  end 
+  def update
+    @post = Post.find(params[:post_id])
+  
+    if @post.update(post_params)
+      flash[:notice] = "参加者レビュー情報を更新しました。"
+      redirect_to users_posts_index_path(current_user)
+        #  session[:planner_id]=planner.id
+        flash[:notice]="参加者レビュー情報を更新しました。"
+    else
+      error_messages = [
+        "タイトルは最低5文字必要です。",
+      "内容は最低10文字必要です。"
+      ]
+      flash[:alert] = error_messages.join("\n")
+      redirect_to users_workshops_edit_path(current_user)
     end
-    def update
-      @post = Post.find(params[:post_id])
-    
-      if @post.update(post_params)
-        flash[:notice] = "参加者レビュー情報を更新しました。"
-        redirect_to users_posts_show_path(current_user,@post.id)
-          #  session[:planner_id]=planner.id
-          flash[:notice]="参加者レビュー情報を更新しました。"
+  end
+  def destroy
+    @post = current_user.posts.find_by(id: params[:id])
+    if @post.nil?
+      flash[:alert] = '投稿が見つかりませんでした。'
+      redirect_to users_workshops_path
+    else
+      @workshop = Workshop.find_by(id: @post.workshop_id)
+      if @workshop.nil?
+        flash[:alert] = 'ワークショップが見つかりませんでした。'
+        redirect_to users_workshops_path
       else
-        render :edit
+        @post.destroy
+        flash[:notice] = '投稿を削除しました。'
+        redirect_to users_workshop_posts_path(workshop_id: @workshop.id)
       end
     end
+  end
     private
 
     def post_params

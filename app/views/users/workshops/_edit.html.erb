@@ -1,5 +1,10 @@
   <div class="user_edit">
     <% if post.user_id == current_user.id %>
       <p><%=link_to "編集",users_workshops_edit_path(post),class: "link_text"%></p>
+      <p><%= link_to "削除",
+                      users_workshop_post_path(workshop_id: post.workshop_id, id: post.id),
+                      method: :delete,
+                      data: { confirm: '本当に削除しますか？' },
+                      class: "link_text" %></p>
     <%end%>
   </div> 
