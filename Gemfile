@@ -26,14 +26,17 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
+gem 'rack-cors'
+gem 'dotenv-rails'
 # Use ActiveStorage variant
  gem 'mini_magick', '~> 4.8'
  gem 'carrierwave'
  gem "simple_calendar", "~> 2.0"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+group :production do
+  gem 'unicorn', '5.4.1'
+end
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
