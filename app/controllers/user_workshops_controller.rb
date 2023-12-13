@@ -1,7 +1,5 @@
 class UserWorkshopsController < ApplicationController
   include UserSessionsHelper 
-
-  end
   def create
         #user_idをcurrent_user.idに入れますよ。
         #workshop_idをparamsに追加します。
