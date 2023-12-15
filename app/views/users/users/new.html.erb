@@ -45,16 +45,12 @@
       </div> 
       <div class="body_box"> 
         <p><%= f.label :name %></p>
-        </div>     
-        <div class="full_name_box"> 
-        <div class="body_box_1">
+      </div>     
+      <div class="body_box"> 
         <%= f.text_field :first_name, :placeholder => "first_name",include_blank: 'first_name入れてください'%> 
-        </div>
-        <div class="body_box_2">
         <%= f.text_field :last_name, :placeholder => "last_name" , include_blank: 'last_name入れてください'%> 
-        </div>
-        </div>  
-        <div class="full_name_box"> 
+      </div>  
+        <div class="body_box"> 
           <p>
             <% if @user.errors[:first_name].any? || @user.errors[:last_name].any? %>
               <% if @user.errors[:first_name].any? %>
